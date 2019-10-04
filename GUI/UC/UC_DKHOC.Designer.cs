@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.adgvDanhSachLop = new Zuby.ADGV.AdvancedDataGridView();
             this.clLDKSTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clMaLopDangKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,7 +42,6 @@
             this.bdLopDangKy = new System.Windows.Forms.BindingSource(this.components);
             this.btnchonLop = new DevExpress.XtraEditors.SimpleButton();
             this.adgvHocSinhDuDK = new Zuby.ADGV.AdvancedDataGridView();
-            this.bdHocSinhDuDieuKien = new System.Windows.Forms.BindingSource(this.components);
             this.clHSSTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clCheckBox = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.clMaHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +50,7 @@
             this.clDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clTenChaMe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clSDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bdHocSinhDuDieuKien = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.adgvDanhSachLop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdLopDangKy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adgvHocSinhDuDK)).BeginInit();
@@ -194,6 +194,9 @@
             this.adgvHocSinhDuDK.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.adgvHocSinhDuDK.Size = new System.Drawing.Size(824, 172);
             this.adgvHocSinhDuDK.TabIndex = 2;
+            this.adgvHocSinhDuDK.SortStringChanged += new System.EventHandler<Zuby.ADGV.AdvancedDataGridView.SortEventArgs>(this.adgvHocSinhDuDK_SortStringChanged);
+            this.adgvHocSinhDuDK.FilterStringChanged += new System.EventHandler<Zuby.ADGV.AdvancedDataGridView.FilterEventArgs>(this.adgvHocSinhDuDK_FilterStringChanged);
+            this.adgvHocSinhDuDK.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.adgvHocSinhDuDK_CellContentClick);
             this.adgvHocSinhDuDK.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.adgvHocSinhDuDK_RowPostPaint);
             // 
             // clHSSTT
@@ -241,8 +244,8 @@
             // clDiaChi
             // 
             this.clDiaChi.DataPropertyName = "DiaChi";
-            dataGridViewCellStyle3.NullValue = "(Trống)";
-            this.clDiaChi.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.NullValue = "(Trống)";
+            this.clDiaChi.DefaultCellStyle = dataGridViewCellStyle1;
             this.clDiaChi.HeaderText = "Địa chỉ";
             this.clDiaChi.MinimumWidth = 22;
             this.clDiaChi.Name = "clDiaChi";

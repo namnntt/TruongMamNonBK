@@ -29,6 +29,7 @@ namespace GUI.UC
         public UC_DKHOC()
         {
             InitializeComponent();
+            
 
         }
 
@@ -46,8 +47,53 @@ namespace GUI.UC
   
             DataTable dt = LopDangKyServices.LayDanhSachLopDangKy();
             bdLopDangKy.DataSource = dt;
+            AddCheckbox();
 
         }
+        #region Add All Check Box
+        private void AddCheckbox()
+        {
+            Point headerCellLocation = this.adgvHocSinhDuDK.GetCellDisplayRectangle(1, -1, true).Location;
+            //Place the Header CheckBox in the Location of the Header Cell.
+            headerCheckBox.Location = new Point(headerCellLocation.X + 30, headerCellLocation.Y + 2);
+            headerCheckBox.BackColor = clCheckBox.DefaultCellStyle.BackColor;
+            headerCheckBox.Size = new Size(15,15);
+            headerCheckBox.Click += HeaderCheckBox_Click;
+            adgvHocSinhDuDK.Controls.Add(headerCheckBox);
+        }
+
+        private void HeaderCheckBox_Click(object sender, EventArgs e)
+        {
+            //Necessary to end the edit mode of the Cell.
+            adgvHocSinhDuDK.EndEdit();
+
+            //Loop and check and uncheck all row CheckBoxes based on Header Cell CheckBox.
+            foreach (DataGridViewRow row in adgvHocSinhDuDK.Rows)
+            {
+                DataGridViewCheckBoxCell checkBox = (row.Cells["clCheckBox"] as DataGridViewCheckBoxCell);
+                checkBox.Value = headerCheckBox.Checked;
+            }
+        }
+        private void adgvHocSinhDuDK_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Check to ensure that the row CheckBox is clicked.
+            if (e.RowIndex >= 0 && e.ColumnIndex == 0)
+            {
+                //Loop to verify whether all row CheckBoxes are checked or not.
+                bool isChecked = true;
+                foreach (DataGridViewRow row in adgvHocSinhDuDK.Rows)
+                {
+                    if (Convert.ToBoolean(row.Cells["clCheckBox"].EditedFormattedValue) == false)
+                    {
+                        isChecked = false;
+                        break;
+                    }
+                }
+                headerCheckBox.Checked = isChecked;
+            }
+        }
+        #endregion
+
         private void adgvDanhSachLop_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             adgvDanhSachLop.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString(); //Display columns STT
@@ -60,6 +106,8 @@ namespace GUI.UC
 
         private void btnchonLop_Click(object sender, EventArgs e)
         {
+            adgvHocSinhDuDK.CleanFilterAndSort();
+            headerCheckBox.Checked = false;
             string TenLop = "Null"; string MaCLB = "Null"; int LichHoc = 3;
             adgvHocSinhDuDK.AutoGenerateColumns = true;
             if (adgvDanhSachLop.SelectedRows.Count > 0)
@@ -79,6 +127,17 @@ namespace GUI.UC
                 adgvHocSinhDuDK.Columns["NgayNhapHoc"].DefaultCellStyle.Format = "d";
                 adgvHocSinhDuDK.Columns["NgayNhapHoc"].HeaderText = "Nhập học";
             }
+            
+        }
+
+        private void adgvHocSinhDuDK_FilterStringChanged(object sender, Zuby.ADGV.AdvancedDataGridView.FilterEventArgs e)
+        {
+            headerCheckBox.Checked = false;
+        }
+
+        private void adgvHocSinhDuDK_SortStringChanged(object sender, Zuby.ADGV.AdvancedDataGridView.SortEventArgs e)
+        {
+            headerCheckBox.Checked = false;
         }
     }
 }
