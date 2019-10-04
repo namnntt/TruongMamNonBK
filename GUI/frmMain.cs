@@ -31,5 +31,19 @@ namespace GUI
                 UC_DKHOC.Instance.BringToFront();
             }
         }
+
+        private void btnHuyDK_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (!this.Controls.Contains(UC_HuyDKHoc.Instance))
+            {
+                this.Controls.Add(UC_HuyDKHoc.Instance);
+                UC_HuyDKHoc.Instance.Dock = DockStyle.Fill;
+                UC_HuyDKHoc.Instance.BringToFront();
+            }
+            else
+            {
+                UC_HuyDKHoc.Instance.BringToFront();
+            }
+        }
     }
 }

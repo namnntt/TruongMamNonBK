@@ -75,6 +75,12 @@
     <Compile Include="UC\UC_DKHOC.Designer.cs">
       <DependentUpon>UC_DKHOC.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\UC_HuyDKHoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC_HuyDKHoc.Designer.cs">
+      <DependentUpon>UC_HuyDKHoc.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -87,9 +93,13 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UC\UC_DKHOC.resx">
       <DependentUpon>UC_DKHOC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC_HuyDKHoc.resx">
+      <DependentUpon>UC_HuyDKHoc.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">
@@ -107,6 +117,9 @@
       <Project>{3a31ab77-1c5c-433f-b76e-51c63367b79b}</Project>
       <Name>BussinesLayer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chart-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

@@ -16,6 +16,7 @@ namespace GUI.UC
     {
         CheckBox headerCheckBox = new CheckBox();
         string MaLopDangKy = "null";
+        
         private static UC_DKHOC _instance;
         public static UC_DKHOC Instance
         {
@@ -130,6 +131,7 @@ namespace GUI.UC
                 {
                     MaLopDangKy = row.Cells[1].Value.ToString();
                 }
+                
             }
             
         }
@@ -157,6 +159,8 @@ namespace GUI.UC
             {
                 MessageBox.Show($"Đăng ký thành công cho {selectedRows.Count.ToString()}");
                 btnchonLop.PerformClick();
+                UC_HuyDKHoc.Instance.onload();
+                
             }
         }
     }
