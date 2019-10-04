@@ -10,5 +10,6 @@ namespace DataLayer.InterFace
     public interface IDangKyHocRepository
     {
         List<DangKyHoc> GetAlls();
+        void DangKyMoi(string MaHS, string MaLopDangKy);
     }
 }

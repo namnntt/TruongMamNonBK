@@ -15,7 +15,7 @@ namespace GUI.UC
     public partial class UC_DKHOC : DevExpress.XtraEditors.XtraUserControl
     {
         CheckBox headerCheckBox = new CheckBox();
-
+        string MaLopDangKy = "null";
         private static UC_DKHOC _instance;
         public static UC_DKHOC Instance
         {
@@ -55,7 +55,7 @@ namespace GUI.UC
         {
             Point headerCellLocation = this.adgvHocSinhDuDK.GetCellDisplayRectangle(1, -1, true).Location;
             //Place the Header CheckBox in the Location of the Header Cell.
-            headerCheckBox.Location = new Point(headerCellLocation.X + 30, headerCellLocation.Y + 2);
+            headerCheckBox.Location = new Point(headerCellLocation.X + 35, headerCellLocation.Y + 2);
             headerCheckBox.BackColor = clCheckBox.DefaultCellStyle.BackColor;
             headerCheckBox.Size = new Size(15,15);
             headerCheckBox.Click += HeaderCheckBox_Click;
@@ -126,6 +126,10 @@ namespace GUI.UC
                 adgvHocSinhDuDK.Columns[3].HeaderText = "Ngày sinh";
                 adgvHocSinhDuDK.Columns["NgayNhapHoc"].DefaultCellStyle.Format = "d";
                 adgvHocSinhDuDK.Columns["NgayNhapHoc"].HeaderText = "Nhập học";
+                foreach (DataGridViewRow row in adgvDanhSachLop.SelectedRows)
+                {
+                    MaLopDangKy = row.Cells[1].Value.ToString();
+                }
             }
             
         }
@@ -138,6 +142,22 @@ namespace GUI.UC
         private void adgvHocSinhDuDK_SortStringChanged(object sender, Zuby.ADGV.AdvancedDataGridView.SortEventArgs e)
         {
             headerCheckBox.Checked = false;
+        }
+
+        private void btnDangKyHoc_Click(object sender, EventArgs e)
+        {
+            List<DataGridViewRow> selectedRows = (from row in adgvHocSinhDuDK.Rows.Cast<DataGridViewRow>()
+                                                  where Convert.ToBoolean(row.Cells["clCheckBox"].Value) == true
+                                                  select row).ToList();
+            foreach (DataGridViewRow row in selectedRows)
+            {
+                DangKyHocServices.DangKyHoc(row.Cells[2].Value.ToString(), MaLopDangKy);
+            }
+            if (selectedRows.Count > 0)
+            {
+                MessageBox.Show($"Đăng ký thành công cho {selectedRows.Count.ToString()}");
+                btnchonLop.PerformClick();
+            }
         }
     }
 }

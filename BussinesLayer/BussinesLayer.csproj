@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DangKyHocServices.cs" />
     <Compile Include="GenericServices.cs" />
     <Compile Include="HocSinhServices.cs" />
     <Compile Include="LopDangKyServices.cs" />

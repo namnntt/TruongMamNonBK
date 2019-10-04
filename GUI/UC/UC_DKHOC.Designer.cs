@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.adgvDanhSachLop = new Zuby.ADGV.AdvancedDataGridView();
             this.clLDKSTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clMaLopDangKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +51,7 @@
             this.clTenChaMe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clSDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bdHocSinhDuDieuKien = new System.Windows.Forms.BindingSource(this.components);
+            this.btnDangKyHoc = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.adgvDanhSachLop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdLopDangKy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adgvHocSinhDuDK)).BeginInit();
@@ -244,8 +245,8 @@
             // clDiaChi
             // 
             this.clDiaChi.DataPropertyName = "DiaChi";
-            dataGridViewCellStyle1.NullValue = "(Trống)";
-            this.clDiaChi.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.NullValue = "(Trống)";
+            this.clDiaChi.DefaultCellStyle = dataGridViewCellStyle2;
             this.clDiaChi.HeaderText = "Địa chỉ";
             this.clDiaChi.MinimumWidth = 22;
             this.clDiaChi.Name = "clDiaChi";
@@ -267,10 +268,22 @@
             this.clSDT.Name = "clSDT";
             this.clSDT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
+            // btnDangKyHoc
+            // 
+            this.btnDangKyHoc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDangKyHoc.Location = new System.Drawing.Point(398, 438);
+            this.btnDangKyHoc.Name = "btnDangKyHoc";
+            this.btnDangKyHoc.Size = new System.Drawing.Size(75, 23);
+            this.btnDangKyHoc.TabIndex = 3;
+            this.btnDangKyHoc.Text = "Đăng Ký Học";
+            this.btnDangKyHoc.Click += new System.EventHandler(this.btnDangKyHoc_Click);
+            // 
             // UC_DKHOC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnDangKyHoc);
             this.Controls.Add(this.adgvHocSinhDuDK);
             this.Controls.Add(this.btnchonLop);
             this.Controls.Add(this.adgvDanhSachLop);
@@ -308,5 +321,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clDiaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn clTenChaMe;
         private System.Windows.Forms.DataGridViewTextBoxColumn clSDT;
+        private DevExpress.XtraEditors.SimpleButton btnDangKyHoc;
     }
 }

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BussinesLayer
 {
-    public class HocSinhServices
+    public static class HocSinhServices
     {
         static IHocSinhRepository HocSinhRepo;
         static ILopDangKyRepository LopDangKyRepo;
