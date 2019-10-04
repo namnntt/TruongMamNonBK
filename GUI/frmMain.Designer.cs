@@ -61,7 +61,9 @@
             this.ribbonPage1,
             this.ribbonPage2});
             this.ribbonControl1.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
+            this.ribbonControl1.ShowToolbarCustomizeItem = false;
             this.ribbonControl1.Size = new System.Drawing.Size(1070, 143);
+            this.ribbonControl1.Toolbar.ShowCustomizeItem = false;
             // 
             // btnMDangKyHoc
             // 
@@ -77,8 +79,8 @@
             // 
             this.btnHuyDK.Caption = "Hủy Đăng ký Học";
             this.btnHuyDK.Id = 2;
-            this.btnHuyDK.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.btnHuyDK.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btnHuyDK.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHuyDK.ImageOptions.Image")));
+            this.btnHuyDK.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHuyDK.ImageOptions.LargeImage")));
             this.btnHuyDK.Name = "btnHuyDK";
             this.btnHuyDK.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btnHuyDK.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHuyDK_ItemClick);

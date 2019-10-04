@@ -19,6 +19,10 @@ namespace BussinesLayer
         {
             dkHocrepo.DangKyMoi(MaHS, MaLopDangKy);
         }
+        public static void HuyDangKyhoc(string MaHS, string MaLopDangKy)
+        {
+            dkHocrepo.HuyDangKy(MaHS, MaLopDangKy);
+        }
             
     }
 }

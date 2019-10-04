@@ -38,6 +38,19 @@ namespace DataLayer.Repository
                 return dsDK.ToList();
             }
         }
-        
+
+        public void HuyDangKy(string MaHS, string MaLopDangKy)
+        {
+            using (MamNonBK context = new MamNonBK())
+            {
+                using (IDbConnection db = new SqlConnection(context.Database.Connection.ConnectionString))
+                {
+                    var p = new DynamicParameters(); p.Add("@MaHocSinh", MaHS);
+                    p.Add("@LopDangKy", MaLopDangKy);
+                    db.Execute("HuyDangKyHoc", p, commandType: CommandType.StoredProcedure);
+                    
+                }
+            }
+        }
     }
 }

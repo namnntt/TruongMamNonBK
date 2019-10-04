@@ -39,6 +39,7 @@
             this.clTenCLB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clHocPhi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CLB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bdLopDangKy = new System.Windows.Forms.BindingSource(this.components);
             this.btnchonLop = new DevExpress.XtraEditors.SimpleButton();
             this.adgvHocSinhDuDK = new Zuby.ADGV.AdvancedDataGridView();
             this.clHSSTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,13 +50,12 @@
             this.clDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clTenChaMe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clSDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnDangKyHoc = new DevExpress.XtraEditors.SimpleButton();
             this.bdHocSinhDuDieuKien = new System.Windows.Forms.BindingSource(this.components);
-            this.bdLopDangKy = new System.Windows.Forms.BindingSource(this.components);
+            this.btnDangKyHoc = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.adgvDanhSachLop)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdLopDangKy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adgvHocSinhDuDK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdHocSinhDuDieuKien)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdLopDangKy)).BeginInit();
             this.SuspendLayout();
             // 
             // adgvDanhSachLop
@@ -291,9 +291,9 @@
             this.Size = new System.Drawing.Size(917, 477);
             this.Load += new System.EventHandler(this.UC_DKHOC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.adgvDanhSachLop)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdLopDangKy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.adgvHocSinhDuDK)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdHocSinhDuDieuKien)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdLopDangKy)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -309,7 +309,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clTenCLB;
         private System.Windows.Forms.DataGridViewTextBoxColumn clHocPhi;
         private System.Windows.Forms.DataGridViewTextBoxColumn CLB;
-        private DevExpress.XtraEditors.SimpleButton btnchonLop;
         private Zuby.ADGV.AdvancedDataGridView adgvHocSinhDuDK;
         private System.Windows.Forms.BindingSource bdHocSinhDuDieuKien;
         private System.Windows.Forms.DataGridViewTextBoxColumn clHSSTT;
@@ -322,5 +321,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clSDT;
         private DevExpress.XtraEditors.SimpleButton btnDangKyHoc;
         public System.Windows.Forms.BindingSource bdLopDangKy;
+        public DevExpress.XtraEditors.SimpleButton btnchonLop;
     }
 }

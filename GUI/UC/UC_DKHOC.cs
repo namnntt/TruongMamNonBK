@@ -121,9 +121,8 @@ namespace GUI.UC
                 }
                 DataTable dt = HocSinhServices.LayHocSinhTheoLopDangKy(TenLop, MaCLB, LichHoc);
                 bdHocSinhDuDieuKien.DataSource = dt;
-
-                adgvHocSinhDuDK.SetFilterDateAndTimeEnabled(adgvHocSinhDuDK.Columns[3], true);
                 adgvHocSinhDuDK.Columns["NgaySinh"].DisplayIndex = 3;
+                adgvHocSinhDuDK.SetFilterDateAndTimeEnabled(adgvHocSinhDuDK.Columns[3], true);
                 adgvHocSinhDuDK.Columns[3].HeaderText = "Ngày sinh";
                 adgvHocSinhDuDK.Columns["NgayNhapHoc"].DefaultCellStyle.Format = "d";
                 adgvHocSinhDuDK.Columns["NgayNhapHoc"].HeaderText = "Nhập học";
