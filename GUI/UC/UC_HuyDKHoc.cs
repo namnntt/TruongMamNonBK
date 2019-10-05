@@ -149,7 +149,7 @@ namespace GUI.UC
             }
             if (selectedRows.Count > 0)
             {
-                MessageBox.Show($"Hủy Thành công {selectedRows.Count.ToString()}");
+                MessageBox.Show($"Hủy Thành công cho {selectedRows.Count.ToString()}học sinh");
                 btnChonLop.PerformClick();
                 onload();
                 UC_DKHOC.Instance.btnchonLop.PerformClick();

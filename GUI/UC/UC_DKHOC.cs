@@ -156,7 +156,7 @@ namespace GUI.UC
             }
             if (selectedRows.Count > 0)
             {
-                MessageBox.Show($"Đăng ký thành công cho {selectedRows.Count.ToString()}");
+                MessageBox.Show($"Đăng ký thành công cho {selectedRows.Count.ToString()} học sinh");
                 btnchonLop.PerformClick();
                 UC_HuyDKHoc.Instance.onload();
                 
