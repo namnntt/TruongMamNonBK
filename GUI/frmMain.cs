@@ -39,10 +39,25 @@ namespace GUI
                 this.Controls.Add(UC_HuyDKHoc.Instance);
                 UC_HuyDKHoc.Instance.Dock = DockStyle.Fill;
                 UC_HuyDKHoc.Instance.BringToFront();
+                
             }
             else
             {
                 UC_HuyDKHoc.Instance.BringToFront();
+            }
+        }
+
+        private void btnGiaHanDangKyHoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (!this.Controls.Contains(UC_GiaHanDKHoc.Instance))
+            {
+                this.Controls.Add(UC_GiaHanDKHoc.Instance);
+                UC_GiaHanDKHoc.Instance.Dock = DockStyle.Fill;
+                UC_GiaHanDKHoc.Instance.BringToFront();
+            }
+            else
+            {
+                UC_GiaHanDKHoc.Instance.BringToFront();
             }
         }
     }

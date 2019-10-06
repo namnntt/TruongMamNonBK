@@ -14,10 +14,12 @@ namespace BussinesLayer
     {
         static ILopDangKyRepository LopDangKyRepo;
         static IDangKyHocRepository dkhocRepo;
+        
         static LopDangKyServices()
         {
             LopDangKyRepo = new LopDangKyRepository();
             dkhocRepo = new DangKyHocRepository();
+            
         }
 
         public static DataTable LayDanhSachLopDangKy()
@@ -67,5 +69,6 @@ namespace BussinesLayer
                         };
             return GenericServices.ToDataTable(dsLop.ToList());
         }
+        
     }
 }

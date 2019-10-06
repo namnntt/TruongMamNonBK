@@ -32,7 +32,7 @@
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnMDangKyHoc = new DevExpress.XtraBars.BarButtonItem();
             this.btnHuyDK = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnGiaHanDangKyHoc = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -51,7 +51,7 @@
             this.ribbonControl1.SearchEditItem,
             this.btnMDangKyHoc,
             this.btnHuyDK,
-            this.barButtonItem2,
+            this.btnGiaHanDangKyHoc,
             this.barButtonItem3,
             this.barButtonItem4});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
@@ -85,15 +85,16 @@
             this.btnHuyDK.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btnHuyDK.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHuyDK_ItemClick);
             // 
-            // barButtonItem2
+            // btnGiaHanDangKyHoc
             // 
-            this.barButtonItem2.Caption = "Gia Hạn Đăng ký";
-            this.barButtonItem2.Id = 3;
-            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
-            this.barButtonItem2.ItemClickFireMode = DevExpress.XtraBars.BarItemEventFireMode.Immediate;
-            this.barButtonItem2.Name = "barButtonItem2";
-            this.barButtonItem2.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnGiaHanDangKyHoc.Caption = "Gia Hạn Đăng ký";
+            this.btnGiaHanDangKyHoc.Id = 3;
+            this.btnGiaHanDangKyHoc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.btnGiaHanDangKyHoc.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.btnGiaHanDangKyHoc.ItemClickFireMode = DevExpress.XtraBars.BarItemEventFireMode.Immediate;
+            this.btnGiaHanDangKyHoc.Name = "btnGiaHanDangKyHoc";
+            this.btnGiaHanDangKyHoc.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnGiaHanDangKyHoc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGiaHanDangKyHoc_ItemClick);
             // 
             // barButtonItem3
             // 
@@ -123,7 +124,7 @@
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.btnMDangKyHoc);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnHuyDK);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem2);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnGiaHanDangKyHoc);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Cập nhập Đăng ký học";
             // 
@@ -171,7 +172,7 @@
         private DevExpress.XtraBars.BarButtonItem btnHuyDK;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem btnGiaHanDangKyHoc;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;

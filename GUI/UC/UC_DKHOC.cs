@@ -48,6 +48,11 @@ namespace GUI.UC
   
             DataTable dt = LopDangKyServices.LayDanhSachLopDangKy();
             bdLopDangKy.DataSource = dt;
+            AutoCompleteStringCollection ac = new AutoCompleteStringCollection();
+            //for(int i =0; i<dt.Rows.Count; i++)
+            //{
+            //    MessageBox.Show(dt.Rows[i]["TenLopDangKy"].ToString());
+            //}
             AddCheckbox();
 
         }
@@ -121,9 +126,9 @@ namespace GUI.UC
                 }
                 DataTable dt = HocSinhServices.LayHocSinhTheoLopDangKy(TenLop, MaCLB, LichHoc);
                 bdHocSinhDuDieuKien.DataSource = dt;
-                adgvHocSinhDuDK.Columns["NgaySinh"].DisplayIndex = 3;
-                adgvHocSinhDuDK.SetFilterDateAndTimeEnabled(adgvHocSinhDuDK.Columns[3], true);
-                adgvHocSinhDuDK.Columns[3].HeaderText = "Ngày sinh";
+                adgvHocSinhDuDK.Columns["NgaySinh"].DisplayIndex = 4;
+                adgvHocSinhDuDK.SetFilterDateAndTimeEnabled(adgvHocSinhDuDK.Columns[4], true);
+                adgvHocSinhDuDK.Columns[4].HeaderText = "Ngày sinh";
                 adgvHocSinhDuDK.Columns["NgayNhapHoc"].DefaultCellStyle.Format = "d";
                 adgvHocSinhDuDK.Columns["NgayNhapHoc"].HeaderText = "Nhập học";
                 foreach (DataGridViewRow row in adgvDanhSachLop.SelectedRows)
@@ -159,8 +164,10 @@ namespace GUI.UC
                 MessageBox.Show($"Đăng ký thành công cho {selectedRows.Count.ToString()} học sinh");
                 btnchonLop.PerformClick();
                 UC_HuyDKHoc.Instance.onload();
-                
+                UC_GiaHanDKHoc.Instance.onload();
             }
         }
+
+        
     }
 }

@@ -75,6 +75,12 @@
     <Compile Include="UC\UC_DKHOC.Designer.cs">
       <DependentUpon>UC_DKHOC.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\UC_GiaHanDKHoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC_GiaHanDKHoc.Designer.cs">
+      <DependentUpon>UC_GiaHanDKHoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\UC_HuyDKHoc.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     <EmbeddedResource Include="UC\UC_DKHOC.resx">
       <DependentUpon>UC_DKHOC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC_GiaHanDKHoc.resx">
+      <DependentUpon>UC_GiaHanDKHoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC\UC_HuyDKHoc.resx">
       <DependentUpon>UC_HuyDKHoc.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,6 +125,10 @@
     <ProjectReference Include="..\BussinesLayer\BussinesLayer.csproj">
       <Project>{3a31ab77-1c5c-433f-b76e-51c63367b79b}</Project>
       <Name>BussinesLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{55679c56-4e98-4299-ac83-162293fcd17b}</Project>
+      <Name>Model</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

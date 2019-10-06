@@ -107,10 +107,9 @@ namespace GUI.UC
             }
             DataTable dt = HocSinhServices.LayHocSinhDaDangKyTheoMaLopDangKy(MaLopDangKy);
             bdHocSinh.DataSource = dt;
-            
-            adgvHocSinhHuyDK.Columns["NgaySinh"].DisplayIndex = 3;
-            adgvHocSinhHuyDK.SetFilterDateAndTimeEnabled(adgvHocSinhHuyDK.Columns[3], true);
-            adgvHocSinhHuyDK.Columns[3].HeaderText = "Ngày sinh";
+            adgvHocSinhHuyDK.Columns["NgaySinh"].DisplayIndex = 4;
+            adgvHocSinhHuyDK.SetFilterDateAndTimeEnabled(adgvHocSinhHuyDK.Columns[4], true);
+            adgvHocSinhHuyDK.Columns[4].HeaderText = "Ngày sinh";
             adgvHocSinhHuyDK.Columns["NgayNhapHoc"].DefaultCellStyle.Format = "d";
             adgvHocSinhHuyDK.Columns["NgayNhapHoc"].HeaderText = "Nhập học";
         }
@@ -153,6 +152,7 @@ namespace GUI.UC
                 btnChonLop.PerformClick();
                 onload();
                 UC_DKHOC.Instance.btnchonLop.PerformClick();
+                UC_GiaHanDKHoc.Instance.onload();
 
             }
         }
