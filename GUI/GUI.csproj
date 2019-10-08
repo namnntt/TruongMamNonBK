@@ -81,6 +81,12 @@
     <Compile Include="UC\UC_GiaHanDKHoc.Designer.cs">
       <DependentUpon>UC_GiaHanDKHoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\UC_HoaDon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC_HoaDon.Designer.cs">
+      <DependentUpon>UC_HoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\UC_HuyDKHoc.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -106,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UC_GiaHanDKHoc.resx">
       <DependentUpon>UC_GiaHanDKHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC_HoaDon.resx">
+      <DependentUpon>UC_HoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UC_HuyDKHoc.resx">
       <DependentUpon>UC_HuyDKHoc.cs</DependentUpon>

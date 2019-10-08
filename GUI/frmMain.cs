@@ -60,5 +60,19 @@ namespace GUI
                 UC_GiaHanDKHoc.Instance.BringToFront();
             }
         }
+
+        private void btnShowHoaDon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (!this.Controls.Contains(UC_HoaDon.Instance))
+            {
+                this.Controls.Add(UC_HoaDon.Instance);
+                UC_HoaDon.Instance.Dock = DockStyle.Fill;
+                UC_HoaDon.Instance.BringToFront();
+            }
+            else
+            {
+                UC_HoaDon.Instance.BringToFront();
+            }
+        }
     }
 }

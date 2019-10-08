@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="DangKyHocServices.cs" />
     <Compile Include="GenericServices.cs" />
+    <Compile Include="HoaDonServices.cs" />
     <Compile Include="HocSinhServices.cs" />
     <Compile Include="LopDangKyServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

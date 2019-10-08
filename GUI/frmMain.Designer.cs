@@ -33,7 +33,7 @@
             this.btnMDangKyHoc = new DevExpress.XtraBars.BarButtonItem();
             this.btnHuyDK = new DevExpress.XtraBars.BarButtonItem();
             this.btnGiaHanDangKyHoc = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnShowHoaDon = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -52,7 +52,7 @@
             this.btnMDangKyHoc,
             this.btnHuyDK,
             this.btnGiaHanDangKyHoc,
-            this.barButtonItem3,
+            this.btnShowHoaDon,
             this.barButtonItem4});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.MaxItemId = 6;
@@ -89,20 +89,21 @@
             // 
             this.btnGiaHanDangKyHoc.Caption = "Gia Hạn Đăng ký";
             this.btnGiaHanDangKyHoc.Id = 3;
-            this.btnGiaHanDangKyHoc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.btnGiaHanDangKyHoc.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.btnGiaHanDangKyHoc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGiaHanDangKyHoc.ImageOptions.Image")));
+            this.btnGiaHanDangKyHoc.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGiaHanDangKyHoc.ImageOptions.LargeImage")));
             this.btnGiaHanDangKyHoc.ItemClickFireMode = DevExpress.XtraBars.BarItemEventFireMode.Immediate;
             this.btnGiaHanDangKyHoc.Name = "btnGiaHanDangKyHoc";
             this.btnGiaHanDangKyHoc.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btnGiaHanDangKyHoc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGiaHanDangKyHoc_ItemClick);
             // 
-            // barButtonItem3
+            // btnShowHoaDon
             // 
-            this.barButtonItem3.Caption = "Hóa Đơn Học phí";
-            this.barButtonItem3.Id = 4;
-            this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
-            this.barButtonItem3.Name = "barButtonItem3";
-            this.barButtonItem3.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnShowHoaDon.Caption = "Hóa Đơn Học phí";
+            this.btnShowHoaDon.Id = 4;
+            this.btnShowHoaDon.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
+            this.btnShowHoaDon.Name = "btnShowHoaDon";
+            this.btnShowHoaDon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnShowHoaDon.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnShowHoaDon_ItemClick);
             // 
             // barButtonItem4
             // 
@@ -130,7 +131,7 @@
             // 
             // ribbonPageGroup3
             // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem3);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnShowHoaDon);
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem4);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "Hóa Đơn Học Phí";
@@ -173,7 +174,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.BarButtonItem btnGiaHanDangKyHoc;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem btnShowHoaDon;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
     }
