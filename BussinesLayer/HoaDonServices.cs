@@ -40,8 +40,11 @@ namespace BussinesLayer
                                       hd.MaHD,
                                       hs.MaHS,
                                       hs.TenHS,
+                                      hs.NgaySinh,
+                                      hs.NgayNhapHoc,
                                       hs.LopHanhChinh.TenLopHC,
-                                      ldk.HocPhi
+                                      ldk.HocPhi,
+                                      hd.TinhTrang
                                       
                                   } into x
                                   group x by new { x.MaHD } into g
@@ -50,7 +53,10 @@ namespace BussinesLayer
                                       MaHoaDon = g.Key.MaHD,
                                       MaHocSinh = g.First().MaHS,
                                       TenHocSinh = g.First().TenHS,
+                                      NgaySinhCuaHS = g.First().NgaySinh,
+                                      NgayNhapHocCuaHS = g.First().NgayNhapHoc,
                                       TenLopHanhChinh = g.First().TenLopHC,
+                                      TinhTrangHocPhi = g.First().TinhTrang,
                                       SoluongLopDangKy = g.Count(),
                                       TongHocPhi = g.Sum(m=>m.HocPhi)
                                       

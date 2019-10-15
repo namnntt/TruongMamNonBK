@@ -130,7 +130,8 @@ namespace GUI.UC
                 MessageBox.Show($"Gia hạn thành công cho {selectedRows.Count.ToString()} học sinh");
                 onload();
                 UC_HuyDKHoc.Instance.onload();
-                UC_DKHOC.Instance.btnchonLop.PerformClick();
+                
+                
             }
         }
     }

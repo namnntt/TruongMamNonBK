@@ -43,6 +43,9 @@
     <Reference Include="DevExpress.XtraBars.v19.1" />
     <Reference Include="DevExpress.Sparkline.v19.1.Core" />
     <Reference Include="DevExpress.XtraEditors.v19.1" />
+    <Reference Include="DevExpress.XtraGrid.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
@@ -81,12 +84,6 @@
     <Compile Include="UC\UC_GiaHanDKHoc.Designer.cs">
       <DependentUpon>UC_GiaHanDKHoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\UC_HoaDon.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC\UC_HoaDon.Designer.cs">
-      <DependentUpon>UC_HoaDon.cs</DependentUpon>
-    </Compile>
     <Compile Include="UC\UC_HuyDKHoc.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -112,9 +109,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UC_GiaHanDKHoc.resx">
       <DependentUpon>UC_GiaHanDKHoc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC\UC_HoaDon.resx">
-      <DependentUpon>UC_HoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UC_HuyDKHoc.resx">
       <DependentUpon>UC_HuyDKHoc.cs</DependentUpon>
@@ -142,6 +136,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Chart-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apply_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="RePort\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RegisterIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bill-detail-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

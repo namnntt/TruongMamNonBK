@@ -14,8 +14,8 @@ namespace GUI.UC
 {
     public partial class UC_DKHOC : DevExpress.XtraEditors.XtraUserControl
     {
-        CheckBox headerCheckBox = new CheckBox();
-        string MaLopDangKy = "null";
+        
+        string MaHocSinh = "null";
         
         private static UC_DKHOC _instance;
         public static UC_DKHOC Instance
@@ -36,69 +36,19 @@ namespace GUI.UC
 
         private void UC_DKHOC_Load(object sender, EventArgs e)
         {
-            adgvDanhSachLop.AutoGenerateColumns = false;
-            adgvDanhSachLop.FilterAndSortEnabled = true;
-            adgvHocSinhDuDK.DisableFilterAndSort(adgvHocSinhDuDK.Columns["clHSSTT"]);
-            adgvHocSinhDuDK.DisableFilterAndSort(adgvHocSinhDuDK.Columns["clCheckBox"]);
-            adgvDanhSachLop.DisableFilterAndSort(clLDKSTT);
-            adgvDanhSachLop.DisableFilterAndSort(clMaLopDangKy);
-            adgvDanhSachLop.DisableFilterAndSort(clTenLopDangKy);
-            adgvDanhSachLop.DisableFilterAndSort(clHocPhi);
 
-  
-            DataTable dt = LopDangKyServices.LayDanhSachLopDangKy();
-            bdLopDangKy.DataSource = dt;
-            AutoCompleteStringCollection ac = new AutoCompleteStringCollection();
-            //for(int i =0; i<dt.Rows.Count; i++)
-            //{
-            //    MessageBox.Show(dt.Rows[i]["TenLopDangKy"].ToString());
-            //}
-            AddCheckbox();
+            onload();
 
         }
-        #region Add All Check Box
-        private void AddCheckbox()
+        private void onload()
         {
-            Point headerCellLocation = this.adgvHocSinhDuDK.GetCellDisplayRectangle(1, -1, true).Location;
-            //Place the Header CheckBox in the Location of the Header Cell.
-            headerCheckBox.Location = new Point(headerCellLocation.X + 35, headerCellLocation.Y + 2);
-            headerCheckBox.BackColor = clCheckBox.DefaultCellStyle.BackColor;
-            headerCheckBox.Size = new Size(15,15);
-            headerCheckBox.Click += HeaderCheckBox_Click;
-            adgvHocSinhDuDK.Controls.Add(headerCheckBox);
+            adgvHocSinhDuDK.AutoGenerateColumns = false;
+            adgvHocSinhDuDK.FilterAndSortEnabled = true;
+            adgvHocSinhDuDK.DisableFilterAndSort(clHSSTT);
+            DataTable dt = HocSinhServices.LayDanhSachHocSinh();
+            bdHocSinhDuDieuKien.DataSource = dt;
+            adgvSearchBar.SetColumns(adgvHocSinhDuDK.Columns);
         }
-
-        private void HeaderCheckBox_Click(object sender, EventArgs e)
-        {
-            //Necessary to end the edit mode of the Cell.
-            adgvHocSinhDuDK.EndEdit();
-
-            //Loop and check and uncheck all row CheckBoxes based on Header Cell CheckBox.
-            foreach (DataGridViewRow row in adgvHocSinhDuDK.Rows)
-            {
-                DataGridViewCheckBoxCell checkBox = (row.Cells["clCheckBox"] as DataGridViewCheckBoxCell);
-                checkBox.Value = headerCheckBox.Checked;
-            }
-        }
-        private void adgvHocSinhDuDK_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //Check to ensure that the row CheckBox is clicked.
-            if (e.RowIndex >= 0 && e.ColumnIndex == 0)
-            {
-                //Loop to verify whether all row CheckBoxes are checked or not.
-                bool isChecked = true;
-                foreach (DataGridViewRow row in adgvHocSinhDuDK.Rows)
-                {
-                    if (Convert.ToBoolean(row.Cells["clCheckBox"].EditedFormattedValue) == false)
-                    {
-                        isChecked = false;
-                        break;
-                    }
-                }
-                headerCheckBox.Checked = isChecked;
-            }
-        }
-        #endregion
 
         private void adgvDanhSachLop_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
@@ -109,65 +59,122 @@ namespace GUI.UC
         {
             adgvHocSinhDuDK.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString(); //Display columns STT
         }
+       
 
-        private void btnchonLop_Click(object sender, EventArgs e)
+        private void btnPickStd_Click(object sender, EventArgs e)
         {
-            adgvHocSinhDuDK.CleanFilterAndSort();
-            headerCheckBox.Checked = false;
-            string TenLop = "Null"; string MaCLB = "Null"; int LichHoc = 3;
-            adgvHocSinhDuDK.AutoGenerateColumns = true;
-            if (adgvDanhSachLop.SelectedRows.Count > 0)
+            foreach(DataGridViewRow row in adgvHocSinhDuDK.SelectedRows)
             {
-                foreach (DataGridViewRow row in adgvDanhSachLop.SelectedRows)
-                {
-                    TenLop = row.Cells[2].Value.ToString();
-                    MaCLB = row.Cells[7].Value.ToString();
-                    LichHoc = (int)row.Cells[4].Value;
-                }
-                DataTable dt = HocSinhServices.LayHocSinhTheoLopDangKy(TenLop, MaCLB, LichHoc);
-                bdHocSinhDuDieuKien.DataSource = dt;
-                adgvHocSinhDuDK.Columns["NgaySinh"].DisplayIndex = 4;
-                adgvHocSinhDuDK.SetFilterDateAndTimeEnabled(adgvHocSinhDuDK.Columns[4], true);
-                adgvHocSinhDuDK.Columns[4].HeaderText = "Ngày sinh";
-                adgvHocSinhDuDK.Columns["NgayNhapHoc"].DefaultCellStyle.Format = "d";
-                adgvHocSinhDuDK.Columns["NgayNhapHoc"].HeaderText = "Nhập học";
-                foreach (DataGridViewRow row in adgvDanhSachLop.SelectedRows)
-                {
-                    MaLopDangKy = row.Cells[1].Value.ToString();
-                }
-                
+                MaHocSinh = row.Cells[1].Value.ToString();
             }
-            
+            bdLopDangKy.DataSource = LopDangKyServices.LayDanhSachLopDangKy(MaHocSinh);
+            adgvDanhSachLop.DisableFilterAndSort(clLDKSTT);
+            adgvDanhSachLop.DisableFilterAndSort(clCheckBoxers);
         }
 
-        private void adgvHocSinhDuDK_FilterStringChanged(object sender, Zuby.ADGV.AdvancedDataGridView.FilterEventArgs e)
+        private void adgvSearchBar_Search(object sender, Zuby.ADGV.AdvancedDataGridViewSearchToolBarSearchEventArgs e)
         {
-            headerCheckBox.Checked = false;
+            bool restartsearch = true;
+            int startColumn = 0;
+            int startRow = 0;
+            if (!e.FromBegin)
+            {
+                bool endcol = adgvHocSinhDuDK.CurrentCell.ColumnIndex + 1 >= adgvHocSinhDuDK.ColumnCount;
+                bool endrow = adgvHocSinhDuDK.CurrentCell.RowIndex + 1 >= adgvHocSinhDuDK.RowCount;
+
+                if (endcol && endrow)
+                {
+                    startColumn = adgvHocSinhDuDK.CurrentCell.ColumnIndex;
+                    startRow = adgvHocSinhDuDK.CurrentCell.RowIndex;
+                }
+                else
+                {
+                    startColumn = endcol ? 0 : adgvHocSinhDuDK.CurrentCell.ColumnIndex + 1;
+                    startRow = adgvHocSinhDuDK.CurrentCell.RowIndex + (endcol ? 1 : 0);
+                }
+            }
+            DataGridViewCell c = adgvHocSinhDuDK.FindCell(
+                e.ValueToSearch,
+                e.ColumnToSearch != null ? e.ColumnToSearch.Name : null,
+                startRow,
+                startColumn,
+                e.WholeWord,
+                e.CaseSensitive);
+            if (c == null && restartsearch)
+                c = adgvHocSinhDuDK.FindCell(
+                    e.ValueToSearch,
+                    e.ColumnToSearch != null ? e.ColumnToSearch.Name : null,
+                    0,
+                    0,
+                    e.WholeWord,
+                    e.CaseSensitive);
+            if (c != null)
+                adgvHocSinhDuDK.CurrentCell = c;
         }
 
-        private void adgvHocSinhDuDK_SortStringChanged(object sender, Zuby.ADGV.AdvancedDataGridView.SortEventArgs e)
-        {
-            headerCheckBox.Checked = false;
-        }
-
+        //Thực hiện đăng ký học cho học sinh
         private void btnDangKyHoc_Click(object sender, EventArgs e)
         {
-            List<DataGridViewRow> selectedRows = (from row in adgvHocSinhDuDK.Rows.Cast<DataGridViewRow>()
-                                                  where Convert.ToBoolean(row.Cells["clCheckBox"].Value) == true
+            List<DataGridViewRow> selectedRows = (from row in adgvDanhSachLop.Rows.Cast<DataGridViewRow>()
+                                                  where Convert.ToBoolean(row.Cells["clCheckBoxers"].Value) == true
                                                   select row).ToList();
+            string result = "";
             foreach (DataGridViewRow row in selectedRows)
             {
-                DangKyHocServices.DangKyHoc(row.Cells[2].Value.ToString(), MaLopDangKy);
+                if (row.Visible == true)
+                {
+                    DangKyHocServices.DangKyHoc(MaHocSinh, row.Cells[2].Value.ToString());
+                    result += ("Mã Lớp: " + row.Cells[2].Value.ToString() + "\n" + "Tên Lớp: " + row.Cells[3].Value.ToString() + "\n" + "-----------------------------------\n");
+                }
             }
             if (selectedRows.Count > 0)
             {
-                MessageBox.Show($"Đăng ký thành công cho {selectedRows.Count.ToString()} học sinh");
-                btnchonLop.PerformClick();
-                UC_HuyDKHoc.Instance.onload();
+                MessageBox.Show($"Đăng ký cho {MaHocSinh} thành công các lớp: \n {result}");
+                btnPickStd.PerformClick();
+                onload();
                 UC_GiaHanDKHoc.Instance.onload();
+                UC_HuyDKHoc.Instance.onload();
             }
         }
+        //Lọc danh sách các lớp trong khi chọn
+        private void adgvDanhSachLop_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1) return;
+            if (adgvDanhSachLop.Columns[e.ColumnIndex].Name == "clCheckBoxers")
+            {
+                if (Convert.ToBoolean(adgvDanhSachLop.Rows[e.RowIndex].Cells[1].EditedFormattedValue) == true)
+                {
+                    foreach(DataGridViewRow row in adgvDanhSachLop.Rows)
+                    {
+                        if(row.Cells[5].Value.ToString() == adgvDanhSachLop.Rows[e.RowIndex].Cells[5].Value.ToString() ||
+                            (row.Cells[8].Value.ToString() == adgvDanhSachLop.Rows[e.RowIndex].Cells[8].Value.ToString() && row.Cells[3].Value.ToString() == adgvDanhSachLop.Rows[e.RowIndex].Cells[3].Value.ToString()))
+                        {
+                            CurrencyManager currencyManager1 = (CurrencyManager)BindingContext[adgvDanhSachLop.DataSource];
+                            currencyManager1.SuspendBinding();
+                            row.Visible = false;
+                            adgvDanhSachLop.Rows[e.RowIndex].Visible = true;
+                            currencyManager1.ResumeBinding();
+                        }
+                    }
 
-        
+                }
+                else
+                {
+                    foreach (DataGridViewRow row in adgvDanhSachLop.Rows)
+                    {
+                        if (row.Cells[5].Value.ToString() == adgvDanhSachLop.Rows[e.RowIndex].Cells[5].Value.ToString() ||
+                            (row.Cells[8].Value.ToString() == adgvDanhSachLop.Rows[e.RowIndex].Cells[8].Value.ToString() && row.Cells[3].Value.ToString() == adgvDanhSachLop.Rows[e.RowIndex].Cells[3].Value.ToString()))
+                        {
+                            CurrencyManager currencyManager1 = (CurrencyManager)BindingContext[adgvDanhSachLop.DataSource];
+                            currencyManager1.SuspendBinding();
+                            row.Visible = true;
+                            adgvDanhSachLop.Rows[e.RowIndex].Visible = true;
+                            currencyManager1.ResumeBinding();
+                        }
+                    }
+                }
+
+            }
+        }
     }
 }

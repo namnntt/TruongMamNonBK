@@ -151,8 +151,8 @@ namespace GUI.UC
                 MessageBox.Show($"Hủy Thành công cho {selectedRows.Count.ToString()}học sinh");
                 btnChonLop.PerformClick();
                 onload();
-                UC_DKHOC.Instance.btnchonLop.PerformClick();
                 UC_GiaHanDKHoc.Instance.onload();
+                
 
             }
         }

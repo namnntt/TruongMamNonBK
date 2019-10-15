@@ -25,32 +25,22 @@ namespace BussinesLayer
             HDRepo = new HoaDonRepository();
             CLBRepo = new CLBRepository();
         }
-        public static DataTable LayHocSinhTheoLopDangKy(string TenLop, string MaCLB, int LichHoc)
+        public static DataTable LayDanhSachHocSinh()
         {
-            List<HocSinh> dsHS = HocSinhRepo.GetAlls();
-            List<HoaDon> dsHD = HDRepo.GetAlls();
-            List<DangKyHoc> dsDKH = DKHocRepo.GetAlls();
-            List<LopDangKy> dsLDK = LopDangKyRepo.LayDanhSachLopDangKy();
-            List<CLB> dsCLB = CLBRepo.GetAlls();
-            var DsHSDuDieuKienDK = from hs in dsHS
-                                   where !(from hd in dsHD
-                                           join dkh in dsDKH on hd.MaHD equals dkh.HoaDon
-                                           join ldk in dsLDK on dkh.LopDangKy equals ldk.MaLopDangKy
-                                           join clb in dsCLB on ldk.CLB equals clb.MaCLB
-                                           where ((ldk.LichHoc == LichHoc || (ldk.TenLopDangKy == TenLop && clb.MaCLB == MaCLB)) && (hd.NgayTao.Value.Month == DateTime.Now.Month && hd.NgayTao.Value.Year == DateTime.Now.Year))
-                                           select hd.HocSinh).Contains(hs.MaHS)
-                                   select new
-                                   {
-                                       hs.MaHS,
-                                       hs.TenHS,
-                                       hs.NgaySinh,
-                                       hs.LopHanhChinh.TenLopHC,
-                                       hs.NgayNhapHoc,
-                                       hs.DiaChi,
-                                       hs.TenChaMe,
-                                       hs.SDTChaMe
-                                   };
-            return GenericServices.ToDataTable(DsHSDuDieuKienDK.ToList());
+            var dsHS = from hs in HocSinhRepo.GetAlls()
+                       select new
+                       {
+                           hs.MaHS,
+                           hs.TenHS,
+                           hs.NgaySinh,
+                           hs.LopHanhChinh.TenLopHC,
+                           hs.NgayNhapHoc,
+                           hs.DiaChi,
+                           hs.TenChaMe,
+                           hs.SDTChaMe
+                       };
+
+            return GenericServices.ToDataTable(dsHS.ToList());
 
         }
         public static DataTable LayHocSinhDaDangKyTheoMaLopDangKy(string MaLopDangKy)
