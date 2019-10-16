@@ -49,7 +49,7 @@
             this.clTenChaMe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clSDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bdHocSinh = new System.Windows.Forms.BindingSource(this.components);
-            this.btnChonLop = new DevExpress.XtraEditors.SimpleButton();
+            this.btnPickStd = new DevExpress.XtraEditors.SimpleButton();
             this.btnHuyDangKy = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.adgvLopDangKyH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bddsLopTheoHS)).BeginInit();
@@ -247,14 +247,14 @@
             // 
             // btnChonLop
             // 
-            this.btnChonLop.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnPickStd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnChonLop.Location = new System.Drawing.Point(393, 228);
-            this.btnChonLop.Name = "btnChonLop";
-            this.btnChonLop.Size = new System.Drawing.Size(75, 23);
-            this.btnChonLop.TabIndex = 2;
-            this.btnChonLop.Text = "Chọn Lớp";
-            this.btnChonLop.Click += new System.EventHandler(this.btnChonLop_Click);
+            this.btnPickStd.Location = new System.Drawing.Point(393, 228);
+            this.btnPickStd.Name = "btnChonLop";
+            this.btnPickStd.Size = new System.Drawing.Size(75, 23);
+            this.btnPickStd.TabIndex = 2;
+            this.btnPickStd.Text = "Chọn Lớp";
+            this.btnPickStd.Click += new System.EventHandler(this.btnChonLop_Click);
             // 
             // btnHuyDangKy
             // 
@@ -272,7 +272,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnHuyDangKy);
-            this.Controls.Add(this.btnChonLop);
+            this.Controls.Add(this.btnPickStd);
             this.Controls.Add(this.adgvHocSinhHuyDK);
             this.Controls.Add(this.adgvLopDangKyH);
             this.Name = "UC_HuyDKHoc";
@@ -298,7 +298,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clNamHoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn clSoLuongHocSinh;
         private Zuby.ADGV.AdvancedDataGridView adgvHocSinhHuyDK;
-        private DevExpress.XtraEditors.SimpleButton btnChonLop;
+        private DevExpress.XtraEditors.SimpleButton btnPickStd;
         private System.Windows.Forms.BindingSource bdHocSinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn clHSSTT;
         private System.Windows.Forms.DataGridViewCheckBoxColumn clChonHS;

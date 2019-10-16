@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using BussinesLayer;
+using GUI.RePort;
 
 namespace GUI.UC
 {
@@ -16,6 +17,7 @@ namespace GUI.UC
     {
         
         string MaHocSinh = "null";
+        DataTable dthsldk = new DataTable();
         
         private static UC_DKHOC _instance;
         public static UC_DKHOC Instance
@@ -49,7 +51,7 @@ namespace GUI.UC
             bdHocSinhDuDieuKien.DataSource = dt;
             adgvSearchBar.SetColumns(adgvHocSinhDuDK.Columns);
         }
-
+        #region Display STT columns
         private void adgvDanhSachLop_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             adgvDanhSachLop.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString(); //Display columns STT
@@ -59,7 +61,7 @@ namespace GUI.UC
         {
             adgvHocSinhDuDK.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString(); //Display columns STT
         }
-       
+        #endregion
 
         private void btnPickStd_Click(object sender, EventArgs e)
         {
@@ -70,8 +72,23 @@ namespace GUI.UC
             bdLopDangKy.DataSource = LopDangKyServices.LayDanhSachLopDangKy(MaHocSinh);
             adgvDanhSachLop.DisableFilterAndSort(clLDKSTT);
             adgvDanhSachLop.DisableFilterAndSort(clCheckBoxers);
-        }
+            dthsldk = LopDangKyServices.LayDanhCacLopDangKyCuaMotHocSinh(MaHocSinh);
+            if (dthsldk.Rows.Count > 0)
+            {
+                btnChiTietHoaDon.Enabled = true;
+                btnChiTietDangKy.Enabled = true;
 
+            }
+            else {
+                btnChiTietHoaDon.Enabled = false;
+                btnChiTietDangKy.Enabled = false;
+            }
+
+            if (bdLopDangKy.Count == 0) { btnDangKyHoc.Enabled = false; }
+            else btnDangKyHoc.Enabled = true;
+           
+        }
+        #region Thanh Tìm kiếm 
         private void adgvSearchBar_Search(object sender, Zuby.ADGV.AdvancedDataGridViewSearchToolBarSearchEventArgs e)
         {
             bool restartsearch = true;
@@ -111,6 +128,7 @@ namespace GUI.UC
             if (c != null)
                 adgvHocSinhDuDK.CurrentCell = c;
         }
+        #endregion
 
         //Thực hiện đăng ký học cho học sinh
         private void btnDangKyHoc_Click(object sender, EventArgs e)
@@ -134,7 +152,9 @@ namespace GUI.UC
                 onload();
                 UC_GiaHanDKHoc.Instance.onload();
                 UC_HuyDKHoc.Instance.onload();
+                btnChiTietHoaDon.Enabled = true;
             }
+            else btnChiTietHoaDon.Enabled = false;
         }
         //Lọc danh sách các lớp trong khi chọn
         private void adgvDanhSachLop_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -172,6 +192,34 @@ namespace GUI.UC
                             currencyManager1.ResumeBinding();
                         }
                     }
+                }
+
+            }
+        }
+
+        private void btnChiTietHoaDon_Click(object sender, EventArgs e)
+        {
+            DataRowView hs = bdHocSinhDuDieuKien.Current as DataRowView;
+            DataTable hd = HoaDonServices.LayDanhSachHoaDonTheoMaHocSinh(hs["MaHS"].ToString());
+            if (dthsldk.Rows.Count > 0)
+            {
+                using (frmHoaDon frm = new frmHoaDon(dthsldk, hs, hd))
+                {
+                    frm.ShowDialog();
+                }
+                
+            }
+        }
+
+        private void btnChiTietDangKy_Click(object sender, EventArgs e)
+        {
+            DataRowView hs = bdHocSinhDuDieuKien.Current as DataRowView;
+
+            if (dthsldk.Rows.Count > 0)
+            {
+                using (frmChiTietDangKy frm = new frmChiTietDangKy(dthsldk, hs))
+                {
+                    frm.ShowDialog();
                 }
 
             }

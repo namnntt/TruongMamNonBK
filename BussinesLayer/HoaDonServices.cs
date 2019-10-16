@@ -64,6 +64,18 @@ namespace BussinesLayer
             return GenericServices.ToDataTable(IdHoaDonvaCount.ToList());
 
         }
+        public static DataTable LayDanhSachHoaDonTheoMaHocSinh(string MaHS)
+        {
+            var dsHS = from hs in HsRepo.GetAlls()
+                       join hd in HDrepo.GetAlls() on hs.MaHS equals hd.HocSinh
+                       where (hd.NgayTao.Value.Month == DateTime.Now.Month && hd.NgayTao.Value.Year == DateTime.Now.Year && MaHS == hs.MaHS)
+                       select new
+                       {
+                           hd.MaHD,
+                           hd.NgayTao
+                       };
+            return GenericServices.ToDataTable(dsHS.ToList());
+        }
 
     }
 }

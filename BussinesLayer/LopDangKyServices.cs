@@ -96,6 +96,29 @@ namespace BussinesLayer
 
                         };
             return GenericServices.ToDataTable(dsLop.ToList());
-        } 
+        }
+        public static DataTable LayDanhCacLopDangKyCuaMotHocSinh(string MaHS)
+        {
+            List<LopDangKy> dslopDK = LopDangKyRepo.LayDanhSachLopDangKy();
+            List<HoaDon> dsHD = dsHDRepo.GetAlls();
+            List<HocSinh> dsHS = hsRepo.GetAlls();
+            List<DangKyHoc> dsDK = dkhocRepo.GetAlls();
+            var dsLDKMaHSDaThamGiaTrongThang = from ldk in dslopDK
+                                               join dk in dsDK on ldk.MaLopDangKy equals dk.LopDangKy
+                                               join hd in dsHD on dk.HoaDon equals hd.MaHD
+                                               join hs in dsHS on hd.HocSinh equals hs.MaHS
+                                               where (hs.MaHS == MaHS && (dk.NgayDangKy.Month == DateTime.Now.Month && dk.NgayDangKy.Year == DateTime.Now.Year))
+                                               select new
+                                               {
+                                                   ldk.MaLopDangKy,
+                                                   ldk.TenLopDangKy,
+                                                   ldk.CLB1.TenCLB,
+                                                   ldk.CLB,
+                                                   ldk.NamHoc,
+                                                   ldk.HocPhi,
+                                                   ldk.LichHoc
+                                               };
+            return GenericServices.ToDataTable(dsLDKMaHSDaThamGiaTrongThang.ToList());
+        }
     }
 }

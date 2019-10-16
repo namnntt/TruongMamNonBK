@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_DKHOC));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.adgvDanhSachLop = new Zuby.ADGV.AdvancedDataGridView();
             this.clLDKSTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clCheckBoxers = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -41,7 +41,14 @@
             this.clTenCLB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clHocPhi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CLB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bdLopDangKy = new System.Windows.Forms.BindingSource(this.components);
             this.adgvHocSinhDuDK = new Zuby.ADGV.AdvancedDataGridView();
+            this.bdHocSinhDuDieuKien = new System.Windows.Forms.BindingSource(this.components);
+            this.adgvSearchBar = new Zuby.ADGV.AdvancedDataGridViewSearchToolBar();
+            this.btnChiTietDangKy = new DevExpress.XtraEditors.SimpleButton();
+            this.btnChiTietHoaDon = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDangKyHoc = new DevExpress.XtraEditors.SimpleButton();
+            this.btnPickStd = new DevExpress.XtraEditors.SimpleButton();
             this.clHSSTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clMaHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clTenHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,16 +56,10 @@
             this.clDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clTenChaMe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clSDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnPickStd = new DevExpress.XtraEditors.SimpleButton();
-            this.adgvSearchBar = new Zuby.ADGV.AdvancedDataGridViewSearchToolBar();
-            this.btnChiTietHoaDon = new DevExpress.XtraEditors.SimpleButton();
-            this.btnDangKyHoc = new DevExpress.XtraEditors.SimpleButton();
-            this.bdHocSinhDuDieuKien = new System.Windows.Forms.BindingSource(this.components);
-            this.bdLopDangKy = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.adgvDanhSachLop)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdLopDangKy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adgvHocSinhDuDK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdHocSinhDuDieuKien)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdLopDangKy)).BeginInit();
             this.SuspendLayout();
             // 
             // adgvDanhSachLop
@@ -199,6 +200,64 @@
             this.adgvHocSinhDuDK.TabIndex = 4;
             this.adgvHocSinhDuDK.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.adgvHocSinhDuDK_RowPostPaint);
             // 
+            // adgvSearchBar
+            // 
+            this.adgvSearchBar.AllowMerge = false;
+            this.adgvSearchBar.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.adgvSearchBar.Location = new System.Drawing.Point(0, 0);
+            this.adgvSearchBar.MaximumSize = new System.Drawing.Size(0, 27);
+            this.adgvSearchBar.MinimumSize = new System.Drawing.Size(0, 27);
+            this.adgvSearchBar.Name = "adgvSearchBar";
+            this.adgvSearchBar.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.adgvSearchBar.Size = new System.Drawing.Size(1216, 27);
+            this.adgvSearchBar.TabIndex = 6;
+            this.adgvSearchBar.Text = "advancedDataGridViewSearchToolBar1";
+            this.adgvSearchBar.Search += new Zuby.ADGV.AdvancedDataGridViewSearchToolBarSearchEventHandler(this.adgvSearchBar_Search);
+            // 
+            // btnChiTietDangKy
+            // 
+            this.btnChiTietDangKy.Enabled = false;
+            this.btnChiTietDangKy.ImageOptions.Image = global::GUI.Properties.Resources.detail_con;
+            this.btnChiTietDangKy.Location = new System.Drawing.Point(774, 509);
+            this.btnChiTietDangKy.Name = "btnChiTietDangKy";
+            this.btnChiTietDangKy.Size = new System.Drawing.Size(128, 33);
+            this.btnChiTietDangKy.TabIndex = 9;
+            this.btnChiTietDangKy.Text = "C.Tiết Lớp đã ĐK";
+            this.btnChiTietDangKy.Click += new System.EventHandler(this.btnChiTietDangKy_Click);
+            // 
+            // btnChiTietHoaDon
+            // 
+            this.btnChiTietHoaDon.Enabled = false;
+            this.btnChiTietHoaDon.ImageOptions.Image = global::GUI.Properties.Resources.Bill_detail_icon;
+            this.btnChiTietHoaDon.Location = new System.Drawing.Point(603, 502);
+            this.btnChiTietHoaDon.Name = "btnChiTietHoaDon";
+            this.btnChiTietHoaDon.Size = new System.Drawing.Size(116, 40);
+            this.btnChiTietHoaDon.TabIndex = 8;
+            this.btnChiTietHoaDon.Text = "In Hóa đơn";
+            this.btnChiTietHoaDon.Click += new System.EventHandler(this.btnChiTietHoaDon_Click);
+            // 
+            // btnDangKyHoc
+            // 
+            this.btnDangKyHoc.Enabled = false;
+            this.btnDangKyHoc.ImageOptions.Image = global::GUI.Properties.Resources.RegisterIcon;
+            this.btnDangKyHoc.Location = new System.Drawing.Point(417, 503);
+            this.btnDangKyHoc.Name = "btnDangKyHoc";
+            this.btnDangKyHoc.Size = new System.Drawing.Size(116, 39);
+            this.btnDangKyHoc.TabIndex = 7;
+            this.btnDangKyHoc.Text = "Đăng Ký Học";
+            this.btnDangKyHoc.Click += new System.EventHandler(this.btnDangKyHoc_Click);
+            // 
+            // btnPickStd
+            // 
+            this.btnPickStd.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnPickStd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPickStd.ImageOptions.Image")));
+            this.btnPickStd.Location = new System.Drawing.Point(603, 253);
+            this.btnPickStd.Name = "btnPickStd";
+            this.btnPickStd.Size = new System.Drawing.Size(126, 34);
+            this.btnPickStd.TabIndex = 5;
+            this.btnPickStd.Text = "Chọn Học Sinh";
+            this.btnPickStd.Click += new System.EventHandler(this.btnPickStd_Click);
+            // 
             // clHSSTT
             // 
             this.clHSSTT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
@@ -235,8 +294,8 @@
             // clDiaChi
             // 
             this.clDiaChi.DataPropertyName = "DiaChi";
-            dataGridViewCellStyle3.NullValue = "(Trống)";
-            this.clDiaChi.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.NullValue = "(Trống)";
+            this.clDiaChi.DefaultCellStyle = dataGridViewCellStyle1;
             this.clDiaChi.HeaderText = "Địa chỉ";
             this.clDiaChi.MinimumWidth = 22;
             this.clDiaChi.Name = "clDiaChi";
@@ -258,55 +317,12 @@
             this.clSDT.Name = "clSDT";
             this.clSDT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
-            // btnPickStd
-            // 
-            this.btnPickStd.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnPickStd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPickStd.ImageOptions.Image")));
-            this.btnPickStd.Location = new System.Drawing.Point(545, 253);
-            this.btnPickStd.Name = "btnPickStd";
-            this.btnPickStd.Size = new System.Drawing.Size(126, 34);
-            this.btnPickStd.TabIndex = 5;
-            this.btnPickStd.Text = "Chọn Học Sinh";
-            this.btnPickStd.Click += new System.EventHandler(this.btnPickStd_Click);
-            // 
-            // adgvSearchBar
-            // 
-            this.adgvSearchBar.AllowMerge = false;
-            this.adgvSearchBar.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.adgvSearchBar.Location = new System.Drawing.Point(0, 0);
-            this.adgvSearchBar.MaximumSize = new System.Drawing.Size(0, 27);
-            this.adgvSearchBar.MinimumSize = new System.Drawing.Size(0, 27);
-            this.adgvSearchBar.Name = "adgvSearchBar";
-            this.adgvSearchBar.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.adgvSearchBar.Size = new System.Drawing.Size(1216, 27);
-            this.adgvSearchBar.TabIndex = 6;
-            this.adgvSearchBar.Text = "advancedDataGridViewSearchToolBar1";
-            this.adgvSearchBar.Search += new Zuby.ADGV.AdvancedDataGridViewSearchToolBarSearchEventHandler(this.adgvSearchBar_Search);
-            // 
-            // btnChiTietHoaDon
-            // 
-            this.btnChiTietHoaDon.ImageOptions.Image = global::GUI.Properties.Resources.Bill_detail_icon;
-            this.btnChiTietHoaDon.Location = new System.Drawing.Point(674, 503);
-            this.btnChiTietHoaDon.Name = "btnChiTietHoaDon";
-            this.btnChiTietHoaDon.Size = new System.Drawing.Size(127, 40);
-            this.btnChiTietHoaDon.TabIndex = 8;
-            this.btnChiTietHoaDon.Text = "Chi Tiết Hóa đơn";
-            // 
-            // btnDangKyHoc
-            // 
-            this.btnDangKyHoc.ImageOptions.Image = global::GUI.Properties.Resources.RegisterIcon;
-            this.btnDangKyHoc.Location = new System.Drawing.Point(488, 504);
-            this.btnDangKyHoc.Name = "btnDangKyHoc";
-            this.btnDangKyHoc.Size = new System.Drawing.Size(116, 39);
-            this.btnDangKyHoc.TabIndex = 7;
-            this.btnDangKyHoc.Text = "Đăng Ký Học";
-            this.btnDangKyHoc.Click += new System.EventHandler(this.btnDangKyHoc_Click);
-            // 
             // UC_DKHOC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.Controls.Add(this.btnChiTietDangKy);
             this.Controls.Add(this.btnChiTietHoaDon);
             this.Controls.Add(this.btnDangKyHoc);
             this.Controls.Add(this.adgvSearchBar);
@@ -317,9 +333,9 @@
             this.Size = new System.Drawing.Size(1216, 577);
             this.Load += new System.EventHandler(this.UC_DKHOC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.adgvDanhSachLop)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdLopDangKy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.adgvHocSinhDuDK)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdHocSinhDuDieuKien)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdLopDangKy)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -331,14 +347,6 @@
         private System.Windows.Forms.BindingSource bdHocSinhDuDieuKien;
         public System.Windows.Forms.BindingSource bdLopDangKy;
         private Zuby.ADGV.AdvancedDataGridView adgvHocSinhDuDK;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clHSSTT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clMaHS;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clTenHS;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clTenLopHC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clDiaChi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clTenChaMe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clSDT;
-        private DevExpress.XtraEditors.SimpleButton btnPickStd;
         private System.Windows.Forms.DataGridViewTextBoxColumn clLDKSTT;
         private System.Windows.Forms.DataGridViewCheckBoxColumn clCheckBoxers;
         private System.Windows.Forms.DataGridViewTextBoxColumn clMaLopDangKy;
@@ -351,5 +359,14 @@
         private Zuby.ADGV.AdvancedDataGridViewSearchToolBar adgvSearchBar;
         private DevExpress.XtraEditors.SimpleButton btnDangKyHoc;
         private DevExpress.XtraEditors.SimpleButton btnChiTietHoaDon;
+        private DevExpress.XtraEditors.SimpleButton btnChiTietDangKy;
+        public DevExpress.XtraEditors.SimpleButton btnPickStd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clHSSTT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clMaHS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clTenHS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clTenLopHC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clDiaChi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clTenChaMe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clSDT;
     }
 }

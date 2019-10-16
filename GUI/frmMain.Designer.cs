@@ -35,6 +35,7 @@
             this.btnGiaHanDangKyHoc = new DevExpress.XtraBars.BarButtonItem();
             this.btnShowHoaDon = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnLichSuHoaDon = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -59,9 +60,10 @@
             this.btnHuyDK,
             this.btnGiaHanDangKyHoc,
             this.btnShowHoaDon,
-            this.barButtonItem4});
+            this.barButtonItem4,
+            this.btnLichSuHoaDon});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 7;
+            this.ribbonControl1.MaxItemId = 8;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -118,6 +120,14 @@
             this.barButtonItem4.Name = "barButtonItem4";
             this.barButtonItem4.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
+            // btnLichSuHoaDon
+            // 
+            this.btnLichSuHoaDon.Caption = "Lịch Sử Hóa Đơn";
+            this.btnLichSuHoaDon.Id = 7;
+            this.btnLichSuHoaDon.ImageOptions.Image = global::GUI.Properties.Resources.bii_history_icon;
+            this.btnLichSuHoaDon.Name = "btnLichSuHoaDon";
+            this.btnLichSuHoaDon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -136,6 +146,7 @@
             // 
             // ribbonPageGroup3
             // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnLichSuHoaDon);
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem4);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "Hóa Đơn Học Phí";
@@ -223,6 +234,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage5;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
+        private DevExpress.XtraBars.BarButtonItem btnLichSuHoaDon;
     }
 }
 

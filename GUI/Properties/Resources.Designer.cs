@@ -73,6 +73,16 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bii_history_icon {
+            get {
+                object obj = ResourceManager.GetObject("bii-history-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Bill_detail_icon {
             get {
                 object obj = ResourceManager.GetObject("Bill-detail-icon", resourceCulture);
@@ -96,6 +106,16 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap delete_32x32 {
             get {
                 object obj = ResourceManager.GetObject("delete_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap detail_con {
+            get {
+                object obj = ResourceManager.GetObject("detail-con", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
