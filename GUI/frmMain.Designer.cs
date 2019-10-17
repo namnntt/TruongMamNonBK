@@ -73,7 +73,7 @@
             this.ribbonPage5});
             this.ribbonControl1.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonControl1.ShowToolbarCustomizeItem = false;
-            this.ribbonControl1.Size = new System.Drawing.Size(1191, 143);
+            this.ribbonControl1.Size = new System.Drawing.Size(1191, 162);
             this.ribbonControl1.Toolbar.ShowCustomizeItem = false;
             // 
             // btnMDangKyHoc
@@ -127,12 +127,14 @@
             this.btnLichSuHoaDon.ImageOptions.Image = global::GUI.Properties.Resources.bii_history_icon;
             this.btnLichSuHoaDon.Name = "btnLichSuHoaDon";
             this.btnLichSuHoaDon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnLichSuHoaDon.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLichSuHoaDon_ItemClick);
             // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1,
             this.ribbonPageGroup3});
+            this.ribbonPage1.ImageOptions.Image = global::GUI.Properties.Resources.register_manager_icon;
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Quản lý Đăng ký Học";
             // 
@@ -155,6 +157,7 @@
             // 
             this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup2});
+            this.ribbonPage2.ImageOptions.Image = global::GUI.Properties.Resources.student_mamager_icon;
             this.ribbonPage2.Name = "ribbonPage2";
             this.ribbonPage2.Text = "Quản Lý Học Sinh";
             // 

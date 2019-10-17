@@ -123,6 +123,12 @@
     <Compile Include="UC\UC_HuyDKHoc.Designer.cs">
       <DependentUpon>UC_HuyDKHoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\UC_LICHSUHOADON.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC_LICHSUHOADON.Designer.cs">
+      <DependentUpon>UC_LICHSUHOADON.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmChiTietDangKy.resx">
       <DependentUpon>frmChiTietDangKy.cs</DependentUpon>
     </EmbeddedResource>
@@ -152,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UC_HuyDKHoc.resx">
       <DependentUpon>UC_HuyDKHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC_LICHSUHOADON.resx">
+      <DependentUpon>UC_LICHSUHOADON.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
@@ -193,6 +202,11 @@
   <ItemGroup>
     <None Include="Resources\detail-con.png" />
     <None Include="Resources\bii-history-icon.png" />
+    <None Include="Resources\checkbox2_32x32.png" />
+    <None Include="Resources\cancel_32x32.png" />
+    <None Include="Resources\renew-icon.png" />
+    <None Include="Resources\register-manager-icon.jpg" />
+    <None Include="Resources\student-mamager-icon.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

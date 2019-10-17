@@ -40,6 +40,7 @@
             this.clSDTChaMe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bdDsHSGiaHan = new System.Windows.Forms.BindingSource(this.components);
             this.btnGiaHan = new DevExpress.XtraEditors.SimpleButton();
+            this.advancedDataGridViewSearchToolBar1 = new Zuby.ADGV.AdvancedDataGridViewSearchToolBar();
             ((System.ComponentModel.ISupportInitialize)(this.adgvdsHSGiaHanDK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdDsHSGiaHan)).BeginInit();
             this.SuspendLayout();
@@ -66,12 +67,12 @@
             this.clSDTChaMe});
             this.adgvdsHSGiaHanDK.DataSource = this.bdDsHSGiaHan;
             this.adgvdsHSGiaHanDK.FilterAndSortEnabled = true;
-            this.adgvdsHSGiaHanDK.Location = new System.Drawing.Point(43, 65);
+            this.adgvdsHSGiaHanDK.Location = new System.Drawing.Point(46, 81);
             this.adgvdsHSGiaHanDK.MultiSelect = false;
             this.adgvdsHSGiaHanDK.Name = "adgvdsHSGiaHanDK";
             this.adgvdsHSGiaHanDK.RowHeadersVisible = false;
             this.adgvdsHSGiaHanDK.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.adgvdsHSGiaHanDK.Size = new System.Drawing.Size(822, 283);
+            this.adgvdsHSGiaHanDK.Size = new System.Drawing.Size(888, 372);
             this.adgvdsHSGiaHanDK.TabIndex = 0;
             this.adgvdsHSGiaHanDK.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.adgvdsHSGiaHanDK_CellContentClick);
             this.adgvdsHSGiaHanDK.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.adgvdsHSGiaHanDK_RowPostPaint);
@@ -144,27 +145,42 @@
             // 
             // btnGiaHan
             // 
-            this.btnGiaHan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGiaHan.Location = new System.Drawing.Point(405, 375);
+            this.btnGiaHan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnGiaHan.ImageOptions.Image = global::GUI.Properties.Resources.renew_icon;
+            this.btnGiaHan.Location = new System.Drawing.Point(450, 459);
             this.btnGiaHan.Name = "btnGiaHan";
-            this.btnGiaHan.Size = new System.Drawing.Size(84, 23);
+            this.btnGiaHan.Size = new System.Drawing.Size(117, 42);
             this.btnGiaHan.TabIndex = 1;
             this.btnGiaHan.Text = "Gia Hạn";
             this.btnGiaHan.Click += new System.EventHandler(this.btnGiaHan_Click);
+            // 
+            // advancedDataGridViewSearchToolBar1
+            // 
+            this.advancedDataGridViewSearchToolBar1.AllowMerge = false;
+            this.advancedDataGridViewSearchToolBar1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.advancedDataGridViewSearchToolBar1.Location = new System.Drawing.Point(0, 0);
+            this.advancedDataGridViewSearchToolBar1.MaximumSize = new System.Drawing.Size(0, 27);
+            this.advancedDataGridViewSearchToolBar1.MinimumSize = new System.Drawing.Size(0, 27);
+            this.advancedDataGridViewSearchToolBar1.Name = "advancedDataGridViewSearchToolBar1";
+            this.advancedDataGridViewSearchToolBar1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.advancedDataGridViewSearchToolBar1.Size = new System.Drawing.Size(958, 27);
+            this.advancedDataGridViewSearchToolBar1.TabIndex = 2;
+            this.advancedDataGridViewSearchToolBar1.Text = "advancedDataGridViewSearchToolBar1";
             // 
             // UC_GiaHanDKHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.advancedDataGridViewSearchToolBar1);
             this.Controls.Add(this.btnGiaHan);
             this.Controls.Add(this.adgvdsHSGiaHanDK);
             this.Name = "UC_GiaHanDKHoc";
-            this.Size = new System.Drawing.Size(917, 476);
+            this.Size = new System.Drawing.Size(958, 540);
             this.Load += new System.EventHandler(this.UC_GiaHanDKHoc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.adgvdsHSGiaHanDK)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdDsHSGiaHan)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -181,5 +197,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clDiaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn clTenChame;
         private System.Windows.Forms.DataGridViewTextBoxColumn clSDTChaMe;
+        private Zuby.ADGV.AdvancedDataGridViewSearchToolBar advancedDataGridViewSearchToolBar1;
     }
 }

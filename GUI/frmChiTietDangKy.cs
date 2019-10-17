@@ -33,6 +33,8 @@ namespace GUI
             txtTenHS.Text = _hs["TenHS"].ToString();
             txtTenLopHC.Text = _hs["TenLopHC"].ToString();
             txtNamSinh.Text = dat.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
+            adgvDanhSachLopDangDangKy.DisableFilterAndSort(clCheck);
+            adgvDanhSachLopDangDangKy.DisableFilterAndSort(clSTT);
             //txtTenHS.Text = _hs.TenHS;
             //txtTenLopHC.Text = _hs.TenLopHC;
             //txtNamSinh.Text = _hs.NgaySinh.ToString("dd/MM/yyyy");

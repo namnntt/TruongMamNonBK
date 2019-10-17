@@ -61,6 +61,18 @@ namespace GUI
             }
         }
 
-        
+        private void btnLichSuHoaDon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (!this.Controls.Contains(UC_LICHSUHOADON.Instance))
+            {
+                this.Controls.Add(UC_LICHSUHOADON.Instance);
+                UC_LICHSUHOADON.Instance.Dock = DockStyle.Fill;
+                UC_LICHSUHOADON.Instance.BringToFront();
+            }
+            else
+            {
+                UC_LICHSUHOADON.Instance.BringToFront();
+            }
+        }
     }
 }

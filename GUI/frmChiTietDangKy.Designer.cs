@@ -39,11 +39,17 @@
             this.txtTenLopHC = new System.Windows.Forms.TextBox();
             this.txtNamSinh = new System.Windows.Forms.TextBox();
             this.adgvDanhSachLopDangDangKy = new Zuby.ADGV.AdvancedDataGridView();
+            this.bdLopdaDangKy = new System.Windows.Forms.BindingSource(this.components);
+            this.btnHUyDangKy = new DevExpress.XtraEditors.SimpleButton();
             this.clSTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clCheck = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.clMaLopDangKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bdLopdaDangKy = new System.Windows.Forms.BindingSource(this.components);
-            this.btnHUyDangKy = new DevExpress.XtraEditors.SimpleButton();
+            this.clTenLopDangKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clTenCLB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clCLB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clNamHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clHocPhi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clLichHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.adgvDanhSachLopDangDangKy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdLopdaDangKy)).BeginInit();
             this.SuspendLayout();
@@ -148,7 +154,13 @@
             this.adgvDanhSachLopDangDangKy.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clSTT,
             this.clCheck,
-            this.clMaLopDangKy});
+            this.clMaLopDangKy,
+            this.clTenLopDangKy,
+            this.clTenCLB,
+            this.clCLB,
+            this.clNamHoc,
+            this.clHocPhi,
+            this.clLichHoc});
             this.adgvDanhSachLopDangDangKy.DataSource = this.bdLopdaDangKy;
             this.adgvDanhSachLopDangDangKy.FilterAndSortEnabled = true;
             this.adgvDanhSachLopDangDangKy.Location = new System.Drawing.Point(26, 150);
@@ -158,6 +170,17 @@
             this.adgvDanhSachLopDangDangKy.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.adgvDanhSachLopDangDangKy.Size = new System.Drawing.Size(819, 228);
             this.adgvDanhSachLopDangDangKy.TabIndex = 8;
+            // 
+            // btnHUyDangKy
+            // 
+            this.btnHUyDangKy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnHUyDangKy.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHUyDangKy.ImageOptions.Image")));
+            this.btnHUyDangKy.Location = new System.Drawing.Point(387, 404);
+            this.btnHUyDangKy.Name = "btnHUyDangKy";
+            this.btnHUyDangKy.Size = new System.Drawing.Size(112, 36);
+            this.btnHUyDangKy.TabIndex = 9;
+            this.btnHUyDangKy.Text = "Hủy Đăng Ký";
             // 
             // clSTT
             // 
@@ -179,22 +202,66 @@
             // 
             // clMaLopDangKy
             // 
+            this.clMaLopDangKy.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.clMaLopDangKy.DataPropertyName = "MaLopDangKy";
             this.clMaLopDangKy.HeaderText = "Mã Lớp ĐK";
             this.clMaLopDangKy.MinimumWidth = 22;
             this.clMaLopDangKy.Name = "clMaLopDangKy";
             this.clMaLopDangKy.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.clMaLopDangKy.Width = 83;
             // 
-            // btnHUyDangKy
+            // clTenLopDangKy
             // 
-            this.btnHUyDangKy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnHUyDangKy.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHUyDangKy.ImageOptions.Image")));
-            this.btnHUyDangKy.Location = new System.Drawing.Point(387, 404);
-            this.btnHUyDangKy.Name = "btnHUyDangKy";
-            this.btnHUyDangKy.Size = new System.Drawing.Size(112, 36);
-            this.btnHUyDangKy.TabIndex = 9;
-            this.btnHUyDangKy.Text = "Hủy Đăng Ký";
+            this.clTenLopDangKy.DataPropertyName = "TenLopDangKy";
+            this.clTenLopDangKy.HeaderText = "Tên Lớp";
+            this.clTenLopDangKy.MinimumWidth = 22;
+            this.clTenLopDangKy.Name = "clTenLopDangKy";
+            this.clTenLopDangKy.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // clTenCLB
+            // 
+            this.clTenCLB.DataPropertyName = "TenCLB";
+            this.clTenCLB.HeaderText = "Tên CLB";
+            this.clTenCLB.MinimumWidth = 22;
+            this.clTenCLB.Name = "clTenCLB";
+            this.clTenCLB.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // clCLB
+            // 
+            this.clCLB.DataPropertyName = "CLB";
+            this.clCLB.HeaderText = "CLB";
+            this.clCLB.MinimumWidth = 22;
+            this.clCLB.Name = "clCLB";
+            this.clCLB.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.clCLB.Visible = false;
+            // 
+            // clNamHoc
+            // 
+            this.clNamHoc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.clNamHoc.DataPropertyName = "NamHoc";
+            this.clNamHoc.HeaderText = "Năm Học";
+            this.clNamHoc.MinimumWidth = 22;
+            this.clNamHoc.Name = "clNamHoc";
+            this.clNamHoc.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.clNamHoc.Width = 74;
+            // 
+            // clHocPhi
+            // 
+            this.clHocPhi.DataPropertyName = "HocPhi";
+            this.clHocPhi.HeaderText = "Học Phí";
+            this.clHocPhi.MinimumWidth = 22;
+            this.clHocPhi.Name = "clHocPhi";
+            this.clHocPhi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // clLichHoc
+            // 
+            this.clLichHoc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.clLichHoc.DataPropertyName = "LichHoc";
+            this.clLichHoc.HeaderText = "Lịch Học";
+            this.clLichHoc.MinimumWidth = 22;
+            this.clLichHoc.Name = "clLichHoc";
+            this.clLichHoc.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.clLichHoc.Width = 71;
             // 
             // frmChiTietDangKy
             // 
@@ -241,5 +308,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clSTT;
         private System.Windows.Forms.DataGridViewCheckBoxColumn clCheck;
         private System.Windows.Forms.DataGridViewTextBoxColumn clMaLopDangKy;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clTenLopDangKy;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clTenCLB;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clCLB;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clNamHoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clHocPhi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clLichHoc;
     }
 }

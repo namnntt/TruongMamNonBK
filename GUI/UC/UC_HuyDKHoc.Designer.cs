@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_HuyDKHoc));
             this.adgvLopDangKyH = new Zuby.ADGV.AdvancedDataGridView();
             this.clLSTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clMaLopDk = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,7 +83,7 @@
             this.adgvLopDangKyH.Name = "adgvLopDangKyH";
             this.adgvLopDangKyH.RowHeadersVisible = false;
             this.adgvLopDangKyH.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.adgvLopDangKyH.Size = new System.Drawing.Size(814, 153);
+            this.adgvLopDangKyH.Size = new System.Drawing.Size(953, 192);
             this.adgvLopDangKyH.TabIndex = 0;
             this.adgvLopDangKyH.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.adgvLopDangKyH_RowPostPaint);
             // 
@@ -165,12 +166,12 @@
             this.clSDT});
             this.adgvHocSinhHuyDK.DataSource = this.bdHocSinh;
             this.adgvHocSinhHuyDK.FilterAndSortEnabled = true;
-            this.adgvHocSinhHuyDK.Location = new System.Drawing.Point(30, 275);
+            this.adgvHocSinhHuyDK.Location = new System.Drawing.Point(30, 309);
             this.adgvHocSinhHuyDK.MultiSelect = false;
             this.adgvHocSinhHuyDK.Name = "adgvHocSinhHuyDK";
             this.adgvHocSinhHuyDK.RowHeadersVisible = false;
             this.adgvHocSinhHuyDK.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.adgvHocSinhHuyDK.Size = new System.Drawing.Size(814, 136);
+            this.adgvHocSinhHuyDK.Size = new System.Drawing.Size(953, 188);
             this.adgvHocSinhHuyDK.TabIndex = 1;
             this.adgvHocSinhHuyDK.SortStringChanged += new System.EventHandler<Zuby.ADGV.AdvancedDataGridView.SortEventArgs>(this.adgvHocSinhHuyDK_SortStringChanged);
             this.adgvHocSinhHuyDK.FilterStringChanged += new System.EventHandler<Zuby.ADGV.AdvancedDataGridView.FilterEventArgs>(this.adgvHocSinhHuyDK_FilterStringChanged);
@@ -222,8 +223,8 @@
             // clDiaChi
             // 
             this.clDiaChi.DataPropertyName = "DiaChi";
-            dataGridViewCellStyle1.NullValue = "(Trống)";
-            this.clDiaChi.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.NullValue = "(Trống)";
+            this.clDiaChi.DefaultCellStyle = dataGridViewCellStyle2;
             this.clDiaChi.HeaderText = "Địa chỉ";
             this.clDiaChi.MinimumWidth = 22;
             this.clDiaChi.Name = "clDiaChi";
@@ -245,24 +246,24 @@
             this.clSDT.Name = "clSDT";
             this.clSDT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
-            // btnChonLop
+            // btnPickStd
             // 
-            this.btnPickStd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPickStd.Location = new System.Drawing.Point(393, 228);
-            this.btnPickStd.Name = "btnChonLop";
-            this.btnPickStd.Size = new System.Drawing.Size(75, 23);
+            this.btnPickStd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnPickStd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPickStd.ImageOptions.Image")));
+            this.btnPickStd.Location = new System.Drawing.Point(459, 250);
+            this.btnPickStd.Name = "btnPickStd";
+            this.btnPickStd.Size = new System.Drawing.Size(121, 41);
             this.btnPickStd.TabIndex = 2;
             this.btnPickStd.Text = "Chọn Lớp";
             this.btnPickStd.Click += new System.EventHandler(this.btnChonLop_Click);
             // 
             // btnHuyDangKy
             // 
-            this.btnHuyDangKy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnHuyDangKy.Location = new System.Drawing.Point(393, 428);
+            this.btnHuyDangKy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnHuyDangKy.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHuyDangKy.ImageOptions.Image")));
+            this.btnHuyDangKy.Location = new System.Drawing.Point(468, 503);
             this.btnHuyDangKy.Name = "btnHuyDangKy";
-            this.btnHuyDangKy.Size = new System.Drawing.Size(75, 23);
+            this.btnHuyDangKy.Size = new System.Drawing.Size(121, 39);
             this.btnHuyDangKy.TabIndex = 3;
             this.btnHuyDangKy.Text = "Hủy Đăng Ký";
             this.btnHuyDangKy.Click += new System.EventHandler(this.btnHuyDangKy_Click);
@@ -276,7 +277,7 @@
             this.Controls.Add(this.adgvHocSinhHuyDK);
             this.Controls.Add(this.adgvLopDangKyH);
             this.Name = "UC_HuyDKHoc";
-            this.Size = new System.Drawing.Size(875, 478);
+            this.Size = new System.Drawing.Size(1014, 556);
             this.Load += new System.EventHandler(this.UC_HuyDKHoc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.adgvLopDangKyH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bddsLopTheoHS)).EndInit();

@@ -30,14 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.LopDangKyReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.LopDangKyReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.LopDangKyReportBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // LopDangKyReportBindingSource
-            // 
-            this.LopDangKyReportBindingSource.DataSource = typeof(GUI.RePort.LopDangKyReport);
             // 
             // reportViewer1
             // 
@@ -49,14 +45,18 @@
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(877, 468);
+            this.reportViewer1.Size = new System.Drawing.Size(889, 591);
             this.reportViewer1.TabIndex = 0;
+            // 
+            // LopDangKyReportBindingSource
+            // 
+            this.LopDangKyReportBindingSource.DataSource = typeof(GUI.RePort.LopDangKyReport);
             // 
             // frmHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(877, 468);
+            this.ClientSize = new System.Drawing.Size(889, 591);
             this.Controls.Add(this.reportViewer1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
