@@ -207,6 +207,7 @@
     <None Include="Resources\renew-icon.png" />
     <None Include="Resources\register-manager-icon.jpg" />
     <None Include="Resources\student-mamager-icon.png" />
+    <None Include="Resources\load-data-icon.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

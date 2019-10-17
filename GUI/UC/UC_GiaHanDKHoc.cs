@@ -45,6 +45,7 @@ namespace GUI.UC
                 bdDsHSGiaHan.DataSource = dt;
                 adgvdsHSGiaHanDK.CleanFilterAndSort();
                 headerCheckBox.Checked = false;
+            advancedDataGridViewSearchToolBar1.SetColumns(adgvdsHSGiaHanDK.Columns);
             if (adgvdsHSGiaHanDK.Columns.Count ==10)
             {
                 adgvdsHSGiaHanDK.Columns["NgaySinh"].DisplayIndex = 4;
@@ -133,6 +134,46 @@ namespace GUI.UC
                 
                 
             }
+        }
+
+        private void advancedDataGridViewSearchToolBar1_Search(object sender, Zuby.ADGV.AdvancedDataGridViewSearchToolBarSearchEventArgs e)
+        {
+            bool restartsearch = true;
+            int startColumn = 0;
+            int startRow = 0;
+            if (!e.FromBegin)
+            {
+                bool endcol = adgvdsHSGiaHanDK.CurrentCell.ColumnIndex + 1 >= adgvdsHSGiaHanDK.ColumnCount;
+                bool endrow = adgvdsHSGiaHanDK.CurrentCell.RowIndex + 1 >= adgvdsHSGiaHanDK.RowCount;
+
+                if (endcol && endrow)
+                {
+                    startColumn = adgvdsHSGiaHanDK.CurrentCell.ColumnIndex;
+                    startRow = adgvdsHSGiaHanDK.CurrentCell.RowIndex;
+                }
+                else
+                {
+                    startColumn = endcol ? 0 : adgvdsHSGiaHanDK.CurrentCell.ColumnIndex + 1;
+                    startRow = adgvdsHSGiaHanDK.CurrentCell.RowIndex + (endcol ? 1 : 0);
+                }
+            }
+            DataGridViewCell c = adgvdsHSGiaHanDK.FindCell(
+                e.ValueToSearch,
+                e.ColumnToSearch != null ? e.ColumnToSearch.Name : null,
+                startRow,
+                startColumn,
+                e.WholeWord,
+                e.CaseSensitive);
+            if (c == null && restartsearch)
+                c = adgvdsHSGiaHanDK.FindCell(
+                    e.ValueToSearch,
+                    e.ColumnToSearch != null ? e.ColumnToSearch.Name : null,
+                    0,
+                    0,
+                    e.WholeWord,
+                    e.CaseSensitive);
+            if (c != null)
+                adgvdsHSGiaHanDK.CurrentCell = c;
         }
     }
 }

@@ -18,7 +18,9 @@ namespace GUI.UC
         
         string MaHocSinh = "null";
         DataTable dthsldk = new DataTable();
-        
+        DataRowView hs;
+
+
         private static UC_DKHOC _instance;
         public static UC_DKHOC Instance
         {
@@ -73,6 +75,7 @@ namespace GUI.UC
             adgvDanhSachLop.DisableFilterAndSort(clLDKSTT);
             adgvDanhSachLop.DisableFilterAndSort(clCheckBoxers);
             dthsldk = LopDangKyServices.LayDanhCacLopDangKyCuaMotHocSinh(MaHocSinh);
+            hs = bdHocSinhDuDieuKien.Current as DataRowView;
             if (dthsldk.Rows.Count > 0)
             {
                 btnChiTietHoaDon.Enabled = true;
@@ -199,7 +202,7 @@ namespace GUI.UC
 
         private void btnChiTietHoaDon_Click(object sender, EventArgs e)
         {
-            DataRowView hs = bdHocSinhDuDieuKien.Current as DataRowView;
+            
             DataTable hd = HoaDonServices.LayDanhSachHoaDonTheoMaHocSinh(hs["MaHS"].ToString());
             if (dthsldk.Rows.Count > 0)
             {
@@ -213,7 +216,7 @@ namespace GUI.UC
 
         private void btnChiTietDangKy_Click(object sender, EventArgs e)
         {
-            DataRowView hs = bdHocSinhDuDieuKien.Current as DataRowView;
+            
 
             if (dthsldk.Rows.Count > 0)
             {

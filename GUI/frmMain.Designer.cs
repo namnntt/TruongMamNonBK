@@ -73,7 +73,7 @@
             this.ribbonPage5});
             this.ribbonControl1.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonControl1.ShowToolbarCustomizeItem = false;
-            this.ribbonControl1.Size = new System.Drawing.Size(1191, 162);
+            this.ribbonControl1.Size = new System.Drawing.Size(1267, 162);
             this.ribbonControl1.Toolbar.ShowCustomizeItem = false;
             // 
             // btnMDangKyHoc
@@ -206,7 +206,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1191, 719);
+            this.ClientSize = new System.Drawing.Size(1267, 719);
             this.Controls.Add(this.ribbonControl1);
             this.Name = "frmMain";
             this.Ribbon = this.ribbonControl1;

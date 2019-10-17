@@ -166,6 +166,7 @@
             this.advancedDataGridViewSearchToolBar1.Size = new System.Drawing.Size(958, 27);
             this.advancedDataGridViewSearchToolBar1.TabIndex = 2;
             this.advancedDataGridViewSearchToolBar1.Text = "advancedDataGridViewSearchToolBar1";
+            this.advancedDataGridViewSearchToolBar1.Search += new Zuby.ADGV.AdvancedDataGridViewSearchToolBarSearchEventHandler(this.advancedDataGridViewSearchToolBar1_Search);
             // 
             // UC_GiaHanDKHoc
             // 
