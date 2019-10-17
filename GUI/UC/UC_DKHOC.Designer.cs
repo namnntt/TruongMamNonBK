@@ -287,7 +287,7 @@
             // btnChiTietHoaDon
             // 
             this.btnChiTietHoaDon.Enabled = false;
-            this.btnChiTietHoaDon.ImageOptions.Image = global::GUI.Properties.Resources.Bill_detail_icon;
+            this.btnChiTietHoaDon.ImageOptions.Image = global::GUI.Properties.Resources.printer_32x322;
             this.btnChiTietHoaDon.Location = new System.Drawing.Point(603, 502);
             this.btnChiTietHoaDon.Name = "btnChiTietHoaDon";
             this.btnChiTietHoaDon.Size = new System.Drawing.Size(116, 40);

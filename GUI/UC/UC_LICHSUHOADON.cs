@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using BussinesLayer;
 
 namespace GUI.UC
 {
@@ -26,6 +27,25 @@ namespace GUI.UC
         public UC_LICHSUHOADON()
         {
             InitializeComponent();
+        }
+        public void onload()
+        {
+            
+        }
+
+        private void UC_LICHSUHOADON_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            e.DisplayText = e.RowHandle.ToString();
+        }
+
+        private void btnLoadDataHD_Click(object sender, EventArgs e)
+        {
+            bdHoaDon.DataSource = HoaDonServices.LayDanhSachHoaDonTheoNamvaThang(dtpDuLieuHoaDon.Value.Year, dtpDuLieuHoaDon.Value.Month);
         }
     }
 }

@@ -39,8 +39,6 @@
             this.txtTenLopHC = new System.Windows.Forms.TextBox();
             this.txtNamSinh = new System.Windows.Forms.TextBox();
             this.adgvDanhSachLopDangDangKy = new Zuby.ADGV.AdvancedDataGridView();
-            this.bdLopdaDangKy = new System.Windows.Forms.BindingSource(this.components);
-            this.btnHUyDangKy = new DevExpress.XtraEditors.SimpleButton();
             this.clSTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clCheck = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.clMaLopDangKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +48,8 @@
             this.clNamHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clHocPhi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clLichHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bdLopdaDangKy = new System.Windows.Forms.BindingSource(this.components);
+            this.btnHUyDangKy = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.adgvDanhSachLopDangDangKy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdLopdaDangKy)).BeginInit();
             this.SuspendLayout();
@@ -171,17 +171,6 @@
             this.adgvDanhSachLopDangDangKy.Size = new System.Drawing.Size(819, 228);
             this.adgvDanhSachLopDangDangKy.TabIndex = 8;
             // 
-            // btnHUyDangKy
-            // 
-            this.btnHUyDangKy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnHUyDangKy.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHUyDangKy.ImageOptions.Image")));
-            this.btnHUyDangKy.Location = new System.Drawing.Point(387, 404);
-            this.btnHUyDangKy.Name = "btnHUyDangKy";
-            this.btnHUyDangKy.Size = new System.Drawing.Size(112, 36);
-            this.btnHUyDangKy.TabIndex = 9;
-            this.btnHUyDangKy.Text = "Hủy Đăng Ký";
-            // 
             // clSTT
             // 
             this.clSTT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
@@ -262,6 +251,18 @@
             this.clLichHoc.Name = "clLichHoc";
             this.clLichHoc.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.clLichHoc.Width = 71;
+            // 
+            // btnHUyDangKy
+            // 
+            this.btnHUyDangKy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnHUyDangKy.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHUyDangKy.ImageOptions.Image")));
+            this.btnHUyDangKy.Location = new System.Drawing.Point(387, 404);
+            this.btnHUyDangKy.Name = "btnHUyDangKy";
+            this.btnHUyDangKy.Size = new System.Drawing.Size(112, 36);
+            this.btnHUyDangKy.TabIndex = 9;
+            this.btnHUyDangKy.Text = "Hủy Đăng Ký";
+            this.btnHUyDangKy.Click += new System.EventHandler(this.btnHUyDangKy_Click);
             // 
             // frmChiTietDangKy
             // 

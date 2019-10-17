@@ -163,6 +163,26 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap printer_32x321 {
+            get {
+                object obj = ResourceManager.GetObject("printer_32x321", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap printer_32x322 {
+            get {
+                object obj = ResourceManager.GetObject("printer_32x322", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap register_manager_icon {
             get {
                 object obj = ResourceManager.GetObject("register-manager-icon", resourceCulture);
@@ -186,6 +206,16 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap renew_icon {
             get {
                 object obj = ResourceManager.GetObject("renew-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap student_icon {
+            get {
+                object obj = ResourceManager.GetObject("student-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

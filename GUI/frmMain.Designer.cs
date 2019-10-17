@@ -36,6 +36,7 @@
             this.btnShowHoaDon = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.btnLichSuHoaDon = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCapNhapTTHS = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -61,9 +62,10 @@
             this.btnGiaHanDangKyHoc,
             this.btnShowHoaDon,
             this.barButtonItem4,
-            this.btnLichSuHoaDon});
+            this.btnLichSuHoaDon,
+            this.btnCapNhapTTHS});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 8;
+            this.ribbonControl1.MaxItemId = 9;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -129,6 +131,14 @@
             this.btnLichSuHoaDon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btnLichSuHoaDon.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLichSuHoaDon_ItemClick);
             // 
+            // btnCapNhapTTHS
+            // 
+            this.btnCapNhapTTHS.Caption = "Cập nhật thông tin học sinh";
+            this.btnCapNhapTTHS.Id = 8;
+            this.btnCapNhapTTHS.ImageOptions.Image = global::GUI.Properties.Resources.student_icon;
+            this.btnCapNhapTTHS.Name = "btnCapNhapTTHS";
+            this.btnCapNhapTTHS.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -163,8 +173,9 @@
             // 
             // ribbonPageGroup2
             // 
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnCapNhapTTHS);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "Học Sinh";
             // 
             // ribbonPage3
             // 
@@ -238,6 +249,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage5;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.XtraBars.BarButtonItem btnLichSuHoaDon;
+        private DevExpress.XtraBars.BarButtonItem btnCapNhapTTHS;
     }
 }
 
