@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_DKHOC));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.adgvDanhSachLop = new Zuby.ADGV.AdvancedDataGridView();
             this.clLDKSTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clCheckBoxers = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -43,6 +43,12 @@
             this.CLB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bdLopDangKy = new System.Windows.Forms.BindingSource(this.components);
             this.adgvHocSinhDuDK = new Zuby.ADGV.AdvancedDataGridView();
+            this.bdHocSinhDuDieuKien = new System.Windows.Forms.BindingSource(this.components);
+            this.adgvSearchBar = new Zuby.ADGV.AdvancedDataGridViewSearchToolBar();
+            this.btnChiTietDangKy = new DevExpress.XtraEditors.SimpleButton();
+            this.btnChiTietHoaDon = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDangKyHoc = new DevExpress.XtraEditors.SimpleButton();
+            this.btnPickStd = new DevExpress.XtraEditors.SimpleButton();
             this.clHSSTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clMaHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clTenHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,12 +56,6 @@
             this.clDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clTenChaMe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clSDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bdHocSinhDuDieuKien = new System.Windows.Forms.BindingSource(this.components);
-            this.adgvSearchBar = new Zuby.ADGV.AdvancedDataGridViewSearchToolBar();
-            this.btnChiTietDangKy = new DevExpress.XtraEditors.SimpleButton();
-            this.btnChiTietHoaDon = new DevExpress.XtraEditors.SimpleButton();
-            this.btnDangKyHoc = new DevExpress.XtraEditors.SimpleButton();
-            this.btnPickStd = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.adgvDanhSachLop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdLopDangKy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adgvHocSinhDuDK)).BeginInit();
@@ -200,65 +200,6 @@
             this.adgvHocSinhDuDK.TabIndex = 4;
             this.adgvHocSinhDuDK.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.adgvHocSinhDuDK_RowPostPaint);
             // 
-            // clHSSTT
-            // 
-            this.clHSSTT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.clHSSTT.HeaderText = "STT";
-            this.clHSSTT.MinimumWidth = 22;
-            this.clHSSTT.Name = "clHSSTT";
-            this.clHSSTT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.clHSSTT.Width = 50;
-            // 
-            // clMaHS
-            // 
-            this.clMaHS.DataPropertyName = "MaHS";
-            this.clMaHS.HeaderText = "Mã HS";
-            this.clMaHS.MinimumWidth = 22;
-            this.clMaHS.Name = "clMaHS";
-            this.clMaHS.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // clTenHS
-            // 
-            this.clTenHS.DataPropertyName = "TenHS";
-            this.clTenHS.HeaderText = "Tên HS";
-            this.clTenHS.MinimumWidth = 22;
-            this.clTenHS.Name = "clTenHS";
-            this.clTenHS.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // clTenLopHC
-            // 
-            this.clTenLopHC.DataPropertyName = "TenLopHC";
-            this.clTenLopHC.HeaderText = "Tên Lớp HC";
-            this.clTenLopHC.MinimumWidth = 22;
-            this.clTenLopHC.Name = "clTenLopHC";
-            this.clTenLopHC.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // clDiaChi
-            // 
-            this.clDiaChi.DataPropertyName = "DiaChi";
-            dataGridViewCellStyle1.NullValue = "(Trống)";
-            this.clDiaChi.DefaultCellStyle = dataGridViewCellStyle1;
-            this.clDiaChi.HeaderText = "Địa chỉ";
-            this.clDiaChi.MinimumWidth = 22;
-            this.clDiaChi.Name = "clDiaChi";
-            this.clDiaChi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // clTenChaMe
-            // 
-            this.clTenChaMe.DataPropertyName = "TenChaMe";
-            this.clTenChaMe.HeaderText = "Tên cha mẹ";
-            this.clTenChaMe.MinimumWidth = 22;
-            this.clTenChaMe.Name = "clTenChaMe";
-            this.clTenChaMe.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // clSDT
-            // 
-            this.clSDT.DataPropertyName = "SDTChaMe";
-            this.clSDT.HeaderText = "SDT Cha Mẹ";
-            this.clSDT.MinimumWidth = 22;
-            this.clSDT.Name = "clSDT";
-            this.clSDT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
             // adgvSearchBar
             // 
             this.adgvSearchBar.AllowMerge = false;
@@ -316,6 +257,67 @@
             this.btnPickStd.TabIndex = 5;
             this.btnPickStd.Text = "Chọn Học Sinh";
             this.btnPickStd.Click += new System.EventHandler(this.btnPickStd_Click);
+            // 
+            // clHSSTT
+            // 
+            this.clHSSTT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.clHSSTT.HeaderText = "STT";
+            this.clHSSTT.MinimumWidth = 22;
+            this.clHSSTT.Name = "clHSSTT";
+            this.clHSSTT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.clHSSTT.Width = 50;
+            // 
+            // clMaHS
+            // 
+            this.clMaHS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.clMaHS.DataPropertyName = "MaHS";
+            this.clMaHS.HeaderText = "Mã HS";
+            this.clMaHS.MinimumWidth = 22;
+            this.clMaHS.Name = "clMaHS";
+            this.clMaHS.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.clMaHS.Width = 62;
+            // 
+            // clTenHS
+            // 
+            this.clTenHS.DataPropertyName = "TenHS";
+            this.clTenHS.HeaderText = "Tên HS";
+            this.clTenHS.MinimumWidth = 22;
+            this.clTenHS.Name = "clTenHS";
+            this.clTenHS.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // clTenLopHC
+            // 
+            this.clTenLopHC.DataPropertyName = "TenLopHC";
+            this.clTenLopHC.HeaderText = "Tên Lớp HC";
+            this.clTenLopHC.MinimumWidth = 22;
+            this.clTenLopHC.Name = "clTenLopHC";
+            this.clTenLopHC.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // clDiaChi
+            // 
+            this.clDiaChi.DataPropertyName = "DiaChi";
+            dataGridViewCellStyle1.NullValue = "(Trống)";
+            this.clDiaChi.DefaultCellStyle = dataGridViewCellStyle1;
+            this.clDiaChi.HeaderText = "Địa chỉ";
+            this.clDiaChi.MinimumWidth = 22;
+            this.clDiaChi.Name = "clDiaChi";
+            this.clDiaChi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // clTenChaMe
+            // 
+            this.clTenChaMe.DataPropertyName = "TenChaMe";
+            this.clTenChaMe.HeaderText = "Tên cha mẹ";
+            this.clTenChaMe.MinimumWidth = 22;
+            this.clTenChaMe.Name = "clTenChaMe";
+            this.clTenChaMe.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // clSDT
+            // 
+            this.clSDT.DataPropertyName = "SDTChaMe";
+            this.clSDT.HeaderText = "SDT Cha Mẹ";
+            this.clSDT.MinimumWidth = 22;
+            this.clSDT.Name = "clSDT";
+            this.clSDT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // UC_DKHOC
             // 

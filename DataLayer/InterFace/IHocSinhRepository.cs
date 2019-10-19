@@ -10,5 +10,6 @@ namespace DataLayer.InterFace
     public interface IHocSinhRepository
     {
         List<HocSinh> GetAlls();
+        void ThemHocSinh(string TenHS, DateTime NgaySinh, string TenChaMe, string SDT, string DiaChi, string LopHC);
     }
 }

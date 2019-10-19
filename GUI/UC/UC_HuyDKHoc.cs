@@ -98,20 +98,24 @@ namespace GUI.UC
 
         private void btnChonLop_Click(object sender, EventArgs e)
         {
-            
+
             adgvHocSinhHuyDK.CleanFilterAndSort();
             headerCheckBox.Checked = false;
             foreach (DataGridViewRow row in adgvLopDangKyH.SelectedRows)
             {
                 MaLopDangKy = row.Cells[1].Value.ToString();
             }
+            adgvHocSinhHuyDK.AutoGenerateColumns = true;
             DataTable dt = HocSinhServices.LayHocSinhDaDangKyTheoMaLopDangKy(MaLopDangKy);
             bdHocSinh.DataSource = dt;
-            adgvHocSinhHuyDK.Columns["NgaySinh"].DisplayIndex = 4;
-            adgvHocSinhHuyDK.SetFilterDateAndTimeEnabled(adgvHocSinhHuyDK.Columns[4], true);
-            adgvHocSinhHuyDK.Columns[4].HeaderText = "Ngày sinh";
-            adgvHocSinhHuyDK.Columns["NgayNhapHoc"].DefaultCellStyle.Format = "d";
-            adgvHocSinhHuyDK.Columns["NgayNhapHoc"].HeaderText = "Nhập học";
+            if (adgvHocSinhHuyDK.Columns.Count == 10)
+            {
+                adgvHocSinhHuyDK.Columns["NgaySinh"].DisplayIndex = 4;
+                adgvHocSinhHuyDK.SetFilterDateAndTimeEnabled(adgvHocSinhHuyDK.Columns[4], true);
+                adgvHocSinhHuyDK.Columns[4].HeaderText = "Ngày sinh";
+                adgvHocSinhHuyDK.Columns["NgayNhapHoc"].DefaultCellStyle.Format = "d";
+                adgvHocSinhHuyDK.Columns["NgayNhapHoc"].HeaderText = "Nhập học";
+            }              
         }
         #region Tạo cột STT
         private void adgvLopDangKyH_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)

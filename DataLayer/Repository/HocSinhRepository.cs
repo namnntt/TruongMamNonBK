@@ -1,7 +1,10 @@
-﻿using DataLayer.InterFace;
+﻿using Dapper;
+using DataLayer.InterFace;
 using Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +20,23 @@ namespace DataLayer.Repository
                 var dsHS = from hs in db.HocSinhs.Include("LopHanhChinh").AsNoTracking()
                            select hs;
                 return dsHS.ToList();
+            }
+        }
+
+        public void ThemHocSinh(string TenHS, DateTime NgaySinh, string TenChaMe, string SDTChaMe, string DiaChi, string LopHC)
+        {
+            using (MamNonBK context = new MamNonBK())
+            {
+                using (IDbConnection db = new SqlConnection(context.Database.Connection.ConnectionString))
+                {
+                    var p = new DynamicParameters(); p.Add("@TenHS", TenHS);
+                    p.Add("@NgaySinh", NgaySinh.ToString("yyyy-MM-dd"));
+                    p.Add("@TenChaMe", TenChaMe);
+                    p.Add("@SDTChaMe", SDTChaMe);
+                    p.Add("@DiaChi", DiaChi);
+                    p.Add("@LopHC", LopHC);
+                    db.Execute("ThemHocSinh", p, commandType: CommandType.StoredProcedure);
+                }
             }
         }
     }

@@ -34,8 +34,6 @@ namespace GUI.UC
         public UC_DKHOC()
         {
             InitializeComponent();
-            
-
         }
 
         private void UC_DKHOC_Load(object sender, EventArgs e)
@@ -46,12 +44,18 @@ namespace GUI.UC
         }
         private void onload()
         {
-            adgvHocSinhDuDK.AutoGenerateColumns = false;
+            adgvHocSinhDuDK.AutoGenerateColumns = true;
             adgvHocSinhDuDK.FilterAndSortEnabled = true;
             adgvHocSinhDuDK.DisableFilterAndSort(clHSSTT);
             DataTable dt = HocSinhServices.LayDanhSachHocSinh();
             bdHocSinhDuDieuKien.DataSource = dt;
-            adgvSearchBar.SetColumns(adgvHocSinhDuDK.Columns);
+            if (adgvHocSinhDuDK.Columns.Count == 9)
+            {
+                adgvHocSinhDuDK.Columns["NgaySinh"].DisplayIndex = 4;
+                adgvHocSinhDuDK.Columns["NgaySinh"].HeaderText = "Ngày Sinh";
+                adgvHocSinhDuDK.Columns["NgayNhapHoc"].HeaderText = "Ngày Nhập học";
+                adgvSearchBar.SetColumns(adgvHocSinhDuDK.Columns);
+            }
         }
         #region Display STT columns
         private void adgvDanhSachLop_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)

@@ -65,8 +65,17 @@ namespace GUI
                 MessageBox.Show($"Hủy Thành công {selectedRows.Count.ToString()} Lớp");
                 UC_DKHOC.Instance.btnPickStd.PerformClick();
                 UC_GiaHanDKHoc.Instance.onload();
-                
+                UC_HuyDKHoc.Instance.onload();
+                UC_HuyDKHoc.Instance.btnPickStd.PerformClick();
+
+
             }
+        }
+
+        private void adgvDanhSachLopDangDangKy_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            
+            adgvDanhSachLopDangDangKy.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
         }
     }
 }

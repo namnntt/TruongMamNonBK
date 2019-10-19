@@ -109,7 +109,7 @@
             this.gridView1.OptionsFind.AlwaysVisible = true;
             this.gridView1.OptionsScrollAnnotations.ShowSelectedRows = DevExpress.Utils.DefaultBoolean.True;
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView1.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView1.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.OptionsView.ShowIndicator = false;
             // 
@@ -190,7 +190,7 @@
             this.clNhapHoc.Name = "clNhapHoc";
             this.clNhapHoc.Visible = true;
             this.clNhapHoc.VisibleIndex = 5;
-            this.clNhapHoc.Width = 92;
+            this.clNhapHoc.Width = 126;
             // 
             // clLopHC
             // 
@@ -203,7 +203,7 @@
             this.clLopHC.Name = "clLopHC";
             this.clLopHC.Visible = true;
             this.clLopHC.VisibleIndex = 6;
-            this.clLopHC.Width = 132;
+            this.clLopHC.Width = 120;
             // 
             // TThocphi
             // 
@@ -222,7 +222,7 @@
             this.clSoLuongLopDK.Name = "clSoLuongLopDK";
             this.clSoLuongLopDK.Visible = true;
             this.clSoLuongLopDK.VisibleIndex = 7;
-            this.clSoLuongLopDK.Width = 123;
+            this.clSoLuongLopDK.Width = 138;
             // 
             // clTongHocPhi
             // 
@@ -235,7 +235,7 @@
             this.clTongHocPhi.Name = "clTongHocPhi";
             this.clTongHocPhi.Visible = true;
             this.clTongHocPhi.VisibleIndex = 8;
-            this.clTongHocPhi.Width = 162;
+            this.clTongHocPhi.Width = 125;
             // 
             // label1
             // 

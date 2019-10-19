@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_HuyDKHoc));
             this.adgvLopDangKyH = new Zuby.ADGV.AdvancedDataGridView();
             this.clLSTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -223,8 +223,8 @@
             // clDiaChi
             // 
             this.clDiaChi.DataPropertyName = "DiaChi";
-            dataGridViewCellStyle2.NullValue = "(Trống)";
-            this.clDiaChi.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.NullValue = "(Trống)";
+            this.clDiaChi.DefaultCellStyle = dataGridViewCellStyle1;
             this.clDiaChi.HeaderText = "Địa chỉ";
             this.clDiaChi.MinimumWidth = 22;
             this.clDiaChi.Name = "clDiaChi";
@@ -299,7 +299,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clNamHoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn clSoLuongHocSinh;
         private Zuby.ADGV.AdvancedDataGridView adgvHocSinhHuyDK;
-        private DevExpress.XtraEditors.SimpleButton btnPickStd;
         private System.Windows.Forms.BindingSource bdHocSinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn clHSSTT;
         private System.Windows.Forms.DataGridViewCheckBoxColumn clChonHS;
@@ -310,5 +309,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clTenChaMe;
         private System.Windows.Forms.DataGridViewTextBoxColumn clSDT;
         private DevExpress.XtraEditors.SimpleButton btnHuyDangKy;
+        public DevExpress.XtraEditors.SimpleButton btnPickStd;
     }
 }

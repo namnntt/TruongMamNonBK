@@ -170,6 +170,7 @@
             this.adgvDanhSachLopDangDangKy.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.adgvDanhSachLopDangDangKy.Size = new System.Drawing.Size(819, 228);
             this.adgvDanhSachLopDangDangKy.TabIndex = 8;
+            this.adgvDanhSachLopDangDangKy.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.adgvDanhSachLopDangDangKy_RowPostPaint);
             // 
             // clSTT
             // 

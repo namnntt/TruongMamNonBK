@@ -110,5 +110,9 @@ namespace BussinesLayer
                               select dk;
             return dsLopDangKy.ToList();
         }
+        public static void ThemHocSinhVaoHeThong(string TenHS, DateTime NgaySinh, string TenChaMe, string SDT, string DiaChi, string LopHC)
+        {
+            HocSinhRepo.ThemHocSinh(TenHS, NgaySinh, TenChaMe, SDT, DiaChi, LopHC);
+        }
     }
 }

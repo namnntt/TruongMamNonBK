@@ -37,6 +37,7 @@
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.btnLichSuHoaDon = new DevExpress.XtraBars.BarButtonItem();
             this.btnCapNhapTTHS = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonGalleryBarItem1 = new DevExpress.XtraBars.RibbonGalleryBarItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -48,7 +49,11 @@
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.repositoryItemHypertextLabel1 = new DevExpress.XtraEditors.Repository.RepositoryItemHypertextLabel();
+            this.repositoryItemHypertextLabel2 = new DevExpress.XtraEditors.Repository.RepositoryItemHypertextLabel();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel2)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -63,9 +68,10 @@
             this.btnShowHoaDon,
             this.barButtonItem4,
             this.btnLichSuHoaDon,
-            this.btnCapNhapTTHS});
+            this.btnCapNhapTTHS,
+            this.ribbonGalleryBarItem1});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 9;
+            this.ribbonControl1.MaxItemId = 30;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -73,6 +79,9 @@
             this.ribbonPage3,
             this.ribbonPage4,
             this.ribbonPage5});
+            this.ribbonControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemHypertextLabel1,
+            this.repositoryItemHypertextLabel2});
             this.ribbonControl1.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonControl1.ShowToolbarCustomizeItem = false;
             this.ribbonControl1.Size = new System.Drawing.Size(1267, 162);
@@ -138,6 +147,13 @@
             this.btnCapNhapTTHS.ImageOptions.Image = global::GUI.Properties.Resources.student_icon;
             this.btnCapNhapTTHS.Name = "btnCapNhapTTHS";
             this.btnCapNhapTTHS.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnCapNhapTTHS.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCapNhapTTHS_ItemClick);
+            // 
+            // ribbonGalleryBarItem1
+            // 
+            this.ribbonGalleryBarItem1.Caption = "ribbonGalleryBarItem1";
+            this.ribbonGalleryBarItem1.Id = 23;
+            this.ribbonGalleryBarItem1.Name = "ribbonGalleryBarItem1";
             // 
             // ribbonPage1
             // 
@@ -213,6 +229,14 @@
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.Text = "ribbonPageGroup6";
             // 
+            // repositoryItemHypertextLabel1
+            // 
+            this.repositoryItemHypertextLabel1.Name = "repositoryItemHypertextLabel1";
+            // 
+            // repositoryItemHypertextLabel2
+            // 
+            this.repositoryItemHypertextLabel2.Name = "repositoryItemHypertextLabel2";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -224,6 +248,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phần Mềm Thu Học Phí Trường mầm non Bách Khoa";
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -250,6 +276,9 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.XtraBars.BarButtonItem btnLichSuHoaDon;
         private DevExpress.XtraBars.BarButtonItem btnCapNhapTTHS;
+        private DevExpress.XtraEditors.Repository.RepositoryItemHypertextLabel repositoryItemHypertextLabel1;
+        private DevExpress.XtraBars.RibbonGalleryBarItem ribbonGalleryBarItem1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemHypertextLabel repositoryItemHypertextLabel2;
     }
 }
 

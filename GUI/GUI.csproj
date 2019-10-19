@@ -83,6 +83,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmCapNhatHocSinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCapNhatHocSinh.Designer.cs">
+      <DependentUpon>frmCapNhatHocSinh.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmChiTietDangKy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +141,9 @@
     <Compile Include="UC\UC_LICHSUHOADON.Designer.cs">
       <DependentUpon>UC_LICHSUHOADON.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmCapNhatHocSinh.resx">
+      <DependentUpon>frmCapNhatHocSinh.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmChiTietDangKy.resx">
       <DependentUpon>frmChiTietDangKy.cs</DependentUpon>
     </EmbeddedResource>
@@ -220,6 +229,24 @@
     <None Include="Resources\printer_32x321.png" />
     <None Include="Resources\printer_32x322.png" />
     <None Include="Resources\student-icon.png" />
+    <None Include="Resources\add_32x32.png" />
+    <None Include="Resources\add_32x321.png" />
+    <None Include="Resources\convert_32x32.png" />
+    <None Include="Resources\convert_16x16.png" />
+    <None Include="Resources\cancel_32x321.png" />
+    <None Include="Resources\cancel_16x16.png" />
+    <None Include="Resources\cancel_32x322.png" />
+    <None Include="Resources\cancel_16x161.png" />
+    <None Include="Resources\about_32x32.png" />
+    <None Include="Resources\about_16x16.png" />
+    <None Include="Resources\cancel_32x323.png" />
+    <None Include="Resources\cancel_16x162.png" />
+    <None Include="Resources\cancel_32x324.png" />
+    <None Include="Resources\cancel_16x163.png" />
+    <None Include="Resources\cancel_32x325.png" />
+    <None Include="Resources\cancel_16x164.png" />
+    <None Include="Resources\cancel_32x326.png" />
+    <None Include="Resources\cancel_16x165.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

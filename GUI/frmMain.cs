@@ -74,5 +74,21 @@ namespace GUI
                 UC_LICHSUHOADON.Instance.BringToFront();
             }
         }
+
+        private void btnCapNhapTTHS_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (!this.Controls.Contains(UC_CapNhatHocSinh.Instance))
+            {
+                this.Controls.Add(UC_CapNhatHocSinh.Instance);
+                UC_CapNhatHocSinh.Instance.Dock = DockStyle.Fill;
+                UC_CapNhatHocSinh.Instance.BringToFront();
+            }
+            else
+            {
+                UC_CapNhatHocSinh.Instance.BringToFront();
+            }
+        }
+
+        
     }
 }

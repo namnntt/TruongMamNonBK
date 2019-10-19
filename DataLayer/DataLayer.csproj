@@ -55,12 +55,14 @@
     <Compile Include="InterFace\IHoaDonRepository.cs" />
     <Compile Include="InterFace\IHocSinhRepository.cs" />
     <Compile Include="InterFace\ILopDangKyRepository.cs" />
+    <Compile Include="InterFace\ILopHCRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\CLBRepository.cs" />
     <Compile Include="Repository\DangKyHocRepository.cs" />
     <Compile Include="Repository\HoaDonRepository.cs" />
     <Compile Include="Repository\HocSinhRepository.cs" />
     <Compile Include="Repository\LopDangKyRepository.cs" />
+    <Compile Include="Repository\LopHCRepository.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
