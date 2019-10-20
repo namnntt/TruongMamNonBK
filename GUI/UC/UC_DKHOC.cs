@@ -42,14 +42,14 @@ namespace GUI.UC
             onload();
 
         }
-        private void onload()
+        public void onload()
         {
             adgvHocSinhDuDK.AutoGenerateColumns = true;
             adgvHocSinhDuDK.FilterAndSortEnabled = true;
             adgvHocSinhDuDK.DisableFilterAndSort(clHSSTT);
             DataTable dt = HocSinhServices.LayDanhSachHocSinh();
             bdHocSinhDuDieuKien.DataSource = dt;
-            if (adgvHocSinhDuDK.Columns.Count == 9)
+            if (adgvHocSinhDuDK.Columns.Count == 10)
             {
                 adgvHocSinhDuDK.Columns["NgaySinh"].DisplayIndex = 4;
                 adgvHocSinhDuDK.Columns["NgaySinh"].HeaderText = "Ngày Sinh";

@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_DKHOC));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.adgvDanhSachLop = new Zuby.ADGV.AdvancedDataGridView();
             this.clLDKSTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clCheckBoxers = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -56,6 +57,7 @@
             this.clDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clTenChaMe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clSDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSoluongDK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.adgvDanhSachLop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdLopDangKy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adgvHocSinhDuDK)).BeginInit();
@@ -188,7 +190,8 @@
             this.clTenLopHC,
             this.clDiaChi,
             this.clTenChaMe,
-            this.clSDT});
+            this.clSDT,
+            this.clSoluongDK});
             this.adgvHocSinhDuDK.DataSource = this.bdHocSinhDuDieuKien;
             this.adgvHocSinhDuDK.FilterAndSortEnabled = true;
             this.adgvHocSinhDuDK.Location = new System.Drawing.Point(27, 75);
@@ -319,6 +322,16 @@
             this.clSDT.Name = "clSDT";
             this.clSDT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
+            // clSoluongDK
+            // 
+            this.clSoluongDK.DataPropertyName = "SoluongLopDaDangKy";
+            dataGridViewCellStyle2.NullValue = "Chưa có đăng ký nào";
+            this.clSoluongDK.DefaultCellStyle = dataGridViewCellStyle2;
+            this.clSoluongDK.HeaderText = "Đã Đăng ký";
+            this.clSoluongDK.MinimumWidth = 22;
+            this.clSoluongDK.Name = "clSoluongDK";
+            this.clSoluongDK.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
             // UC_DKHOC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -370,5 +383,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clDiaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn clTenChaMe;
         private System.Windows.Forms.DataGridViewTextBoxColumn clSDT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clSoluongDK;
     }
 }

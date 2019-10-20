@@ -63,6 +63,7 @@ namespace GUI
             if (selectedRows.Count > 0)
             {
                 MessageBox.Show($"Hủy Thành công {selectedRows.Count.ToString()} Lớp");
+                UC_DKHOC.Instance.onload();
                 UC_DKHOC.Instance.btnPickStd.PerformClick();
                 UC_GiaHanDKHoc.Instance.onload();
                 UC_HuyDKHoc.Instance.onload();

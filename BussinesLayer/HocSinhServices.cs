@@ -27,20 +27,40 @@ namespace BussinesLayer
         }
         public static DataTable LayDanhSachHocSinh()
         {
-            var dsHS = from hs in HocSinhRepo.GetAlls()
-                       select new
-                       {
-                           hs.MaHS,
-                           hs.TenHS,
-                           hs.NgaySinh,
-                           hs.LopHanhChinh.TenLopHC,
-                           hs.NgayNhapHoc,
-                           hs.DiaChi,
-                           hs.TenChaMe,
-                           hs.SDTChaMe
-                       };
+            List<DangKyHoc> DsDkHoc = DKHocRepo.GetAlls();
+            List<HoaDon> DsHoaDon = HDRepo.GetAlls();
+            List<HocSinh> dsHS = HocSinhRepo.GetAlls();
+            var dsHSvaSoLopDaDangKy = from hs in dsHS
+                                      join hd in DsHoaDon on hs.MaHS equals hd.HocSinh
+                                      join dk in DsDkHoc on hd.MaHD equals dk.HoaDon
+                                      where (dk.NgayDangKy.Month == DateTime.Now.Month && dk.NgayDangKy.Year == DateTime.Now.Year)
+                                      select new
+                                      {
+                                          hs.MaHS
+                                      } into x
+                                      group x by new { x.MaHS } into g
+                                      select new
+                                      {
+                                          g.First().MaHS,
+                                          SoluongLopDaDangKy = g.Count()
+                                      };
 
-            return GenericServices.ToDataTable(dsHS.ToList());
+            var dsHSList = dsHS.FullOuterJoin(dsHSvaSoLopDaDangKy.ToList(), a => a.MaHS, b => b.MaHS, (a, b, MaHS) =>
+            new
+            {
+                MaHS,
+                a.TenHS,
+                a.NgaySinh,
+                a.LopHanhChinh.TenLopHC,
+                a.NgayNhapHoc,
+                a.DiaChi,
+                a.TenChaMe,
+                a.SDTChaMe,
+                b?.SoluongLopDaDangKy
+
+            }
+            );
+            return GenericServices.ToDataTable(dsHSList.ToList());
 
         }
         public static DataTable LayHocSinhDaDangKyTheoMaLopDangKy(string MaLopDangKy)
@@ -115,4 +135,57 @@ namespace BussinesLayer
             HocSinhRepo.ThemHocSinh(TenHS, NgaySinh, TenChaMe, SDT, DiaChi, LopHC);
         }
     }
+    //Extenxion
+    #region Extenxion methoth
+    internal static class MyExtensions
+    {
+        internal static IList<TR> FullOuterGroupJoin<TA, TB, TK, TR>(
+            this IEnumerable<TA> a,
+            IEnumerable<TB> b,
+            Func<TA, TK> selectKeyA,
+            Func<TB, TK> selectKeyB,
+            Func<IEnumerable<TA>, IEnumerable<TB>, TK, TR> projection,
+            IEqualityComparer<TK> cmp = null)
+        {
+            cmp = cmp ?? EqualityComparer<TK>.Default;
+            var alookup = a.ToLookup(selectKeyA, cmp);
+            var blookup = b.ToLookup(selectKeyB, cmp);
+
+            var keys = new HashSet<TK>(alookup.Select(p => p.Key), cmp);
+            keys.UnionWith(blookup.Select(p => p.Key));
+
+            var join = from key in keys
+                       let xa = alookup[key]
+                       let xb = blookup[key]
+                       select projection(xa, xb, key);
+
+            return join.ToList();
+        }
+
+        internal static IList<TR> FullOuterJoin<TA, TB, TK, TR>(
+            this IEnumerable<TA> a,
+            IEnumerable<TB> b,
+            Func<TA, TK> selectKeyA,
+            Func<TB, TK> selectKeyB,
+            Func<TA, TB, TK, TR> projection,
+            TA defaultA = default(TA),
+            TB defaultB = default(TB),
+            IEqualityComparer<TK> cmp = null)
+        {
+            cmp = cmp ?? EqualityComparer<TK>.Default;
+            var alookup = a.ToLookup(selectKeyA, cmp);
+            var blookup = b.ToLookup(selectKeyB, cmp);
+
+            var keys = new HashSet<TK>(alookup.Select(p => p.Key), cmp);
+            keys.UnionWith(blookup.Select(p => p.Key));
+
+            var join = from key in keys
+                       from xa in alookup[key].DefaultIfEmpty(defaultA)
+                       from xb in blookup[key].DefaultIfEmpty(defaultB)
+                       select projection(xa, xb, key);
+
+            return join.ToList();
+        }
+    }
+    #endregion
 }

@@ -47,11 +47,11 @@ namespace BussinesLayer
                                       hd.TinhTrang
                                       
                                   } into x
-                                  group x by new { x.MaHD } into g
+                                  group x by new { x.MaHS } into g
                                   select new
                                   {
-                                      MaHoaDon = g.Key.MaHD,
-                                      MaHocSinh = g.First().MaHS,
+                                      MaHoaDon = g.Key.MaHS,
+                                      MaHocSinh = g.First().MaHD,
                                       TenHocSinh = g.First().TenHS,
                                       NgaySinhCuaHS = g.First().NgaySinh,
                                       NgayNhapHocCuaHS = g.First().NgayNhapHoc,
