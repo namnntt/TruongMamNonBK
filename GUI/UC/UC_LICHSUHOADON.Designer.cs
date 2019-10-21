@@ -34,7 +34,6 @@
             this.gdcDuLieuHoaDon = new DevExpress.XtraGrid.GridControl();
             this.bdHoaDon = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.clSTT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clMaHD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clMaHS = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clHocSinh = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -46,6 +45,7 @@
             this.clTongHocPhi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
+            this.btnExport = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gdcDuLieuHoaDon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdHoaDon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -89,10 +89,11 @@
             // 
             // gridView1
             // 
+            this.gridView1.Appearance.FocusedCell.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.FocusedCell.Options.UseFont = true;
             this.gridView1.Appearance.SelectedRow.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridView1.Appearance.SelectedRow.Options.UseFont = true;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.clSTT,
             this.clMaHD,
             this.clMaHS,
             this.clHocSinh,
@@ -111,19 +112,8 @@
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.OptionsView.ShowIndicator = false;
-            // 
-            // clSTT
-            // 
-            this.clSTT.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clSTT.AppearanceCell.Options.UseFont = true;
-            this.clSTT.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clSTT.AppearanceHeader.Options.UseFont = true;
-            this.clSTT.Caption = "STT";
-            this.clSTT.Name = "clSTT";
-            this.clSTT.Visible = true;
-            this.clSTT.VisibleIndex = 0;
-            this.clSTT.Width = 61;
+            this.gridView1.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView1_CustomDrawRowIndicator);
+            this.gridView1.RowCountChanged += new System.EventHandler(this.gridView1_RowCountChanged);
             // 
             // clMaHD
             // 
@@ -135,7 +125,7 @@
             this.clMaHD.FieldName = "MaHoaDon";
             this.clMaHD.Name = "clMaHD";
             this.clMaHD.Visible = true;
-            this.clMaHD.VisibleIndex = 1;
+            this.clMaHD.VisibleIndex = 0;
             this.clMaHD.Width = 76;
             // 
             // clMaHS
@@ -148,7 +138,7 @@
             this.clMaHS.FieldName = "MaHocSinh";
             this.clMaHS.Name = "clMaHS";
             this.clMaHS.Visible = true;
-            this.clMaHS.VisibleIndex = 2;
+            this.clMaHS.VisibleIndex = 1;
             this.clMaHS.Width = 69;
             // 
             // clHocSinh
@@ -161,7 +151,7 @@
             this.clHocSinh.FieldName = "TenHocSinh";
             this.clHocSinh.Name = "clHocSinh";
             this.clHocSinh.Visible = true;
-            this.clHocSinh.VisibleIndex = 3;
+            this.clHocSinh.VisibleIndex = 2;
             this.clHocSinh.Width = 217;
             // 
             // clNgaySinh
@@ -176,7 +166,7 @@
             this.clNgaySinh.FieldName = "NgaySinhCuaHS";
             this.clNgaySinh.Name = "clNgaySinh";
             this.clNgaySinh.Visible = true;
-            this.clNgaySinh.VisibleIndex = 4;
+            this.clNgaySinh.VisibleIndex = 3;
             this.clNgaySinh.Width = 114;
             // 
             // clNhapHoc
@@ -189,7 +179,7 @@
             this.clNhapHoc.FieldName = "NgayNhapHocCuaHS";
             this.clNhapHoc.Name = "clNhapHoc";
             this.clNhapHoc.Visible = true;
-            this.clNhapHoc.VisibleIndex = 5;
+            this.clNhapHoc.VisibleIndex = 4;
             this.clNhapHoc.Width = 126;
             // 
             // clLopHC
@@ -202,7 +192,7 @@
             this.clLopHC.FieldName = "TenLopHanhChinh";
             this.clLopHC.Name = "clLopHC";
             this.clLopHC.Visible = true;
-            this.clLopHC.VisibleIndex = 6;
+            this.clLopHC.VisibleIndex = 5;
             this.clLopHC.Width = 120;
             // 
             // TThocphi
@@ -221,7 +211,7 @@
             this.clSoLuongLopDK.FieldName = "SoluongLopDangKy";
             this.clSoLuongLopDK.Name = "clSoLuongLopDK";
             this.clSoLuongLopDK.Visible = true;
-            this.clSoLuongLopDK.VisibleIndex = 7;
+            this.clSoLuongLopDK.VisibleIndex = 6;
             this.clSoLuongLopDK.Width = 138;
             // 
             // clTongHocPhi
@@ -234,7 +224,7 @@
             this.clTongHocPhi.FieldName = "TongHocPhi";
             this.clTongHocPhi.Name = "clTongHocPhi";
             this.clTongHocPhi.Visible = true;
-            this.clTongHocPhi.VisibleIndex = 8;
+            this.clTongHocPhi.VisibleIndex = 7;
             this.clTongHocPhi.Width = 125;
             // 
             // label1
@@ -253,16 +243,29 @@
             this.btnPrint.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrint.Appearance.Options.UseFont = true;
             this.btnPrint.ImageOptions.Image = global::GUI.Properties.Resources.printer_32x321;
-            this.btnPrint.Location = new System.Drawing.Point(520, 476);
+            this.btnPrint.Location = new System.Drawing.Point(665, 476);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(138, 39);
             this.btnPrint.TabIndex = 4;
             this.btnPrint.Text = "In Hóa Đơn";
             // 
+            // btnExport
+            // 
+            this.btnExport.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnExport.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExport.Appearance.Options.UseFont = true;
+            this.btnExport.ImageOptions.Image = global::GUI.Properties.Resources.excell_icon;
+            this.btnExport.Location = new System.Drawing.Point(444, 476);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(138, 39);
+            this.btnExport.TabIndex = 4;
+            this.btnExport.Text = "Xuất ra Excell";
+            // 
             // UC_LICHSUHOADON
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnExport);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gdcDuLieuHoaDon);
@@ -287,7 +290,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.SimpleButton btnPrint;
-        private DevExpress.XtraGrid.Columns.GridColumn clSTT;
         private DevExpress.XtraGrid.Columns.GridColumn clMaHD;
         private DevExpress.XtraGrid.Columns.GridColumn clMaHS;
         private DevExpress.XtraGrid.Columns.GridColumn clHocSinh;
@@ -298,5 +300,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn clSoLuongLopDK;
         private DevExpress.XtraGrid.Columns.GridColumn clTongHocPhi;
         private System.Windows.Forms.BindingSource bdHoaDon;
+        private DevExpress.XtraEditors.SimpleButton btnExport;
     }
 }

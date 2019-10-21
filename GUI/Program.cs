@@ -19,7 +19,9 @@ namespace GUI
             Application.SetCompatibleTextRenderingDefault(false);
 
             BonusSkins.Register();
-            Application.Run(new frmMain());
+            frmLogin Login = new frmLogin();
+            Application.Run(Login);
+            
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using GUI.UC;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,8 +13,10 @@ namespace GUI
 {
     public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public frmMain()
+        GiaoVu _gv;
+        public frmMain(GiaoVu gv)
         {
+            _gv = gv;
             InitializeComponent();
         }
 
@@ -89,6 +92,31 @@ namespace GUI
             }
         }
 
-        
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+        }
+
+        private void btnDangXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn thực sự muốn đăng Xuất ra?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                this.Hide();
+                using (frmLogin frm = new frmLogin())
+                {
+                    frm.ShowDialog();
+                }
+                this.Close();
+            }
+            else return;
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            var LastName = _gv.TenGiaoVu.Split(' ').Last();
+            string TenGiaoVu = LastName.ToString();
+            btnDownDropAccount.Text += TenGiaoVu;
+        }
     }
 }

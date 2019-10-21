@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnMDangKyHoc = new DevExpress.XtraBars.BarButtonItem();
@@ -37,7 +38,6 @@
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.btnLichSuHoaDon = new DevExpress.XtraBars.BarButtonItem();
             this.btnCapNhapTTHS = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonGalleryBarItem1 = new DevExpress.XtraBars.RibbonGalleryBarItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -51,9 +51,23 @@
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.repositoryItemHypertextLabel1 = new DevExpress.XtraEditors.Repository.RepositoryItemHypertextLabel();
             this.repositoryItemHypertextLabel2 = new DevExpress.XtraEditors.Repository.RepositoryItemHypertextLabel();
+            this.btnDownDropAccount = new DevExpress.XtraEditors.DropDownButton();
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.btnDoiThongTinCaNhan = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDoiMatKhau = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDangXuat = new DevExpress.XtraBars.BarButtonItem();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -68,10 +82,9 @@
             this.btnShowHoaDon,
             this.barButtonItem4,
             this.btnLichSuHoaDon,
-            this.btnCapNhapTTHS,
-            this.ribbonGalleryBarItem1});
+            this.btnCapNhapTTHS});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 30;
+            this.ribbonControl1.MaxItemId = 34;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -148,12 +161,6 @@
             this.btnCapNhapTTHS.Name = "btnCapNhapTTHS";
             this.btnCapNhapTTHS.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btnCapNhapTTHS.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCapNhapTTHS_ItemClick);
-            // 
-            // ribbonGalleryBarItem1
-            // 
-            this.ribbonGalleryBarItem1.Caption = "ribbonGalleryBarItem1";
-            this.ribbonGalleryBarItem1.Id = 23;
-            this.ribbonGalleryBarItem1.Name = "ribbonGalleryBarItem1";
             // 
             // ribbonPage1
             // 
@@ -237,19 +244,125 @@
             // 
             this.repositoryItemHypertextLabel2.Name = "repositoryItemHypertextLabel2";
             // 
+            // btnDownDropAccount
+            // 
+            this.btnDownDropAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDownDropAccount.DropDownControl = this.popupMenu1;
+            this.btnDownDropAccount.ImageOptions.Image = global::GUI.Properties.Resources.account_icon_lg;
+            this.btnDownDropAccount.Location = new System.Drawing.Point(1106, 29);
+            this.btnDownDropAccount.Name = "btnDownDropAccount";
+            this.btnDownDropAccount.Size = new System.Drawing.Size(161, 36);
+            this.btnDownDropAccount.TabIndex = 10;
+            this.btnDownDropAccount.Text = "Xin Chào ";
+            // 
+            // popupMenu1
+            // 
+            this.popupMenu1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnDoiThongTinCaNhan),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnDoiMatKhau),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnDangXuat)});
+            this.popupMenu1.Manager = this.barManager1;
+            this.popupMenu1.Name = "popupMenu1";
+            // 
+            // btnDoiThongTinCaNhan
+            // 
+            this.btnDoiThongTinCaNhan.Caption = "Đổi thông tin cá nhân";
+            this.btnDoiThongTinCaNhan.Id = 0;
+            this.btnDoiThongTinCaNhan.ImageOptions.ImageIndex = 0;
+            this.btnDoiThongTinCaNhan.Name = "btnDoiThongTinCaNhan";
+            this.btnDoiThongTinCaNhan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
+            // btnDoiMatKhau
+            // 
+            this.btnDoiMatKhau.Caption = "Đổi mật khẩu hiện tại";
+            this.btnDoiMatKhau.Id = 1;
+            this.btnDoiMatKhau.ImageOptions.ImageIndex = 1;
+            this.btnDoiMatKhau.Name = "btnDoiMatKhau";
+            // 
+            // btnDangXuat
+            // 
+            this.btnDangXuat.Caption = "Đăng Xuất";
+            this.btnDangXuat.Id = 2;
+            this.btnDangXuat.ImageOptions.ImageIndex = 2;
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDangXuat_ItemClick);
+            // 
+            // barManager1
+            // 
+            this.barManager1.DockControls.Add(this.barDockControlTop);
+            this.barManager1.DockControls.Add(this.barDockControlBottom);
+            this.barManager1.DockControls.Add(this.barDockControlLeft);
+            this.barManager1.DockControls.Add(this.barDockControlRight);
+            this.barManager1.Form = this;
+            this.barManager1.Images = this.imageCollection1;
+            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.btnDoiThongTinCaNhan,
+            this.btnDoiMatKhau,
+            this.btnDangXuat});
+            this.barManager1.MaxItemId = 4;
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.barManager1;
+            this.barDockControlTop.Size = new System.Drawing.Size(1267, 0);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 715);
+            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Size = new System.Drawing.Size(1267, 0);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlLeft.Manager = this.barManager1;
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 715);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(1267, 0);
+            this.barDockControlRight.Manager = this.barManager1;
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 715);
+            // 
+            // imageCollection1
+            // 
+            this.imageCollection1.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imageCollection1.ImageStream")));
+            this.imageCollection1.TransparentColor = System.Drawing.Color.Fuchsia;
+            this.imageCollection1.Images.SetKeyName(0, "Person_details.png");
+            this.imageCollection1.Images.SetKeyName(1, "ChangePassword-icon.png");
+            this.imageCollection1.Images.SetKeyName(2, "logout-icon.png");
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1267, 719);
+            this.ClientSize = new System.Drawing.Size(1267, 715);
+            this.Controls.Add(this.btnDownDropAccount);
             this.Controls.Add(this.ribbonControl1);
+            this.Controls.Add(this.barDockControlLeft);
+            this.Controls.Add(this.barDockControlRight);
+            this.Controls.Add(this.barDockControlBottom);
+            this.Controls.Add(this.barDockControlTop);
             this.Name = "frmMain";
             this.Ribbon = this.ribbonControl1;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phần Mềm Thu Học Phí Trường mầm non Bách Khoa";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -277,8 +390,18 @@
         private DevExpress.XtraBars.BarButtonItem btnLichSuHoaDon;
         private DevExpress.XtraBars.BarButtonItem btnCapNhapTTHS;
         private DevExpress.XtraEditors.Repository.RepositoryItemHypertextLabel repositoryItemHypertextLabel1;
-        private DevExpress.XtraBars.RibbonGalleryBarItem ribbonGalleryBarItem1;
         private DevExpress.XtraEditors.Repository.RepositoryItemHypertextLabel repositoryItemHypertextLabel2;
+        private DevExpress.XtraEditors.DropDownButton btnDownDropAccount;
+        private DevExpress.XtraBars.PopupMenu popupMenu1;
+        private DevExpress.XtraBars.BarButtonItem btnDoiThongTinCaNhan;
+        private DevExpress.XtraBars.BarButtonItem btnDoiMatKhau;
+        private DevExpress.XtraBars.BarManager barManager1;
+        private DevExpress.XtraBars.BarDockControl barDockControlTop;
+        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
+        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
+        private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.Utils.ImageCollection imageCollection1;
+        private DevExpress.XtraBars.BarButtonItem btnDangXuat;
     }
 }
 

@@ -161,7 +161,7 @@ namespace GUI.UC
                 UC_HuyDKHoc.Instance.onload();
                 btnChiTietHoaDon.Enabled = true;
             }
-            else btnChiTietHoaDon.Enabled = false;
+            //else btnChiTietHoaDon.Enabled = false;
         }
         //Lọc danh sách các lớp trong khi chọn
         private void adgvDanhSachLop_CellContentClick(object sender, DataGridViewCellEventArgs e)
