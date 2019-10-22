@@ -19,8 +19,6 @@ namespace GUI.UC
         string MaHocSinh = "null";
         DataTable dthsldk = new DataTable();
         DataRowView hs;
-
-
         private static UC_DKHOC _instance;
         public static UC_DKHOC Instance
         {
@@ -79,6 +77,7 @@ namespace GUI.UC
             adgvDanhSachLop.DisableFilterAndSort(clLDKSTT);
             adgvDanhSachLop.DisableFilterAndSort(clCheckBoxers);
             dthsldk = LopDangKyServices.LayDanhCacLopDangKyCuaMotHocSinh(MaHocSinh);
+            //Lấy thông tin học sinh để cho các hoạt động in hóa đơn
             hs = bdHocSinhDuDieuKien.Current as DataRowView;
             if (dthsldk.Rows.Count > 0)
             {

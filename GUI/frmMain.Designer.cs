@@ -53,7 +53,6 @@
             this.repositoryItemHypertextLabel2 = new DevExpress.XtraEditors.Repository.RepositoryItemHypertextLabel();
             this.btnDownDropAccount = new DevExpress.XtraEditors.DropDownButton();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.btnDoiThongTinCaNhan = new DevExpress.XtraBars.BarButtonItem();
             this.btnDoiMatKhau = new DevExpress.XtraBars.BarButtonItem();
             this.btnDangXuat = new DevExpress.XtraBars.BarButtonItem();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
@@ -258,19 +257,10 @@
             // popupMenu1
             // 
             this.popupMenu1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnDoiThongTinCaNhan),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnDoiMatKhau),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnDangXuat)});
             this.popupMenu1.Manager = this.barManager1;
             this.popupMenu1.Name = "popupMenu1";
-            // 
-            // btnDoiThongTinCaNhan
-            // 
-            this.btnDoiThongTinCaNhan.Caption = "Đổi thông tin cá nhân";
-            this.btnDoiThongTinCaNhan.Id = 0;
-            this.btnDoiThongTinCaNhan.ImageOptions.ImageIndex = 0;
-            this.btnDoiThongTinCaNhan.Name = "btnDoiThongTinCaNhan";
-            this.btnDoiThongTinCaNhan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // btnDoiMatKhau
             // 
@@ -278,6 +268,7 @@
             this.btnDoiMatKhau.Id = 1;
             this.btnDoiMatKhau.ImageOptions.ImageIndex = 1;
             this.btnDoiMatKhau.Name = "btnDoiMatKhau";
+            this.btnDoiMatKhau.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDoiMatKhau_ItemClick);
             // 
             // btnDangXuat
             // 
@@ -296,7 +287,6 @@
             this.barManager1.Form = this;
             this.barManager1.Images = this.imageCollection1;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.btnDoiThongTinCaNhan,
             this.btnDoiMatKhau,
             this.btnDangXuat});
             this.barManager1.MaxItemId = 4;
@@ -393,7 +383,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemHypertextLabel repositoryItemHypertextLabel2;
         private DevExpress.XtraEditors.DropDownButton btnDownDropAccount;
         private DevExpress.XtraBars.PopupMenu popupMenu1;
-        private DevExpress.XtraBars.BarButtonItem btnDoiThongTinCaNhan;
         private DevExpress.XtraBars.BarButtonItem btnDoiMatKhau;
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;

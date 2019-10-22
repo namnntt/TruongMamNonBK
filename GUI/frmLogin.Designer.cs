@@ -128,12 +128,13 @@
             // mttlab
             // 
             this.mttlab.AutoSize = true;
-            this.mttlab.ForeColor = System.Drawing.Color.Black;
+            this.mttlab.ForeColor = System.Drawing.Color.Red;
             this.mttlab.Location = new System.Drawing.Point(175, 214);
             this.mttlab.Name = "mttlab";
             this.mttlab.Size = new System.Drawing.Size(0, 0);
             this.mttlab.TabIndex = 5;
             this.mttlab.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.mttlab.UseCustomForeColor = true;
             this.mttlab.Visible = false;
             // 
             // mttCheckBox

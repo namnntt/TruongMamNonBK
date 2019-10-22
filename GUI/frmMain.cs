@@ -118,5 +118,13 @@ namespace GUI
             string TenGiaoVu = LastName.ToString();
             btnDownDropAccount.Text += TenGiaoVu;
         }
+
+        private void btnDoiMatKhau_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            using (frmDoiMatKhau frm = new frmDoiMatKhau(_gv))
+            {
+                frm.ShowDialog();
+            }
+        }
     }
 }

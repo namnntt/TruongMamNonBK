@@ -1,7 +1,10 @@
-﻿using DataLayer.InterFace;
+﻿using Dapper;
+using DataLayer.InterFace;
 using Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +24,21 @@ namespace DataLayer.Repository
                     return false;
                 else return true;
 
+            }
+        }
+
+        public void DoiMatKhau(string MaGiaoVu, string MatKhauMoi)
+        {
+            using (MamNonBK context = new MamNonBK())
+            {
+                using (IDbConnection db = new SqlConnection(context.Database.Connection.ConnectionString))
+                {
+                    //Đổi mật khẩu
+                    var p = new DynamicParameters();
+                    p.Add("@MatKhauMoi", MatKhauMoi);
+                    p.Add("@MaGV", MaGiaoVu);
+                    db.Execute("DoiMatKhau", p, commandType: CommandType.StoredProcedure);
+                }
             }
         }
 

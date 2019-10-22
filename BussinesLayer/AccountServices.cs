@@ -24,5 +24,9 @@ namespace BussinesLayer
         {
             return AccRepo.LayThongtinGiaoVu(inputAccount);
         }
+        public static void DoiMatKhau(string MatKhauMoi, string MaGiaoVu)
+        {
+            AccRepo.DoiMatKhau(MaGiaoVu, MatKhauMoi);
+        }
     }
 }
