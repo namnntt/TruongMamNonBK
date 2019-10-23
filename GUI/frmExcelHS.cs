@@ -79,11 +79,12 @@ namespace GUI
         private void btnSaveDataBase_Click(object sender, EventArgs e)
         {
             List<LopHanhChinh> dsLop = LopHCServices.LayDanhSachLopHanhChinh();
-            if(gridView1.GetSelectedRows().Length > 0)
+            First:  int[] RowIndexData = gridView1.GetSelectedRows();   
+            if(RowIndexData.Length > 0)
             {
-                for(int i =0; i< gridView1.GetSelectedRows().Length; i++)
+                for(int i =0; i< RowIndexData.Length; i++)
                 {
-                    int selectRownHandle = gridView1.GetSelectedRows()[i];
+                    int selectRownHandle = RowIndexData[i];
                     DataRow gv = gridView1.GetDataRow(selectRownHandle);
                     string MaLopHC = null;
                     foreach (LopHanhChinh temp in dsLop)
@@ -92,33 +93,28 @@ namespace GUI
                         {
                             MaLopHC = temp.MaLopHC;
                         }
-                        else
-                        {
-                            gridView1.UnselectRow(i);
+                        //else
+                        //{
+                        //    gridView1.UnselectRow(i);
                             
-                        }
+                        //}
                     }
                     if(!string.IsNullOrEmpty(MaLopHC))
                     {
                         HocSinhServices.ThemHocSinhVaoHeThong(gv[0].ToString(), Convert.ToDateTime(gv[1].ToString()), gv[2].ToString(), gv[3].ToString(), gv[4].ToString(), MaLopHC);
                         gridView1.DeleteRow(i);
+                        goto First;
+                    }
+                    else
+                    {
+                        gridView1.UnselectRow(i);
                     }
                     
                 }
-                //if (selectedrowHandles.Length < Firstcheck.Length)
-                //{
-                //    MessageBox.Show($"Đã thêm thành công dữ liệu ngoại trừ một số record còn lại không đúng tên lớp Hành chính bạn có thể sửa lại cho đúng rồi thực hiện lại");
-                    
-                //}
-                //else
-                //{
-                //    MessageBox.Show("thêm thành công toàn bộ dữ liệu");
-                //}
-                
             }
             else
             {
-                MessageBox.Show("Mời bạn chọn các row cần thêm vào CSDL");
+                MessageBox.Show("Không còn row nào được chọn");
             }
         }
     }
