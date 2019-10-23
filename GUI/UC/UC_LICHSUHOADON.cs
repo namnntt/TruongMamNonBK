@@ -50,7 +50,7 @@ namespace GUI.UC
         {
             bdHoaDon.DataSource = HoaDonServices.LayDanhSachHoaDonTheoNamvaThang(dtpDuLieuHoaDon.Value.Year, dtpDuLieuHoaDon.Value.Month);
         }
-
+        #region làm cột indicator STT
         private void gridView1_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
         {
             try
@@ -105,6 +105,7 @@ namespace GUI.UC
             SizeF size = gr.MeasureString(gridview.RowCount.ToString(), gridview.PaintAppearance.Row.GetFont());
             gridview.IndicatorWidth = Convert.ToInt32(size.Width + 0.999f) + GridPainter.Indicator.ImageSize.Width + 40;
         }
+        #endregion
         private bool ExportExcel(string filename)
         {
             try

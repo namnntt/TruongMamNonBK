@@ -87,6 +87,8 @@
             // clNgaySinh
             // 
             this.clNgaySinh.Caption = "Ngày Sinh";
+            this.clNgaySinh.DisplayFormat.FormatString = "d";
+            this.clNgaySinh.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.clNgaySinh.Name = "clNgaySinh";
             this.clNgaySinh.Visible = true;
             this.clNgaySinh.VisibleIndex = 2;
