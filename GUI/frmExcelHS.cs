@@ -79,13 +79,11 @@ namespace GUI
         private void btnSaveDataBase_Click(object sender, EventArgs e)
         {
             List<LopHanhChinh> dsLop = LopHCServices.LayDanhSachLopHanhChinh();
-            Firt: Int32[] Firstcheck = gridView1.GetSelectedRows();
-            check:  Int32[] selectedrowHandles = gridView1.GetSelectedRows();
-            if(selectedrowHandles.Length > 0)
+            if(gridView1.GetSelectedRows().Length > 0)
             {
-                for(int i =0; i<selectedrowHandles.Length; i++)
+                for(int i =0; i< gridView1.GetSelectedRows().Length; i++)
                 {
-                    int selectRownHandle = selectedrowHandles[i];
+                    int selectRownHandle = gridView1.GetSelectedRows()[i];
                     DataRow gv = gridView1.GetDataRow(selectRownHandle);
                     string MaLopHC = null;
                     foreach (LopHanhChinh temp in dsLop)
@@ -93,13 +91,11 @@ namespace GUI
                         if (string.Compare(gv[5].ToString(), temp.TenLopHC, true) == 0)
                         {
                             MaLopHC = temp.MaLopHC;
-                            break;
-                            
                         }
                         else
                         {
                             gridView1.UnselectRow(i);
-                            goto check;
+                            
                         }
                     }
                     if(!string.IsNullOrEmpty(MaLopHC))
@@ -109,15 +105,15 @@ namespace GUI
                     }
                     
                 }
-                if (selectedrowHandles.Length < Firstcheck.Length)
-                {
-                    MessageBox.Show($"Đã thêm thành công dữ liệu ngoại trừ một số record còn lại không đúng tên lớp Hành chính bạn có thể sửa lại cho đúng rồi thực hiện lại");
-                    goto Firt;
-                }
-                else
-                {
-                    MessageBox.Show("thêm thành công toàn bộ dữ liệu");
-                }
+                //if (selectedrowHandles.Length < Firstcheck.Length)
+                //{
+                //    MessageBox.Show($"Đã thêm thành công dữ liệu ngoại trừ một số record còn lại không đúng tên lớp Hành chính bạn có thể sửa lại cho đúng rồi thực hiện lại");
+                    
+                //}
+                //else
+                //{
+                //    MessageBox.Show("thêm thành công toàn bộ dữ liệu");
+                //}
                 
             }
             else
