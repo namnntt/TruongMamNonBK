@@ -12,6 +12,7 @@ using System.IO;
 using ExcelDataReader;
 using Model;
 using BussinesLayer;
+using GUI.UC;
 
 namespace GUI
 {
@@ -122,10 +123,12 @@ namespace GUI
             {
 
                 MessageBox.Show($"Có {DemSoDongBiSai.ToString()} dòng bị sai dữ liệu lớp hành chính mời bạn kiểm tra lại và thử lại");
+                UC_CapNhatHocSinh.Instance.onload();
             }
             else
             {
                 MessageBox.Show("Thêm hoàn tất toàn bộ dòng đã chọn");
+                UC_CapNhatHocSinh.Instance.onload();
             }
 
                 //else
