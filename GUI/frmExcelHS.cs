@@ -79,6 +79,7 @@ namespace GUI
         private void btnSaveDataBase_Click(object sender, EventArgs e)
         {
             List<LopHanhChinh> dsLop = LopHCServices.LayDanhSachLopHanhChinh();
+            bool flag = false;
             First:  int[] RowIndexData = gridView1.GetSelectedRows();   
             if(RowIndexData.Length > 0)
             {
@@ -92,12 +93,8 @@ namespace GUI
                         if (string.Compare(gv[5].ToString(), temp.TenLopHC, true) == 0)
                         {
                             MaLopHC = temp.MaLopHC;
+                            break;
                         }
-                        //else
-                        //{
-                        //    gridView1.UnselectRow(i);
-                            
-                        //}
                     }
                     if(!string.IsNullOrEmpty(MaLopHC))
                     {
@@ -108,14 +105,17 @@ namespace GUI
                     else
                     {
                         gridView1.UnselectRow(i);
+                        flag = true;
                     }
                     
                 }
             }
             else
             {
-                MessageBox.Show("Không còn row nào được chọn");
+                string result = flag == true ?"Đã thêm nhưng có một số dòng bị sai lớp hành chính mời bạn kiểm tra lại " : "Đã thêm toàn bộ";
+                MessageBox.Show(result);
             }
+            if (flag == true) MessageBox.Show("Đã thêm nhưng có một số dòng bị sai lớp hành chính mời bạn kiểm tra lại");
         }
     }
 }
