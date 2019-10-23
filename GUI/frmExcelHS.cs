@@ -79,8 +79,8 @@ namespace GUI
         private void btnSaveDataBase_Click(object sender, EventArgs e)
         {
             List<LopHanhChinh> dsLop = LopHCServices.LayDanhSachLopHanhChinh();
-            bool flag = false;
-            First:  int[] RowIndexData = gridView1.GetSelectedRows();   
+            int[] RowIndexData = gridView1.GetSelectedRows();
+            int DemSoDongBiSai = 0;
             if(RowIndexData.Length > 0)
             {
                 for(int i =0; i< RowIndexData.Length; i++)
@@ -96,26 +96,44 @@ namespace GUI
                             break;
                         }
                     }
-                    if(!string.IsNullOrEmpty(MaLopHC))
+                    if (!string.IsNullOrEmpty(MaLopHC))
                     {
                         HocSinhServices.ThemHocSinhVaoHeThong(gv[0].ToString(), Convert.ToDateTime(gv[1].ToString()), gv[2].ToString(), gv[3].ToString(), gv[4].ToString(), MaLopHC);
-                        gridView1.DeleteRow(i);
-                        goto First;
                     }
                     else
                     {
                         gridView1.UnselectRow(i);
-                        flag = true;
+                        DemSoDongBiSai++;
                     }
+                    //if(MaLopHC == null)
+                    //{
+                    //    gridView1.UnselectRow(i);
+                    //    flag = true;
+                    //}
                     
                 }
             }
             else
             {
-                string result = flag == true ?"Đã thêm nhưng có một số dòng bị sai lớp hành chính mời bạn kiểm tra lại " : "Đã thêm toàn bộ";
-                MessageBox.Show(result);
+                MessageBox.Show("bạn chưa chọn dòng dữ liệu nào để thêm");
             }
-            if (flag == true) MessageBox.Show("Đã thêm nhưng có một số dòng bị sai lớp hành chính mời bạn kiểm tra lại");
-        }
+            gridView1.DeleteSelectedRows();
+            if(DemSoDongBiSai !=0)
+            {
+                MessageBox.Show($"Có {DemSoDongBiSai.ToString()} dòng bị sai dữ liệu lớp hành chính mời bạn kiểm tra lại và thử lại");
+            }
+            else
+            {
+                MessageBox.Show("Thêm hoàn tất toàn bộ dòng đã chọn");
+            }
+
+                //else
+                //{
+                //    string result = flag == true ?"Đã thêm nhưng có một số dòng bị sai lớp hành chính mời bạn kiểm tra lại " : "Đã thêm toàn bộ";
+                //    MessageBox.Show(result);
+                //}
+                //vitrixoa.ForEach(x => { gridView1.DeleteRow(x); });
+                //if (flag == true) MessageBox.Show("Đã thêm nhưng có một số dòng bị sai lớp hành chính mời bạn kiểm tra lại");
+            }
     }
 }
