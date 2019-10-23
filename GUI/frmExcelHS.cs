@@ -102,7 +102,7 @@ namespace GUI
                     }
                     else
                     {
-                        gridView1.UnselectRow(i);
+                        gridView1.UnselectRow(selectRownHandle);
                         DemSoDongBiSai++;
                     }
                     //if(MaLopHC == null)
@@ -118,8 +118,9 @@ namespace GUI
                 MessageBox.Show("bạn chưa chọn dòng dữ liệu nào để thêm");
             }
             gridView1.DeleteSelectedRows();
-            if(DemSoDongBiSai !=0)
+            if (DemSoDongBiSai !=0)
             {
+
                 MessageBox.Show($"Có {DemSoDongBiSai.ToString()} dòng bị sai dữ liệu lớp hành chính mời bạn kiểm tra lại và thử lại");
             }
             else
