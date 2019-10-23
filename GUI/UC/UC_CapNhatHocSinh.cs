@@ -105,5 +105,13 @@ namespace GUI.UC
             SizeF size = gr.MeasureString(gridview.RowCount.ToString(), gridview.PaintAppearance.Row.GetFont());
             gridview.IndicatorWidth = Convert.ToInt32(size.Width + 0.999f) + GridPainter.Indicator.ImageSize.Width + 40;
         }
+
+        private void btnAddEcxel_Click(object sender, EventArgs e)
+        {
+            using (frmExcelHS frm = new frmExcelHS())
+            {
+                frm.ShowDialog();
+            }
+        }
     }
 }

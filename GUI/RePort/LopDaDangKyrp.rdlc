@@ -1096,7 +1096,7 @@
       <Width>7.32304in</Width>
       <Page>
         <PageHeader>
-          <Height>2.81933cm</Height>
+          <Height>2.58121cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -1119,8 +1119,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox26</rd:DefaultName>
-              <Top>0.21001cm</Top>
-              <Left>12.94909cm</Left>
+              <Top>0.54515cm</Top>
+              <Left>12.81302cm</Left>
               <Height>0.57354cm</Height>
               <Width>1.41521cm</Width>
               <Style>
@@ -1153,8 +1153,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>pMaHD</rd:DefaultName>
-              <Top>0.21001cm</Top>
-              <Left>14.39957cm</Left>
+              <Top>0.54515cm</Top>
+              <Left>14.2635cm</Left>
               <Height>0.57354cm</Height>
               <Width>2.5cm</Width>
               <ZIndex>1</ZIndex>
@@ -1187,8 +1187,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox26</rd:DefaultName>
-              <Top>0.85411cm</Top>
-              <Left>12.94908cm</Left>
+              <Top>1.01286cm</Top>
+              <Left>12.81301cm</Left>
               <Height>0.57354cm</Height>
               <Width>1.53868cm</Width>
               <ZIndex>2</ZIndex>
@@ -1222,8 +1222,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>pHDNgayTao</rd:DefaultName>
-              <Top>0.85411cm</Top>
-              <Left>14.66415cm</Left>
+              <Top>1.01286cm</Top>
+              <Left>14.52808cm</Left>
               <Height>0.6cm</Height>
               <Width>2.23542cm</Width>
               <ZIndex>3</ZIndex>
@@ -1247,7 +1247,7 @@
                       <Value>=Globals!ExecutionTime</Value>
                       <Style>
                         <FontStyle>Italic</FontStyle>
-                        <Format>d</Format>
+                        <Format>dd/MM/yyyy</Format>
                         <TextDecoration>None</TextDecoration>
                       </Style>
                     </TextRun>
@@ -1258,8 +1258,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>ExecutionTime</rd:DefaultName>
-              <Top>1.6305cm</Top>
-              <Left>14.80025cm</Left>
+              <Top>1.5864cm</Top>
+              <Left>14.66418cm</Left>
               <Height>0.6cm</Height>
               <Width>3.63771cm</Width>
               <ZIndex>4</ZIndex>
@@ -1292,8 +1292,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox12</rd:DefaultName>
-              <Top>1.6305cm</Top>
-              <Left>12.94909cm</Left>
+              <Top>1.5864cm</Top>
+              <Left>12.81302cm</Left>
               <Height>0.6cm</Height>
               <Width>1.85116cm</Width>
               <ZIndex>5</ZIndex>

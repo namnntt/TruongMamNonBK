@@ -102,7 +102,7 @@ namespace GUI
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(mttMatKhau.Text) && !string.IsNullOrEmpty(mttTaiKhoan.Text))
+            if (!string.IsNullOrEmpty(mttMatKhau.Text) || !string.IsNullOrEmpty(mttTaiKhoan.Text))
             {
                 if (count == 0)
                 {

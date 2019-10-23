@@ -118,12 +118,13 @@ namespace GUI.UC
                     SaveFileDialog.FileName = filename;
                     if(SaveFileDialog.ShowDialog() == DialogResult.OK)
                     {
-                        gridView1.ColumnPanelRowHeight = 40;
+                        gridView1.ColumnPanelRowHeight = 20;
                         gridView1.OptionsPrint.AutoWidth = AutoSize;
                         XlsxExportOptions options = new XlsxExportOptions();
                         options.TextExportMode = TextExportMode.Text;
                         options.ExportMode = XlsxExportMode.SingleFile;
                         options.SheetName = $"Hóa Đơn tháng {dtpDuLieuHoaDon.Value.Month.ToString()}-{dtpDuLieuHoaDon.Value.Year.ToString()}";
+                       
                         ExportSettings.DefaultExportType = ExportType.Default;
                         gridView1.ExportToXlsx(SaveFileDialog.FileName, options);
                         MessageBox.Show("Xuất thành công");
