@@ -50,8 +50,8 @@ namespace BussinesLayer
                                   group x by new { x.MaHS } into g
                                   select new
                                   {
-                                      MaHoaDon = g.Key.MaHS,
-                                      MaHocSinh = g.First().MaHD,
+                                      MaHocSinh = g.Key.MaHS,
+                                      MaHoaDon = g.First().MaHD,
                                       TenHocSinh = g.First().TenHS,
                                       NgaySinhCuaHS = g.First().NgaySinh,
                                       NgayNhapHocCuaHS = g.First().NgayNhapHoc,
@@ -75,6 +75,10 @@ namespace BussinesLayer
                            hd.NgayTao
                        };
             return GenericServices.ToDataTable(dsHS.ToList());
+        }
+        public static void XoaDuLieuHoaDon(string MaHD)
+        {
+            HDrepo.XoaDuLieuHoaDon(MaHD);
         }
 
     }

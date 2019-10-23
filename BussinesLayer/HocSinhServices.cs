@@ -63,6 +63,22 @@ namespace BussinesLayer
             return GenericServices.ToDataTable(dsHSList.ToList());
 
         }
+        public static DataTable GetAlls()
+        {
+            var dsHS = from hs in HocSinhRepo.GetAlls()
+                       select new
+                            {
+                                hs.MaHS,
+                                hs.TenHS,
+                                hs.NgaySinh,
+                                hs.NgayNhapHoc,
+                                hs.LopHanhChinh.TenLopHC,
+                                hs.TenChaMe,
+                                hs.DiaChi,
+                                hs.SDTChaMe
+                            };
+            return GenericServices.ToDataTable(dsHS.ToList());
+        }
         public static DataTable LayHocSinhDaDangKyTheoMaLopDangKy(string MaLopDangKy)
         {
             List<HoaDon> dsHD = HDRepo.GetAlls();

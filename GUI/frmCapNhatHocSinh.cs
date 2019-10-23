@@ -30,10 +30,19 @@ namespace GUI
 
         private void btnThemHS_Click(object sender, EventArgs e)
         {
-          
-            HocSinhServices.ThemHocSinhVaoHeThong(txtTenHS.Text, datNgaySinh.Value, txtTenChaMe.Text, txtSDTLienHe.Text, txtDiaChi.Text, cbLopHC.SelectedValue.ToString());
-            UC_CapNhatHocSinh.Instance.onload();
-
+            if (!string.IsNullOrEmpty(txtDiaChi.Text) || !string.IsNullOrEmpty(txtSDTLienHe.Text) || !string.IsNullOrEmpty(txtTenChaMe.Text) || !string.IsNullOrEmpty(txtTenHS.Text))
+            {
+                HocSinhServices.ThemHocSinhVaoHeThong(txtTenHS.Text, datNgaySinh.Value, txtTenChaMe.Text, txtSDTLienHe.Text, txtDiaChi.Text, cbLopHC.SelectedValue.ToString());
+                UC_CapNhatHocSinh.Instance.onload();
+                UC_DKHOC.Instance.onload();
+                MessageBox.Show("Thêm thành công");
+                txtTenHS.Clear();
+                txtDiaChi.Clear();
+                txtSDTLienHe.Clear();
+                txtTenChaMe.Clear();
+            }
+            else MessageBox.Show("Không được Có trường bị để trống");
+            
         }
     }
 }

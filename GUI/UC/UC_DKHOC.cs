@@ -52,7 +52,9 @@ namespace GUI.UC
                 adgvHocSinhDuDK.Columns["NgaySinh"].DisplayIndex = 4;
                 adgvHocSinhDuDK.Columns["NgaySinh"].HeaderText = "Ngày Sinh";
                 adgvHocSinhDuDK.Columns["NgayNhapHoc"].HeaderText = "Ngày Nhập học";
+                adgvHocSinhDuDK.Columns["NgayNhapHoc"].DefaultCellStyle.Format = "d";
                 adgvSearchBar.SetColumns(adgvHocSinhDuDK.Columns);
+                
             }
         }
         #region Display STT columns
@@ -69,7 +71,7 @@ namespace GUI.UC
 
         private void btnPickStd_Click(object sender, EventArgs e)
         {
-            foreach(DataGridViewRow row in adgvHocSinhDuDK.SelectedRows)
+            foreach (DataGridViewRow row in adgvHocSinhDuDK.SelectedRows)
             {
                 MaHocSinh = row.Cells[1].Value.ToString();
             }
@@ -156,8 +158,7 @@ namespace GUI.UC
                 MessageBox.Show($"Đăng ký cho {MaHocSinh} thành công các lớp: \n {result}");
                 btnPickStd.PerformClick();
                 onload();
-                UC_GiaHanDKHoc.Instance.onload();
-                UC_HuyDKHoc.Instance.onload();
+                UC_HuyDKHoc.Instance.btnPickStd.PerformClick();
                 btnChiTietHoaDon.Enabled = true;
             }
             //else btnChiTietHoaDon.Enabled = false;

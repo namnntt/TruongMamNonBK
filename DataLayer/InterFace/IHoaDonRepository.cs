@@ -10,5 +10,6 @@ namespace DataLayer.InterFace
     public interface IHoaDonRepository
     {
         List<HoaDon> GetAlls();
+        void XoaDuLieuHoaDon(string MaHD);
     }
 }

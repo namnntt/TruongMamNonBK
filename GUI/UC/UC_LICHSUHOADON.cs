@@ -12,6 +12,8 @@ using BussinesLayer;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid.Drawing;
+using DevExpress.XtraPrinting;
+using DevExpress.Export;
 
 namespace GUI.UC
 {
@@ -32,10 +34,7 @@ namespace GUI.UC
         {
             InitializeComponent();
         }
-        public void onload()
-        {
-            
-        }
+ 
 
         private void UC_LICHSUHOADON_Load(object sender, EventArgs e)
         {
@@ -105,6 +104,77 @@ namespace GUI.UC
             Graphics gr = Graphics.FromHwnd(gridview.GridControl.Handle);
             SizeF size = gr.MeasureString(gridview.RowCount.ToString(), gridview.PaintAppearance.Row.GetFont());
             gridview.IndicatorWidth = Convert.ToInt32(size.Width + 0.999f) + GridPainter.Indicator.ImageSize.Width + 40;
+        }
+        private bool ExportExcel(string filename)
+        {
+            try
+            {
+                if(gridView1.FocusedRowHandle < 0)
+                {
+
+                }
+                else
+                {
+                    SaveFileDialog.FileName = filename;
+                    if(SaveFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        gridView1.ColumnPanelRowHeight = 40;
+                        gridView1.OptionsPrint.AutoWidth = AutoSize;
+                        XlsxExportOptions options = new XlsxExportOptions();
+                        options.TextExportMode = TextExportMode.Text;
+                        options.ExportMode = XlsxExportMode.SingleFile;
+                        options.SheetName = $"Hóa Đơn tháng {dtpDuLieuHoaDon.Value.Month.ToString()}-{dtpDuLieuHoaDon.Value.Year.ToString()}";
+                        ExportSettings.DefaultExportType = ExportType.Default;
+                        gridView1.ExportToXlsx(SaveFileDialog.FileName, options);
+                        MessageBox.Show("Xuất thành công");
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return false;
+
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            ExportExcel("");
+        }
+
+        private void btnXoaDuLieuHoaDon_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Int32[] selectedrowHandles = gridView1.GetSelectedRows();
+                if (selectedrowHandles.Length > 0)
+                {
+                    DialogResult reslut = MessageBox.Show("Nếu bạn xóa dữ liệu hóa đơn ở đây thì toàn bộ dữ liệu đăng ký học cũng bị xóa Theo.\n Bạn chắc chắn chứ?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (reslut == DialogResult.Yes)
+                    {
+                        for (int i = 0; i < selectedrowHandles.Length; i++)
+                        {
+                            int selectRownHandle = selectedrowHandles[i];
+                            DataRow gv = gridView1.GetDataRow(selectRownHandle);
+                            HoaDonServices.XoaDuLieuHoaDon(gv[1].ToString());
+                        }
+
+                        btnLoadDataHD.PerformClick();
+                        
+                        
+                        UC_HuyDKHoc.Instance.onload();
+                        UC_HuyDKHoc.Instance.btnPickStd.PerformClick();
+                        UC_GiaHanDKHoc.Instance.onload();
+                    }
+
+                }
+                else MessageBox.Show("Chưa chọn gì không thể xóa");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

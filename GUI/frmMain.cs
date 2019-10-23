@@ -28,10 +28,12 @@ namespace GUI
                 this.Controls.Add(UC_DKHOC.Instance);
                 UC_DKHOC.Instance.Dock = DockStyle.Fill;
                 UC_DKHOC.Instance.BringToFront();
+                //UC_DKHOC.Instance.onload();
             }
             else
             {
                 UC_DKHOC.Instance.BringToFront();
+                UC_DKHOC.Instance.onload();
             }
         }
 
@@ -47,6 +49,7 @@ namespace GUI
             else
             {
                 UC_HuyDKHoc.Instance.BringToFront();
+                UC_HuyDKHoc.Instance.onload();
             }
         }
 
@@ -61,6 +64,7 @@ namespace GUI
             else
             {
                 UC_GiaHanDKHoc.Instance.BringToFront();
+                UC_GiaHanDKHoc.Instance.onload();
             }
         }
 
@@ -89,6 +93,7 @@ namespace GUI
             else
             {
                 UC_CapNhatHocSinh.Instance.BringToFront();
+                
             }
         }
 

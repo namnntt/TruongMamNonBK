@@ -84,28 +84,28 @@
             this.datNgaySinh.Location = new System.Drawing.Point(125, 96);
             this.datNgaySinh.Name = "datNgaySinh";
             this.datNgaySinh.Size = new System.Drawing.Size(161, 21);
-            this.datNgaySinh.TabIndex = 4;
+            this.datNgaySinh.TabIndex = 1;
             // 
             // txtTenHS
             // 
             this.txtTenHS.Location = new System.Drawing.Point(125, 57);
             this.txtTenHS.Name = "txtTenHS";
             this.txtTenHS.Size = new System.Drawing.Size(446, 21);
-            this.txtTenHS.TabIndex = 5;
+            this.txtTenHS.TabIndex = 0;
             // 
             // txtTenChaMe
             // 
             this.txtTenChaMe.Location = new System.Drawing.Point(125, 132);
             this.txtTenChaMe.Name = "txtTenChaMe";
             this.txtTenChaMe.Size = new System.Drawing.Size(446, 21);
-            this.txtTenChaMe.TabIndex = 6;
+            this.txtTenChaMe.TabIndex = 2;
             // 
             // txtSDTLienHe
             // 
             this.txtSDTLienHe.Location = new System.Drawing.Point(125, 169);
             this.txtSDTLienHe.Name = "txtSDTLienHe";
             this.txtSDTLienHe.Size = new System.Drawing.Size(446, 21);
-            this.txtSDTLienHe.TabIndex = 7;
+            this.txtSDTLienHe.TabIndex = 3;
             // 
             // cbLopHC
             // 
@@ -114,7 +114,7 @@
             this.cbLopHC.Location = new System.Drawing.Point(125, 236);
             this.cbLopHC.Name = "cbLopHC";
             this.cbLopHC.Size = new System.Drawing.Size(121, 21);
-            this.cbLopHC.TabIndex = 8;
+            this.cbLopHC.TabIndex = 5;
             // 
             // lbLopHc
             // 
@@ -132,7 +132,7 @@
             this.btnThemHS.Location = new System.Drawing.Point(241, 281);
             this.btnThemHS.Name = "btnThemHS";
             this.btnThemHS.Size = new System.Drawing.Size(105, 49);
-            this.btnThemHS.TabIndex = 10;
+            this.btnThemHS.TabIndex = 6;
             this.btnThemHS.Text = "Thêm HS";
             this.btnThemHS.Click += new System.EventHandler(this.btnThemHS_Click);
             // 
@@ -150,7 +150,7 @@
             this.txtDiaChi.Location = new System.Drawing.Point(125, 205);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(446, 21);
-            this.txtDiaChi.TabIndex = 12;
+            this.txtDiaChi.TabIndex = 4;
             // 
             // frmCapNhatHocSinh
             // 

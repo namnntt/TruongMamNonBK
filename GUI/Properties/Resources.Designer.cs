@@ -323,6 +323,36 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap class_icon {
+            get {
+                object obj = ResourceManager.GetObject("class-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap clb_icon {
+            get {
+                object obj = ResourceManager.GetObject("clb-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap club_1306525 {
+            get {
+                object obj = ResourceManager.GetObject("club_1306525", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap convert_16x16 {
             get {
                 object obj = ResourceManager.GetObject("convert_16x16", resourceCulture);
@@ -353,6 +383,16 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap deletedatasource2_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("deletedatasource2_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap detail_con {
             get {
                 object obj = ResourceManager.GetObject("detail-con", resourceCulture);
@@ -366,6 +406,16 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap excell_icon {
             get {
                 object obj = ResourceManager.GetObject("excell-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap GiaoVu_icon_Manager {
+            get {
+                object obj = ResourceManager.GetObject("GiaoVu-icon-Manager", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

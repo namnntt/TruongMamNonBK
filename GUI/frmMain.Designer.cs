@@ -203,6 +203,7 @@
             // 
             this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup4});
+            this.ribbonPage3.ImageOptions.Image = global::GUI.Properties.Resources.GiaoVu_icon_Manager;
             this.ribbonPage3.Name = "ribbonPage3";
             this.ribbonPage3.Text = "Quản Lý Tài Khoản";
             // 
@@ -215,6 +216,7 @@
             // 
             this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup5});
+            this.ribbonPage4.ImageOptions.Image = global::GUI.Properties.Resources.club_1306525;
             this.ribbonPage4.Name = "ribbonPage4";
             this.ribbonPage4.Text = "Quản Lý các CLB";
             // 
@@ -227,6 +229,7 @@
             // 
             this.ribbonPage5.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup6});
+            this.ribbonPage5.ImageOptions.Image = global::GUI.Properties.Resources.class_icon;
             this.ribbonPage5.Name = "ribbonPage5";
             this.ribbonPage5.Text = "Quản Lý Các Lớp CLB";
             // 

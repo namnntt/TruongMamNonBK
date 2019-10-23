@@ -146,6 +146,7 @@
             this.mttCheckBox.TabIndex = 3;
             this.mttCheckBox.Text = "Nhớ tài khoản này";
             this.mttCheckBox.UseSelectable = true;
+            this.mttCheckBox.CheckedChanged += new System.EventHandler(this.mttCheckBox_CheckedChanged);
             // 
             // frmLogin
             // 
@@ -163,6 +164,7 @@
             this.Name = "frmLogin";
             this.ShowInTaskbar = false;
             this.Text = "ĐĂNG NHẬP";
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

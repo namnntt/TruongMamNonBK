@@ -121,5 +121,31 @@ namespace GUI
                 mttlab.Text = "Empty!!!";
             } 
         }
+
+        private void mttCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if(mttCheckBox.Checked)
+            {
+                Properties.Settings.Default.TaiKhoan = mttTaiKhoan.Text;
+                Properties.Settings.Default.MatKhau = mttMatKhau.Text;
+            }
+            else
+            {
+                Properties.Settings.Default.TaiKhoan = null;
+                Properties.Settings.Default.MatKhau = null;
+            }
+            Properties.Settings.Default.RememberMe = mttCheckBox.Checked;
+            Properties.Settings.Default.Save();
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            if (Properties.Settings.Default.RememberMe)
+            {
+                mttMatKhau.Text = Properties.Settings.Default.MatKhau;
+                mttTaiKhoan.Text = Properties.Settings.Default.TaiKhoan;
+            }
+            
+        }
     }
 }
