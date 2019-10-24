@@ -159,6 +159,7 @@ namespace GUI.UC
                 UC_DKHOC.Instance.btnPickStd.PerformClick();
                 UC_GiaHanDKHoc.Instance.onload();
             }
+            
         }
     }
 }

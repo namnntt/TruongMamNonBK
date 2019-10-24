@@ -145,6 +145,11 @@ namespace GUI
                 mttMatKhau.Text = Properties.Settings.Default.MatKhau;
                 mttTaiKhoan.Text = Properties.Settings.Default.TaiKhoan;
             }
+            if (!string.IsNullOrEmpty(mttMatKhau.Text) && !string.IsNullOrEmpty(mttTaiKhoan.Text))
+            {
+                mttCheckBox.Checked = true;
+            }
+            else mttCheckBox.Checked = false;
             
         }
     }

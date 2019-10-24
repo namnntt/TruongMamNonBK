@@ -126,9 +126,12 @@ namespace GUI
             }
             else
             {
-                MessageBox.Show("Thêm hoàn tất toàn bộ dòng đã chọn");
-                UC_CapNhatHocSinh.Instance.onload();
-                UC_DKHOC.Instance.onload();
+                if (RowIndexData.Length > 0)
+                {
+                    MessageBox.Show("Thêm hoàn tất toàn bộ dòng đã chọn");
+                    UC_CapNhatHocSinh.Instance.onload();
+                    UC_DKHOC.Instance.onload();
+                }
             }
         }
         #region Cột STT

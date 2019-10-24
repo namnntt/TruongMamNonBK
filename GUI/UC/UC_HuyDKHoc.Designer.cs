@@ -80,6 +80,7 @@
             this.adgvLopDangKyH.DataSource = this.bddsLopTheoHS;
             this.adgvLopDangKyH.FilterAndSortEnabled = false;
             this.adgvLopDangKyH.Location = new System.Drawing.Point(30, 52);
+            this.adgvLopDangKyH.MultiSelect = false;
             this.adgvLopDangKyH.Name = "adgvLopDangKyH";
             this.adgvLopDangKyH.RowHeadersVisible = false;
             this.adgvLopDangKyH.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
