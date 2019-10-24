@@ -184,7 +184,7 @@
             this.ribbonPageGroup3.ItemLinks.Add(this.btnLichSuHoaDon);
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem4);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.Text = "Hóa Đơn Học Phí";
+            this.ribbonPageGroup3.Text = "Báo cáo và Thống kê dữ liệu";
             // 
             // ribbonPage2
             // 
