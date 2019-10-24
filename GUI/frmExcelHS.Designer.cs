@@ -76,6 +76,8 @@
             this.gridView1.OptionsSelection.MultiSelect = true;
             this.gridView1.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView1_CustomDrawRowIndicator);
+            this.gridView1.RowCountChanged += new System.EventHandler(this.gridView1_RowCountChanged);
             // 
             // clTenHS
             // 
@@ -123,7 +125,7 @@
             // 
             // opfDexcel
             // 
-            this.opfDexcel.Filter = "Excel 97-2003|*.xls|Excel 2016|*.xlsx";
+            this.opfDexcel.Filter = "Excel 2010-2016|*.xlsx|Excel 1997-2003|*.xls";
             // 
             // txtLink
             // 

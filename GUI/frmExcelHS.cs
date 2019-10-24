@@ -13,6 +13,9 @@ using ExcelDataReader;
 using Model;
 using BussinesLayer;
 using GUI.UC;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid.Views.Grid.Drawing;
+using DevExpress.XtraGrid;
 
 namespace GUI
 {
@@ -23,6 +26,7 @@ namespace GUI
             InitializeComponent();
         }
         DataTableCollection tableCollection;
+        bool indicatorIcon = true;
         private void btnfindFile_Click(object sender, EventArgs e)
         {
             try
@@ -106,12 +110,6 @@ namespace GUI
                         gridView1.UnselectRow(selectRownHandle);
                         DemSoDongBiSai++;
                     }
-                    //if(MaLopHC == null)
-                    //{
-                    //    gridView1.UnselectRow(i);
-                    //    flag = true;
-                    //}
-                    
                 }
             }
             else
@@ -124,20 +122,70 @@ namespace GUI
 
                 MessageBox.Show($"Có {DemSoDongBiSai.ToString()} dòng bị sai dữ liệu lớp hành chính mời bạn kiểm tra lại và thử lại");
                 UC_CapNhatHocSinh.Instance.onload();
+                UC_DKHOC.Instance.onload();
             }
             else
             {
                 MessageBox.Show("Thêm hoàn tất toàn bộ dòng đã chọn");
                 UC_CapNhatHocSinh.Instance.onload();
+                UC_DKHOC.Instance.onload();
             }
+        }
+        #region Cột STT
+        private void gridView1_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
+        {
+            try
+            {
+                GridView view = (GridView)sender;
+                if (e.Info.IsRowIndicator && e.RowHandle >= 0)
+                {
+                    string sText = (e.RowHandle + 1).ToString();
+                    Graphics gr = e.Info.Graphics;
+                    gr.PageUnit = GraphicsUnit.Pixel;
+                    GridView gridView = ((GridView)sender);
+                    SizeF size = gr.MeasureString(sText, e.Info.Appearance.Font);
+                    int nNewSize = Convert.ToInt32(size.Width) + GridPainter.Indicator.ImageSize.Width + 10;
+                    if (gridView.IndicatorWidth < nNewSize)
+                    {
+                        gridView.IndicatorWidth = nNewSize;
+                    }
 
-                //else
-                //{
-                //    string result = flag == true ?"Đã thêm nhưng có một số dòng bị sai lớp hành chính mời bạn kiểm tra lại " : "Đã thêm toàn bộ";
-                //    MessageBox.Show(result);
-                //}
-                //vitrixoa.ForEach(x => { gridView1.DeleteRow(x); });
-                //if (flag == true) MessageBox.Show("Đã thêm nhưng có một số dòng bị sai lớp hành chính mời bạn kiểm tra lại");
+                    e.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+                    e.Info.DisplayText = sText;
+                }
+                if (!indicatorIcon)
+                    e.Info.ImageIndex = -1;
+
+                if (e.RowHandle == GridControl.InvalidRowHandle)
+                {
+                    Graphics gr = e.Info.Graphics;
+                    gr.PageUnit = GraphicsUnit.Pixel;
+                    GridView gridView = ((GridView)sender);
+                    SizeF size = gr.MeasureString("STT", e.Info.Appearance.Font);
+                    int nNewSize = Convert.ToInt32(size.Width) + GridPainter.Indicator.ImageSize.Width + 10;
+                    if (gridView.IndicatorWidth < nNewSize)
+                    {
+                        gridView.IndicatorWidth = nNewSize;
+                    }
+
+                    e.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+                    e.Info.DisplayText = "STT";
+
+                }
             }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        private void gridView1_RowCountChanged(object sender, EventArgs e)
+        {
+            GridView gridview = ((GridView)sender);
+            if (!gridview.GridControl.IsHandleCreated) return;
+            Graphics gr = Graphics.FromHwnd(gridview.GridControl.Handle);
+            SizeF size = gr.MeasureString(gridview.RowCount.ToString(), gridview.PaintAppearance.Row.GetFont());
+            gridview.IndicatorWidth = Convert.ToInt32(size.Width + 0.999f) + GridPainter.Indicator.ImageSize.Width + 30;
+        }
+        #endregion
     }
 }

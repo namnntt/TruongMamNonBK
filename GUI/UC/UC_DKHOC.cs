@@ -158,10 +158,12 @@ namespace GUI.UC
                 MessageBox.Show($"Đăng ký cho {MaHocSinh} thành công các lớp: \n {result}");
                 btnPickStd.PerformClick();
                 onload();
+                UC_HuyDKHoc.Instance.onload();
                 UC_HuyDKHoc.Instance.btnPickStd.PerformClick();
+                UC_GiaHanDKHoc.Instance.onload();
                 btnChiTietHoaDon.Enabled = true;
             }
-            //else btnChiTietHoaDon.Enabled = false;
+            else MessageBox.Show("xin hãy chọn Lớp để Đăng ký");
         }
         //Lọc danh sách các lớp trong khi chọn
         private void adgvDanhSachLop_CellContentClick(object sender, DataGridViewCellEventArgs e)

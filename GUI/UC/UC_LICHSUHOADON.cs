@@ -161,10 +161,9 @@ namespace GUI.UC
                             DataRow gv = gridView1.GetDataRow(selectRownHandle);
                             HoaDonServices.XoaDuLieuHoaDon(gv[1].ToString());
                         }
-
                         btnLoadDataHD.PerformClick();
-                        
-                        
+                        UC_DKHOC.Instance.onload();
+                        UC_DKHOC.Instance.btnPickStd.PerformClick();
                         UC_HuyDKHoc.Instance.onload();
                         UC_HuyDKHoc.Instance.btnPickStd.PerformClick();
                         UC_GiaHanDKHoc.Instance.onload();

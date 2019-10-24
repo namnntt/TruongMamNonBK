@@ -131,10 +131,14 @@ namespace GUI.UC
                 MessageBox.Show($"Gia hạn thành công cho {selectedRows.Count.ToString()} học sinh");
                 onload();
                 UC_DKHOC.Instance.onload();
+                UC_DKHOC.Instance.btnPickStd.PerformClick();
                 UC_HuyDKHoc.Instance.onload();
                 UC_HuyDKHoc.Instance.btnPickStd.PerformClick();
-                
-                
+
+            }
+            else
+            {
+                MessageBox.Show("xin hãy chọn học sinh gia hạn");
             }
         }
 

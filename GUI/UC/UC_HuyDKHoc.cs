@@ -155,7 +155,9 @@ namespace GUI.UC
                 MessageBox.Show($"Hủy Thành công cho {selectedRows.Count.ToString()} học sinh");
                 onload();
                 btnPickStd.PerformClick();
+                UC_DKHOC.Instance.onload();
                 UC_DKHOC.Instance.btnPickStd.PerformClick();
+                UC_GiaHanDKHoc.Instance.onload();
             }
         }
     }
