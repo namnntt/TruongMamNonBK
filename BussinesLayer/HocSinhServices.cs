@@ -150,6 +150,10 @@ namespace BussinesLayer
         {
             HocSinhRepo.ThemHocSinh(TenHS, NgaySinh, TenChaMe, SDT, DiaChi, LopHC);
         }
+        public static int UpdateTTHocSinh(string MaHs, string TenHS, DateTime NgaySinh, string TenchaMe, string SDTChame, string Diachi, string LopHC)
+        {
+            return HocSinhRepo.UpdateHocSinh(MaHs, TenHS, NgaySinh, TenchaMe, SDTChame, Diachi, LopHC);
+        }
     }
 
 }

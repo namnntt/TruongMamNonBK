@@ -142,6 +142,7 @@
             this.barButtonItem4.ImageOptions.Image = global::GUI.Properties.Resources.Chart_icon;
             this.barButtonItem4.Name = "barButtonItem4";
             this.barButtonItem4.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
             // 
             // btnLichSuHoaDon
             // 

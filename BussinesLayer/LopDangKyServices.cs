@@ -120,5 +120,38 @@ namespace BussinesLayer
                                                };
             return GenericServices.ToDataTable(dsLDKMaHSDaThamGiaTrongThang.ToList());
         }
+        //lấy danh sách học sinh theo năm và tháng
+        public static DataTable DanhsachLopDangKyVaSoHocSinh(int Nam, int Thang)
+        {
+            List<DangKyHoc> dsdkHoc = dkhocRepo.GetAlls();
+            List<LopDangKy> dslDK = LopDangKyRepo.LayDanhSachLopDangKy();
+            var IDlopVaCount = from Dk in dsdkHoc
+                               group Dk by new
+                               {
+                                   ID = Dk.LopDangKy,
+                                   Thang = Dk.NgayDangKy.Month,
+                                   Nam = Dk.NgayDangKy.Year
+                               }
+                              into g
+                               where (g.Key.Thang == Thang && g.Key.Nam == Nam)
+                               select new
+                               {
+                                   ID = g.Key.ID,
+                                   Count = g.Count()
+                               };
+            var dsLop = from IDLop in IDlopVaCount.ToList()
+                        join Lop in dslDK on IDLop.ID equals Lop.MaLopDangKy
+                        select new
+                        {
+                            //IDLop.ID,
+                            Lop.TenLopDangKy,
+                            //Lop.CLB1.TenCLB,
+                            //Lop.LichHoc,
+                            //Lop.NamHoc,
+                            IDLop.Count,
+
+                        };
+            return GenericServices.ToDataTable(dsLop.ToList());
+        }
     }
 }

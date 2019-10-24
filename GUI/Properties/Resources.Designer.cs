@@ -423,6 +423,16 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap load_data_Chart_icon {
+            get {
+                object obj = ResourceManager.GetObject("load-data-Chart-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap load_data_icon {
             get {
                 object obj = ResourceManager.GetObject("load-data-icon", resourceCulture);
@@ -536,6 +546,16 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap student_mamager_icon {
             get {
                 object obj = ResourceManager.GetObject("student-mamager-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap update_member_icon {
+            get {
+                object obj = ResourceManager.GetObject("update-member-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

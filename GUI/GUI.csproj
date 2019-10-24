@@ -37,12 +37,16 @@
       <HintPath>..\packages\AdvancedDataGridView\AdvancedDataGridView.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.BonusSkins.v19.1" />
+    <Reference Include="DevExpress.Charts.v19.1.Core, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v19.1" />
     <Reference Include="DevExpress.Dialogs.v19.1.Core, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v19.1.Core" />
     <Reference Include="DevExpress.Utils.v19.1" />
     <Reference Include="DevExpress.XtraBars.v19.1" />
     <Reference Include="DevExpress.Sparkline.v19.1.Core" />
+    <Reference Include="DevExpress.XtraCharts.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v19.1.UI, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v19.1.Wizard, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraDialogs.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v19.1" />
     <Reference Include="DevExpress.XtraGrid.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -185,6 +189,12 @@
     <Compile Include="UC\UC_LICHSUHOADON.Designer.cs">
       <DependentUpon>UC_LICHSUHOADON.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\UC_ThongKe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC_ThongKe.Designer.cs">
+      <DependentUpon>UC_ThongKe.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmCapNhatHocSinh.resx">
       <DependentUpon>frmCapNhatHocSinh.cs</DependentUpon>
     </EmbeddedResource>
@@ -235,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UC_LICHSUHOADON.resx">
       <DependentUpon>UC_LICHSUHOADON.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC_ThongKe.resx">
+      <DependentUpon>UC_ThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
@@ -316,6 +329,8 @@
     <None Include="Resources\class-icon.png" />
     <None Include="Resources\deletedatasource2_32x32.png" />
     <None Include="Resources\save-database-icon.png" />
+    <None Include="Resources\update-member-icon.png" />
+    <None Include="Resources\load-data-Chart-icon.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

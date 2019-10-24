@@ -32,13 +32,15 @@ namespace GUI.UC
         {
             InitializeComponent();
         }
-
+        string TenLopHC = null;
+        string MaHocSinh = null;
         private void btnAddHocSinh_Click(object sender, EventArgs e)
         {
-            
-            using (frmCapNhatHocSinh frm = new frmCapNhatHocSinh())
+            using (frmCapNhatHocSinh frm = new frmCapNhatHocSinh(TenLopHC, MaHocSinh))
             {
+                frm.btnThemHS.Enabled = true;
                 frm.ShowDialog();
+                
             }
         }
         public void onload()
@@ -50,7 +52,7 @@ namespace GUI.UC
         {
             onload();
         }
-
+        #region Tạo cột indicator STT
         private void gridViewHocSinh_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
         {
             try
@@ -105,12 +107,39 @@ namespace GUI.UC
             SizeF size = gr.MeasureString(gridview.RowCount.ToString(), gridview.PaintAppearance.Row.GetFont());
             gridview.IndicatorWidth = Convert.ToInt32(size.Width + 0.999f) + GridPainter.Indicator.ImageSize.Width + 40;
         }
+        #endregion
 
         private void btnAddEcxel_Click(object sender, EventArgs e)
         {
             using (frmExcelHS frm = new frmExcelHS())
             {
                 frm.ShowDialog();
+            }
+        }
+
+        private void btnUpdateHocSinh_Click(object sender, EventArgs e)
+        {
+            int[] RowIndexData = gridViewHocSinh.GetSelectedRows();
+            
+            if (RowIndexData.Length > 0)
+            {
+                DataRow rv = gridViewHocSinh.GetDataRow(RowIndexData[0]);
+                using (frmCapNhatHocSinh frm = new frmCapNhatHocSinh(rv[4].ToString(), rv[0].ToString()))
+                {
+                    frm.btnUpdate.Enabled = true;
+                    frm.Text = "Cập nhật thông tin học sinh";
+                    frm.datNgaySinh.Value = Convert.ToDateTime(rv[2]);
+                    frm.txtTenHS.Text = rv[1].ToString();
+                    frm.txtTenChaMe.Text = rv[5].ToString();
+                    frm.txtSDTLienHe.Text = rv[7].ToString();
+                    frm.txtDiaChi.Text = rv[6].ToString();
+                    frm.ShowDialog();
+                    
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn học sinh cần cập nhật thông tin");
             }
         }
     }

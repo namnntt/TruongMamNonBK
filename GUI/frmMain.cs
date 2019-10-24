@@ -129,5 +129,20 @@ namespace GUI
                 frm.ShowDialog();
             }
         }
+
+        private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (!this.Controls.Contains(UC_ThongKe.Instance))
+            {
+                this.Controls.Add(UC_ThongKe.Instance);
+                UC_ThongKe.Instance.Dock = DockStyle.Fill;
+                UC_ThongKe.Instance.BringToFront();
+            }
+            else
+            {
+                UC_ThongKe.Instance.BringToFront();
+
+            }
+        }
     }
 }

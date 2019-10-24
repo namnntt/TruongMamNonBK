@@ -39,5 +39,24 @@ namespace DataLayer.Repository
                 }
             }
         }
+
+        public int UpdateHocSinh(string MaHs, string TenHS, DateTime NgaySinh, string TenchaMe, string SDTChame, string Diachi, string LopHC)
+        {
+            using (MamNonBK context = new MamNonBK())
+            {
+                using (IDbConnection db = new SqlConnection(context.Database.Connection.ConnectionString))
+                {
+                    var p = new DynamicParameters();
+                    p.Add("@NgaySinh", NgaySinh.ToString("yyyy-MM-dd"));
+                    p.Add("@TenHocSinh", TenHS);
+                    p.Add("@MaHocSinh", MaHs);
+                    p.Add("@TenChaMe", TenchaMe);
+                    p.Add("@SDTChaMe", SDTChame);
+                    p.Add("@DiaChi", Diachi);
+                    p.Add("@LopHanhChinh", LopHC);
+                    return db.Execute("UpdateTTHocSinh", p, commandType: CommandType.StoredProcedure);
+                }
+            }
+        }
     }
 }

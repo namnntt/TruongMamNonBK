@@ -42,6 +42,7 @@
             this.clSDTChaMe = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clNgayNhapHoc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnAddEcxel = new DevExpress.XtraEditors.SimpleButton();
+            this.btnUpdateHocSinh = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.bdHocSinh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcdHocSinh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewHocSinh)).BeginInit();
@@ -51,9 +52,9 @@
             // 
             this.btnAddHocSinh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.btnAddHocSinh.ImageOptions.Image = global::GUI.Properties.Resources.add_32x32;
-            this.btnAddHocSinh.Location = new System.Drawing.Point(588, 476);
+            this.btnAddHocSinh.Location = new System.Drawing.Point(543, 483);
             this.btnAddHocSinh.Name = "btnAddHocSinh";
-            this.btnAddHocSinh.Size = new System.Drawing.Size(118, 37);
+            this.btnAddHocSinh.Size = new System.Drawing.Size(118, 41);
             this.btnAddHocSinh.TabIndex = 1;
             this.btnAddHocSinh.Text = "Thêm Học Sinh";
             this.btnAddHocSinh.Click += new System.EventHandler(this.btnAddHocSinh_Click);
@@ -67,7 +68,7 @@
             this.gcdHocSinh.Location = new System.Drawing.Point(21, 67);
             this.gcdHocSinh.MainView = this.gridViewHocSinh;
             this.gcdHocSinh.Name = "gcdHocSinh";
-            this.gcdHocSinh.Size = new System.Drawing.Size(977, 383);
+            this.gcdHocSinh.Size = new System.Drawing.Size(1177, 390);
             this.gcdHocSinh.TabIndex = 2;
             this.gcdHocSinh.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewHocSinh});
@@ -203,22 +204,33 @@
             // btnAddEcxel
             // 
             this.btnAddEcxel.ImageOptions.Image = global::GUI.Properties.Resources.excell_icon;
-            this.btnAddEcxel.Location = new System.Drawing.Point(394, 476);
+            this.btnAddEcxel.Location = new System.Drawing.Point(336, 483);
             this.btnAddEcxel.Name = "btnAddEcxel";
-            this.btnAddEcxel.Size = new System.Drawing.Size(124, 37);
+            this.btnAddEcxel.Size = new System.Drawing.Size(124, 41);
             this.btnAddEcxel.TabIndex = 3;
             this.btnAddEcxel.Text = "Ecxel Import";
             this.btnAddEcxel.Click += new System.EventHandler(this.btnAddEcxel_Click);
+            // 
+            // btnUpdateHocSinh
+            // 
+            this.btnUpdateHocSinh.ImageOptions.Image = global::GUI.Properties.Resources.update_member_icon;
+            this.btnUpdateHocSinh.Location = new System.Drawing.Point(744, 483);
+            this.btnUpdateHocSinh.Name = "btnUpdateHocSinh";
+            this.btnUpdateHocSinh.Size = new System.Drawing.Size(112, 41);
+            this.btnUpdateHocSinh.TabIndex = 4;
+            this.btnUpdateHocSinh.Text = "Cập nhật HS";
+            this.btnUpdateHocSinh.Click += new System.EventHandler(this.btnUpdateHocSinh_Click);
             // 
             // UC_CapNhatHocSinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnUpdateHocSinh);
             this.Controls.Add(this.btnAddEcxel);
             this.Controls.Add(this.gcdHocSinh);
             this.Controls.Add(this.btnAddHocSinh);
             this.Name = "UC_CapNhatHocSinh";
-            this.Size = new System.Drawing.Size(1034, 548);
+            this.Size = new System.Drawing.Size(1234, 555);
             this.Load += new System.EventHandler(this.UC_CapNhatHocSinh_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bdHocSinh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcdHocSinh)).EndInit();
@@ -241,5 +253,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn clSDTChaMe;
         private DevExpress.XtraGrid.Columns.GridColumn clNgayNhapHoc;
         private DevExpress.XtraEditors.SimpleButton btnAddEcxel;
+        private DevExpress.XtraEditors.SimpleButton btnUpdateHocSinh;
     }
 }

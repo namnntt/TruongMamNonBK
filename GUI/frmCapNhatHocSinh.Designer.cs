@@ -38,9 +38,10 @@
             this.txtSDTLienHe = new System.Windows.Forms.TextBox();
             this.cbLopHC = new System.Windows.Forms.ComboBox();
             this.lbLopHc = new System.Windows.Forms.Label();
-            this.btnThemHS = new DevExpress.XtraEditors.SimpleButton();
             this.label5 = new System.Windows.Forms.Label();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
+            this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
+            this.btnThemHS = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
             // 
             // label1
@@ -98,14 +99,14 @@
             this.txtTenChaMe.Location = new System.Drawing.Point(125, 132);
             this.txtTenChaMe.Name = "txtTenChaMe";
             this.txtTenChaMe.Size = new System.Drawing.Size(446, 21);
-            this.txtTenChaMe.TabIndex = 2;
+            this.txtTenChaMe.TabIndex = 1;
             // 
             // txtSDTLienHe
             // 
             this.txtSDTLienHe.Location = new System.Drawing.Point(125, 169);
             this.txtSDTLienHe.Name = "txtSDTLienHe";
             this.txtSDTLienHe.Size = new System.Drawing.Size(446, 21);
-            this.txtSDTLienHe.TabIndex = 3;
+            this.txtSDTLienHe.TabIndex = 2;
             // 
             // cbLopHC
             // 
@@ -114,7 +115,7 @@
             this.cbLopHC.Location = new System.Drawing.Point(125, 236);
             this.cbLopHC.Name = "cbLopHC";
             this.cbLopHC.Size = new System.Drawing.Size(121, 21);
-            this.cbLopHC.TabIndex = 5;
+            this.cbLopHC.TabIndex = 4;
             // 
             // lbLopHc
             // 
@@ -124,17 +125,6 @@
             this.lbLopHc.Size = new System.Drawing.Size(82, 13);
             this.lbLopHc.TabIndex = 9;
             this.lbLopHc.Text = "Lớp Hành Chính";
-            // 
-            // btnThemHS
-            // 
-            this.btnThemHS.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnThemHS.ImageOptions.Image = global::GUI.Properties.Resources.add_32x321;
-            this.btnThemHS.Location = new System.Drawing.Point(241, 281);
-            this.btnThemHS.Name = "btnThemHS";
-            this.btnThemHS.Size = new System.Drawing.Size(105, 49);
-            this.btnThemHS.TabIndex = 6;
-            this.btnThemHS.Text = "Thêm HS";
-            this.btnThemHS.Click += new System.EventHandler(this.btnThemHS_Click);
             // 
             // label5
             // 
@@ -150,13 +140,37 @@
             this.txtDiaChi.Location = new System.Drawing.Point(125, 205);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(446, 21);
-            this.txtDiaChi.TabIndex = 4;
+            this.txtDiaChi.TabIndex = 3;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Enabled = false;
+            this.btnUpdate.ImageOptions.Image = global::GUI.Properties.Resources.update_member_icon;
+            this.btnUpdate.Location = new System.Drawing.Point(171, 281);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(115, 49);
+            this.btnUpdate.TabIndex = 5;
+            this.btnUpdate.Text = "Cập nhật HS";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnThemHS
+            // 
+            this.btnThemHS.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnThemHS.Enabled = false;
+            this.btnThemHS.ImageOptions.Image = global::GUI.Properties.Resources.add_32x321;
+            this.btnThemHS.Location = new System.Drawing.Point(376, 281);
+            this.btnThemHS.Name = "btnThemHS";
+            this.btnThemHS.Size = new System.Drawing.Size(105, 49);
+            this.btnThemHS.TabIndex = 6;
+            this.btnThemHS.Text = "Thêm HS";
+            this.btnThemHS.Click += new System.EventHandler(this.btnThemHS_Click);
             // 
             // frmCapNhatHocSinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(621, 342);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.txtDiaChi);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnThemHS);
@@ -188,14 +202,15 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker datNgaySinh;
-        private System.Windows.Forms.TextBox txtTenHS;
-        private System.Windows.Forms.TextBox txtTenChaMe;
-        private System.Windows.Forms.TextBox txtSDTLienHe;
-        private System.Windows.Forms.ComboBox cbLopHC;
         private System.Windows.Forms.Label lbLopHc;
-        private DevExpress.XtraEditors.SimpleButton btnThemHS;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtDiaChi;
+        public DevExpress.XtraEditors.SimpleButton btnUpdate;
+        public DevExpress.XtraEditors.SimpleButton btnThemHS;
+        public System.Windows.Forms.DateTimePicker datNgaySinh;
+        public System.Windows.Forms.TextBox txtTenHS;
+        public System.Windows.Forms.TextBox txtTenChaMe;
+        public System.Windows.Forms.TextBox txtSDTLienHe;
+        public System.Windows.Forms.ComboBox cbLopHC;
+        public System.Windows.Forms.TextBox txtDiaChi;
     }
 }
