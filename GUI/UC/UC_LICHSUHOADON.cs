@@ -49,6 +49,14 @@ namespace GUI.UC
         private void btnLoadDataHD_Click(object sender, EventArgs e)
         {
             bdHoaDon.DataSource = HoaDonServices.LayDanhSachHoaDonTheoNamvaThang(dtpDuLieuHoaDon.Value.Year, dtpDuLieuHoaDon.Value.Month);
+            if(dtpDuLieuHoaDon.Value.Year == DateTime.Now.Year && dtpDuLieuHoaDon.Value.Month == DateTime.Now.Month)
+            {
+                btnXoaDuLieuHoaDon.Enabled = false;
+            }
+            else
+            {
+                btnXoaDuLieuHoaDon.Enabled = true;
+            }
         }
         #region làm cột indicator STT
         private void gridView1_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
@@ -162,10 +170,10 @@ namespace GUI.UC
                             HoaDonServices.XoaDuLieuHoaDon(gv[1].ToString());
                         }
                         btnLoadDataHD.PerformClick();
-                        UC_DKHOC.Instance.onload();
-                        UC_DKHOC.Instance.btnPickStd.PerformClick();
-                        UC_HuyDKHoc.Instance.onload();
-                        UC_HuyDKHoc.Instance.btnPickStd.PerformClick();
+                        //UC_DKHOC.Instance.onload();
+                        //UC_DKHOC.Instance.btnPickStd.PerformClick();
+                        //UC_HuyDKHoc.Instance.onload();
+                        //UC_HuyDKHoc.Instance.btnPickStd.PerformClick();
                         UC_GiaHanDKHoc.Instance.onload();
                     }
 

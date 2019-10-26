@@ -72,13 +72,18 @@ namespace BussinesLayer
                        select new
                        {
                            hd.MaHD,
-                           hd.NgayTao
+                           hd.NgayTao,
+                           hd.TinhTrang
                        };
             return GenericServices.ToDataTable(dsHS.ToList());
         }
         public static void XoaDuLieuHoaDon(string MaHD)
         {
             HDrepo.XoaDuLieuHoaDon(MaHD);
+        }
+        public static int UpdateTTInHoaDon(string MaHD)
+        {
+            return HDrepo.UpdateHD(MaHD);
         }
 
     }

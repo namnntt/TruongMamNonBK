@@ -11,5 +11,6 @@ namespace DataLayer.InterFace
     {
         List<HoaDon> GetAlls();
         void XoaDuLieuHoaDon(string MaHD);
+        int UpdateHD(string MaHD);
     }
 }

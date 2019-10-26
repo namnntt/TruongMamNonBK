@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using GUI.RePort;
 using System.Globalization;
+using BussinesLayer;
+using GUI.UC;
 
 namespace GUI
 {
@@ -47,6 +49,14 @@ namespace GUI
             this.reportViewer1.LocalReport.SetParameters(p);
 
             this.reportViewer1.RefreshReport();
+        }
+
+        private void frmHoaDon_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            string MaHD = (string)_hd.Rows[0][0];
+            int Daupdate = HoaDonServices.UpdateTTInHoaDon(MaHD);
+            UC_DKHOC.Instance.onload();
+
         }
     }
 }

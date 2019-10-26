@@ -36,12 +36,14 @@ namespace BussinesLayer
                                       where (dk.NgayDangKy.Month == DateTime.Now.Month && dk.NgayDangKy.Year == DateTime.Now.Year)
                                       select new
                                       {
-                                          hs.MaHS
+                                          hs.MaHS,
+                                          hd.TinhTrang
                                       } into x
                                       group x by new { x.MaHS } into g
                                       select new
                                       {
                                           g.First().MaHS,
+                                          g.First().TinhTrang,
                                           SoluongLopDaDangKy = g.Count()
                                       };
 
@@ -56,8 +58,8 @@ namespace BussinesLayer
                 a.DiaChi,
                 a.TenChaMe,
                 a.SDTChaMe,
-                b?.SoluongLopDaDangKy
-
+                b?.SoluongLopDaDangKy,
+                b?.TinhTrang
             }
             );
             return GenericServices.ToDataTable(dsHSList.ToList());

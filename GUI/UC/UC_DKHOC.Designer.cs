@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_DKHOC));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.adgvDanhSachLop = new Zuby.ADGV.AdvancedDataGridView();
             this.clLDKSTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clCheckBoxers = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -44,12 +45,6 @@
             this.CLB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bdLopDangKy = new System.Windows.Forms.BindingSource(this.components);
             this.adgvHocSinhDuDK = new Zuby.ADGV.AdvancedDataGridView();
-            this.bdHocSinhDuDieuKien = new System.Windows.Forms.BindingSource(this.components);
-            this.adgvSearchBar = new Zuby.ADGV.AdvancedDataGridViewSearchToolBar();
-            this.btnChiTietDangKy = new DevExpress.XtraEditors.SimpleButton();
-            this.btnChiTietHoaDon = new DevExpress.XtraEditors.SimpleButton();
-            this.btnDangKyHoc = new DevExpress.XtraEditors.SimpleButton();
-            this.btnPickStd = new DevExpress.XtraEditors.SimpleButton();
             this.clHSSTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clMaHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clTenHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,6 +53,14 @@
             this.clTenChaMe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clSDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clSoluongDK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clTinhTrangHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bdHocSinhDuDieuKien = new System.Windows.Forms.BindingSource(this.components);
+            this.adgvSearchBar = new Zuby.ADGV.AdvancedDataGridViewSearchToolBar();
+            this.btnChiTietDangKy = new DevExpress.XtraEditors.SimpleButton();
+            this.btnChiTietHoaDon = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDangKyHoc = new DevExpress.XtraEditors.SimpleButton();
+            this.btnPickStd = new DevExpress.XtraEditors.SimpleButton();
+            this.lbnThongBao = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.adgvDanhSachLop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdLopDangKy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adgvHocSinhDuDK)).BeginInit();
@@ -191,7 +194,8 @@
             this.clDiaChi,
             this.clTenChaMe,
             this.clSDT,
-            this.clSoluongDK});
+            this.clSoluongDK,
+            this.clTinhTrangHoaDon});
             this.adgvHocSinhDuDK.DataSource = this.bdHocSinhDuDieuKien;
             this.adgvHocSinhDuDK.FilterAndSortEnabled = true;
             this.adgvHocSinhDuDK.Location = new System.Drawing.Point(27, 75);
@@ -201,7 +205,89 @@
             this.adgvHocSinhDuDK.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.adgvHocSinhDuDK.Size = new System.Drawing.Size(1158, 172);
             this.adgvHocSinhDuDK.TabIndex = 4;
+            this.adgvHocSinhDuDK.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.adgvHocSinhDuDK_CellFormatting);
             this.adgvHocSinhDuDK.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.adgvHocSinhDuDK_RowPostPaint);
+            // 
+            // clHSSTT
+            // 
+            this.clHSSTT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.clHSSTT.HeaderText = "STT";
+            this.clHSSTT.MinimumWidth = 22;
+            this.clHSSTT.Name = "clHSSTT";
+            this.clHSSTT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.clHSSTT.Width = 50;
+            // 
+            // clMaHS
+            // 
+            this.clMaHS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.clMaHS.DataPropertyName = "MaHS";
+            this.clMaHS.HeaderText = "Mã HS";
+            this.clMaHS.MinimumWidth = 22;
+            this.clMaHS.Name = "clMaHS";
+            this.clMaHS.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.clMaHS.Width = 62;
+            // 
+            // clTenHS
+            // 
+            this.clTenHS.DataPropertyName = "TenHS";
+            this.clTenHS.HeaderText = "Tên HS";
+            this.clTenHS.MinimumWidth = 22;
+            this.clTenHS.Name = "clTenHS";
+            this.clTenHS.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // clTenLopHC
+            // 
+            this.clTenLopHC.DataPropertyName = "TenLopHC";
+            this.clTenLopHC.HeaderText = "Tên Lớp HC";
+            this.clTenLopHC.MinimumWidth = 22;
+            this.clTenLopHC.Name = "clTenLopHC";
+            this.clTenLopHC.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // clDiaChi
+            // 
+            this.clDiaChi.DataPropertyName = "DiaChi";
+            dataGridViewCellStyle10.NullValue = "(Trống)";
+            this.clDiaChi.DefaultCellStyle = dataGridViewCellStyle10;
+            this.clDiaChi.HeaderText = "Địa chỉ";
+            this.clDiaChi.MinimumWidth = 22;
+            this.clDiaChi.Name = "clDiaChi";
+            this.clDiaChi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // clTenChaMe
+            // 
+            this.clTenChaMe.DataPropertyName = "TenChaMe";
+            this.clTenChaMe.HeaderText = "Tên cha mẹ";
+            this.clTenChaMe.MinimumWidth = 22;
+            this.clTenChaMe.Name = "clTenChaMe";
+            this.clTenChaMe.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // clSDT
+            // 
+            this.clSDT.DataPropertyName = "SDTChaMe";
+            this.clSDT.HeaderText = "SDT Cha Mẹ";
+            this.clSDT.MinimumWidth = 22;
+            this.clSDT.Name = "clSDT";
+            this.clSDT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // clSoluongDK
+            // 
+            this.clSoluongDK.DataPropertyName = "SoluongLopDaDangKy";
+            dataGridViewCellStyle11.NullValue = "Chưa có đăng ký nào";
+            this.clSoluongDK.DefaultCellStyle = dataGridViewCellStyle11;
+            this.clSoluongDK.HeaderText = "Đã Đăng ký";
+            this.clSoluongDK.MinimumWidth = 22;
+            this.clSoluongDK.Name = "clSoluongDK";
+            this.clSoluongDK.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // clTinhTrangHoaDon
+            // 
+            this.clTinhTrangHoaDon.DataPropertyName = "TinhTrang";
+            dataGridViewCellStyle12.NullValue = "không có HĐ";
+            this.clTinhTrangHoaDon.DefaultCellStyle = dataGridViewCellStyle12;
+            this.clTinhTrangHoaDon.HeaderText = "Tình Trạng";
+            this.clTinhTrangHoaDon.MinimumWidth = 22;
+            this.clTinhTrangHoaDon.Name = "clTinhTrangHoaDon";
+            this.clTinhTrangHoaDon.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // adgvSearchBar
             // 
@@ -261,82 +347,22 @@
             this.btnPickStd.Text = "Chọn Học Sinh";
             this.btnPickStd.Click += new System.EventHandler(this.btnPickStd_Click);
             // 
-            // clHSSTT
+            // lbnThongBao
             // 
-            this.clHSSTT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.clHSSTT.HeaderText = "STT";
-            this.clHSSTT.MinimumWidth = 22;
-            this.clHSSTT.Name = "clHSSTT";
-            this.clHSSTT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.clHSSTT.Width = 50;
-            // 
-            // clMaHS
-            // 
-            this.clMaHS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.clMaHS.DataPropertyName = "MaHS";
-            this.clMaHS.HeaderText = "Mã HS";
-            this.clMaHS.MinimumWidth = 22;
-            this.clMaHS.Name = "clMaHS";
-            this.clMaHS.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.clMaHS.Width = 62;
-            // 
-            // clTenHS
-            // 
-            this.clTenHS.DataPropertyName = "TenHS";
-            this.clTenHS.HeaderText = "Tên HS";
-            this.clTenHS.MinimumWidth = 22;
-            this.clTenHS.Name = "clTenHS";
-            this.clTenHS.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // clTenLopHC
-            // 
-            this.clTenLopHC.DataPropertyName = "TenLopHC";
-            this.clTenLopHC.HeaderText = "Tên Lớp HC";
-            this.clTenLopHC.MinimumWidth = 22;
-            this.clTenLopHC.Name = "clTenLopHC";
-            this.clTenLopHC.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // clDiaChi
-            // 
-            this.clDiaChi.DataPropertyName = "DiaChi";
-            dataGridViewCellStyle1.NullValue = "(Trống)";
-            this.clDiaChi.DefaultCellStyle = dataGridViewCellStyle1;
-            this.clDiaChi.HeaderText = "Địa chỉ";
-            this.clDiaChi.MinimumWidth = 22;
-            this.clDiaChi.Name = "clDiaChi";
-            this.clDiaChi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // clTenChaMe
-            // 
-            this.clTenChaMe.DataPropertyName = "TenChaMe";
-            this.clTenChaMe.HeaderText = "Tên cha mẹ";
-            this.clTenChaMe.MinimumWidth = 22;
-            this.clTenChaMe.Name = "clTenChaMe";
-            this.clTenChaMe.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // clSDT
-            // 
-            this.clSDT.DataPropertyName = "SDTChaMe";
-            this.clSDT.HeaderText = "SDT Cha Mẹ";
-            this.clSDT.MinimumWidth = 22;
-            this.clSDT.Name = "clSDT";
-            this.clSDT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // clSoluongDK
-            // 
-            this.clSoluongDK.DataPropertyName = "SoluongLopDaDangKy";
-            dataGridViewCellStyle2.NullValue = "Chưa có đăng ký nào";
-            this.clSoluongDK.DefaultCellStyle = dataGridViewCellStyle2;
-            this.clSoluongDK.HeaderText = "Đã Đăng ký";
-            this.clSoluongDK.MinimumWidth = 22;
-            this.clSoluongDK.Name = "clSoluongDK";
-            this.clSoluongDK.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.lbnThongBao.AutoSize = true;
+            this.lbnThongBao.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbnThongBao.ForeColor = System.Drawing.Color.Red;
+            this.lbnThongBao.Location = new System.Drawing.Point(508, 39);
+            this.lbnThongBao.Name = "lbnThongBao";
+            this.lbnThongBao.Size = new System.Drawing.Size(0, 23);
+            this.lbnThongBao.TabIndex = 10;
             // 
             // UC_DKHOC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.Controls.Add(this.lbnThongBao);
             this.Controls.Add(this.btnChiTietDangKy);
             this.Controls.Add(this.btnChiTietHoaDon);
             this.Controls.Add(this.btnDangKyHoc);
@@ -384,5 +410,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clTenChaMe;
         private System.Windows.Forms.DataGridViewTextBoxColumn clSDT;
         private System.Windows.Forms.DataGridViewTextBoxColumn clSoluongDK;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clTinhTrangHoaDon;
+        private System.Windows.Forms.Label lbnThongBao;
     }
 }

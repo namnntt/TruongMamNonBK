@@ -19,11 +19,13 @@ namespace GUI
     {
         DataRowView _hs;
         DataTable _dt;
+        DataTable _hd;
 
-        public frmChiTietDangKy(DataTable dt, DataRowView hs)
+        public frmChiTietDangKy(DataTable dt, DataRowView hs, DataTable hd)
         {
             _hs = hs;
             _dt = dt;
+            _hd = hd;
             InitializeComponent();
         }
 
@@ -52,15 +54,19 @@ namespace GUI
                                                   select row).ToList();
             foreach (DataGridViewRow row in selectedRows)
             {
-                DangKyHocServices.HuyDangKyhoc(txtMaHs.Text, row.Cells[2].Value.ToString());
-                CurrencyManager currencyManager1 = (CurrencyManager)BindingContext[adgvDanhSachLopDangDangKy.DataSource];
-                currencyManager1.SuspendBinding();
-                row.Visible = false;
-                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells["clCheck"];
-                chk.Value = chk.FalseValue;
-                currencyManager1.ResumeBinding();
+                if ((bool)_hd.Rows[0][2] == false)
+                {
+                    DangKyHocServices.HuyDangKyhoc(txtMaHs.Text, row.Cells[2].Value.ToString());
+
+                    CurrencyManager currencyManager1 = (CurrencyManager)BindingContext[adgvDanhSachLopDangDangKy.DataSource];
+                    currencyManager1.SuspendBinding();
+                    row.Visible = false;
+                    DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells["clCheck"];
+                    chk.Value = chk.FalseValue;
+                    currencyManager1.ResumeBinding();
+                }
             }
-            if (selectedRows.Count > 0)
+            if (selectedRows.Count > 0 && (bool)_hd.Rows[0][2] == false)
             {
                 MessageBox.Show($"Hủy Thành công {selectedRows.Count.ToString()} Lớp");
                 UC_DKHOC.Instance.onload();
@@ -69,7 +75,10 @@ namespace GUI
                 UC_HuyDKHoc.Instance.onload();
                 UC_HuyDKHoc.Instance.btnPickStd.PerformClick();
 
-
+            }
+            else
+            {
+                MessageBox.Show("Xin lỗi HĐ đã được in bạn không thể hủy đăng ký \n Nếu vẫn muốn Hủy ĐK Liên hệ bộ phận IT", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

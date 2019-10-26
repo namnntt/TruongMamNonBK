@@ -46,13 +46,15 @@ namespace GUI.UC
             adgvHocSinhDuDK.FilterAndSortEnabled = true;
             adgvHocSinhDuDK.DisableFilterAndSort(clHSSTT);
             DataTable dt = HocSinhServices.LayDanhSachHocSinh();
+            lbnThongBao.Text = $"Nghiệp vụ Đăng ký học Tháng {DateTime.Now.Month.ToString()}/{DateTime.Now.Year.ToString()}";
             bdHocSinhDuDieuKien.DataSource = dt;
-            if (adgvHocSinhDuDK.Columns.Count == 10)
+            if (adgvHocSinhDuDK.Columns.Count == 11)
             {
                 adgvHocSinhDuDK.Columns["NgaySinh"].DisplayIndex = 4;
                 adgvHocSinhDuDK.Columns["NgaySinh"].HeaderText = "Ngày Sinh";
                 adgvHocSinhDuDK.Columns["NgayNhapHoc"].HeaderText = "Ngày Nhập học";
                 adgvHocSinhDuDK.Columns["NgayNhapHoc"].DefaultCellStyle.Format = "d";
+                adgvHocSinhDuDK.Columns["NgayNhapHoc"].DisplayIndex = 8;
                 adgvSearchBar.SetColumns(adgvHocSinhDuDK.Columns);
                 
             }
@@ -208,30 +210,60 @@ namespace GUI.UC
 
         private void btnChiTietHoaDon_Click(object sender, EventArgs e)
         {
-            
             DataTable hd = HoaDonServices.LayDanhSachHoaDonTheoMaHocSinh(hs["MaHS"].ToString());
-            if (dthsldk.Rows.Count > 0)
+            if ((bool)hd.Rows[0][2] == false)
             {
-                using (frmHoaDon frm = new frmHoaDon(dthsldk, hs, hd))
+                DialogResult result =  MessageBox.Show("nếu thực hiện in hóa đơn bạn sẽ không thể hủy đăng ký. bạn Phải chắc chắn đăng ký đã chính xác", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dthsldk.Rows.Count > 0 && result == DialogResult.Yes)
                 {
-                    frm.ShowDialog();
+                    using (frmHoaDon frm = new frmHoaDon(dthsldk, hs, hd))
+                    {
+                        frm.ShowDialog();
+                    }
                 }
-                
             }
+            else
+            {
+                if (dthsldk.Rows.Count > 0)
+                {
+                    using (frmHoaDon frm = new frmHoaDon(dthsldk, hs, hd))
+                    {
+                        frm.ShowDialog();
+                    }
+                }
+            }
+            
+
         }
 
         private void btnChiTietDangKy_Click(object sender, EventArgs e)
         {
-            
+            DataTable hd = HoaDonServices.LayDanhSachHoaDonTheoMaHocSinh(hs["MaHS"].ToString());
+
 
             if (dthsldk.Rows.Count > 0)
             {
-                using (frmChiTietDangKy frm = new frmChiTietDangKy(dthsldk, hs))
+                using (frmChiTietDangKy frm = new frmChiTietDangKy(dthsldk, hs, hd))
                 {
                     frm.ShowDialog();
                 }
 
             }
+        }
+
+        private void adgvHocSinhDuDK_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            var grid = (DataGridView)sender;
+            if (grid.Columns[e.ColumnIndex].Name == "clTinhTrangHoaDon")
+            {
+                if (e.Value is bool)
+                {
+                    bool value = (bool)e.Value;
+                    e.Value = (value) ? "Đã in hóa đơn" : "Chưa in hóa đơn";
+                    e.FormattingApplied = true;
+                }
+            }
+
         }
     }
 }

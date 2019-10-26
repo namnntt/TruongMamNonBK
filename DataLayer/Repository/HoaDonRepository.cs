@@ -23,6 +23,21 @@ namespace DataLayer.Repository
             }
         }
 
+        public int UpdateHD(string MaHD)
+        {
+            using (MamNonBK context = new MamNonBK())
+            {
+                using (IDbConnection db = new SqlConnection(context.Database.Connection.ConnectionString))
+                {
+                    var p = new DynamicParameters();
+                    p.Add("@MaHD", MaHD);
+                    return db.Execute("UpdateTinhTrangHoaDon", p, commandType: CommandType.StoredProcedure);
+
+                }
+
+            }
+        }
+
         public void XoaDuLieuHoaDon(string MaHD)
         {
             using (MamNonBK context = new MamNonBK())
