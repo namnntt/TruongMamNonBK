@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
             DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SideBySideBarSeriesView sideBySideBarSeriesView1 = new DevExpress.XtraCharts.SideBySideBarSeriesView();
+            DevExpress.XtraCharts.SeriesPoint seriesPoint1 = new DevExpress.XtraCharts.SeriesPoint(0D, new object[] {
+            ((object)(0D))});
+            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.ChartTitle chartTitle1 = new DevExpress.XtraCharts.ChartTitle();
             this.chrBaoCaoSoLuongDangky = new DevExpress.XtraCharts.ChartControl();
             this.datdrawrtChart = new System.Windows.Forms.DateTimePicker();
@@ -38,10 +41,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnDuLieu = new DevExpress.XtraEditors.SimpleButton();
+            this.bdbaocao = new System.Windows.Forms.BindingSource(this.components);
+            this.bdnavi = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.chrBaoCaoSoLuongDangky)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdbaocao)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdnavi)).BeginInit();
             this.SuspendLayout();
             // 
             // chrBaoCaoSoLuongDangky
@@ -53,13 +60,15 @@
             this.chrBaoCaoSoLuongDangky.Legend.Name = "Default Legend";
             this.chrBaoCaoSoLuongDangky.Location = new System.Drawing.Point(0, 108);
             this.chrBaoCaoSoLuongDangky.Name = "chrBaoCaoSoLuongDangky";
-            series1.Name = "Số Lượng đăng ký";
-            sideBySideBarSeriesView1.Border.Thickness = 3;
-            sideBySideBarSeriesView1.Border.Visibility = DevExpress.Utils.DefaultBoolean.True;
-            sideBySideBarSeriesView1.ColorEach = true;
-            series1.View = sideBySideBarSeriesView1;
+            series1.DataSource = this.bdnavi;
+            series1.Name = "Tháng 9";
+            series1.Points.AddRange(new DevExpress.XtraCharts.SeriesPoint[] {
+            seriesPoint1});
+            series2.DataSource = this.bdbaocao;
+            series2.Name = "Tháng 10";
             this.chrBaoCaoSoLuongDangky.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series1};
+        series1,
+        series2};
             this.chrBaoCaoSoLuongDangky.Size = new System.Drawing.Size(1117, 437);
             this.chrBaoCaoSoLuongDangky.TabIndex = 0;
             chartTitle1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -134,9 +143,11 @@
             this.Name = "UC_ThongKe";
             this.Size = new System.Drawing.Size(1117, 545);
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chrBaoCaoSoLuongDangky)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdbaocao)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdnavi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,5 +161,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private DevExpress.XtraEditors.SimpleButton btnDuLieu;
+        private System.Windows.Forms.BindingSource bdbaocao;
+        private System.Windows.Forms.BindingSource bdnavi;
     }
 }

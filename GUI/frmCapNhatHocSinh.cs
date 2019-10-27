@@ -80,5 +80,22 @@ namespace GUI
                 MessageBox.Show("Đã cập nhật thành công");
             }
         }
+
+        private void txtSDTLienHe_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtSDTLienHe.Text.PhoneVietNamValidation() || txtSDTLienHe.Text.Length < 10)
+            {
+                e.Cancel = true;
+                txtSDTLienHe.Focus();
+                errorProvider.SetError(txtSDTLienHe, "Nhập sai định dạng SĐT");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider.SetError(txtSDTLienHe, null);
+            }
+
+
+        }
     }
 }

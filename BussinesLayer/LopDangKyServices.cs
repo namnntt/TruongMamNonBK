@@ -144,7 +144,7 @@ namespace BussinesLayer
                         select new
                         {
                             //IDLop.ID,
-                            Lop.TenLopDangKy,
+                            TenVaMaLop = Lop.MaLopDangKy +" - "+ Lop.TenLopDangKy + " Học thứ " + Lop.LichHoc,
                             //Lop.CLB1.TenCLB,
                             //Lop.LichHoc,
                             //Lop.NamHoc,

@@ -34,10 +34,18 @@ namespace GUI.UC
         {
             if (cbChart.SelectedIndex == 0)
             {
-                chrBaoCaoSoLuongDangky.Series["Số Lượng đăng ký"].DataSource = LopDangKyServices.DanhsachLopDangKyVaSoHocSinh(datdrawrtChart.Value.Year, datdrawrtChart.Value.Month);
-                chrBaoCaoSoLuongDangky.Series["Số Lượng đăng ký"].ArgumentScaleType = ScaleType.Auto;
-                chrBaoCaoSoLuongDangky.Series["Số Lượng đăng ký"].ArgumentDataMember = "TenLopDangKy";
-                chrBaoCaoSoLuongDangky.Series["Số Lượng đăng ký"].ValueDataMembers.AddRange(new string[] { "Count" });
+                bdbaocao.DataSource = LopDangKyServices.DanhsachLopDangKyVaSoHocSinh(datdrawrtChart.Value.Year, datdrawrtChart.Value.Month);
+                bdnavi.DataSource = LopDangKyServices.DanhsachLopDangKyVaSoHocSinh(2019, 9);
+                chrBaoCaoSoLuongDangky.Series["Tháng 9"].ArgumentScaleType = ScaleType.Auto;
+                chrBaoCaoSoLuongDangky.Series["Tháng 10"].ArgumentScaleType = ScaleType.Auto;
+                chrBaoCaoSoLuongDangky.Series["Tháng 9"].ArgumentDataMember = "TenVaMaLop";
+                chrBaoCaoSoLuongDangky.Series["Tháng 10"].ArgumentDataMember = "TenVaMaLop";
+
+                chrBaoCaoSoLuongDangky.Series["Tháng 9"].ValueDataMembers.AddRange(new string[] { "Count" });
+                chrBaoCaoSoLuongDangky.Series["Tháng 10"].ValueDataMembers.AddRange(new string[] { "Count" });
+
+
+
                 //ChartTitle chartTitle1 = new ChartTitle();
                 //chartTitle1.Text = $"Báo cáo thống kế số lượng đăng ký theo lớp trong tháng {datdrawrtChart.Value.Month.ToString()}/{datdrawrtChart.Value.Year.ToString()}";
                 //chrBaoCaoSoLuongDangky.Titles.Add(chartTitle1);

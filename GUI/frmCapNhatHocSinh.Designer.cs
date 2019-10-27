@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,6 +43,8 @@
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
             this.btnThemHS = new DevExpress.XtraEditors.SimpleButton();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -90,6 +93,7 @@
             // txtTenHS
             // 
             this.txtTenHS.Location = new System.Drawing.Point(125, 57);
+            this.txtTenHS.MaxLength = 255;
             this.txtTenHS.Name = "txtTenHS";
             this.txtTenHS.Size = new System.Drawing.Size(446, 21);
             this.txtTenHS.TabIndex = 0;
@@ -97,6 +101,7 @@
             // txtTenChaMe
             // 
             this.txtTenChaMe.Location = new System.Drawing.Point(125, 132);
+            this.txtTenChaMe.MaxLength = 255;
             this.txtTenChaMe.Name = "txtTenChaMe";
             this.txtTenChaMe.Size = new System.Drawing.Size(446, 21);
             this.txtTenChaMe.TabIndex = 1;
@@ -104,9 +109,11 @@
             // txtSDTLienHe
             // 
             this.txtSDTLienHe.Location = new System.Drawing.Point(125, 169);
+            this.txtSDTLienHe.MaxLength = 10;
             this.txtSDTLienHe.Name = "txtSDTLienHe";
             this.txtSDTLienHe.Size = new System.Drawing.Size(446, 21);
             this.txtSDTLienHe.TabIndex = 2;
+            this.txtSDTLienHe.Validating += new System.ComponentModel.CancelEventHandler(this.txtSDTLienHe_Validating);
             // 
             // cbLopHC
             // 
@@ -138,6 +145,7 @@
             // txtDiaChi
             // 
             this.txtDiaChi.Location = new System.Drawing.Point(125, 205);
+            this.txtDiaChi.MaxLength = 255;
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(446, 21);
             this.txtDiaChi.TabIndex = 3;
@@ -165,6 +173,10 @@
             this.btnThemHS.Text = "Thêm HS";
             this.btnThemHS.Click += new System.EventHandler(this.btnThemHS_Click);
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // frmCapNhatHocSinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -191,6 +203,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm Học Sinh";
             this.Load += new System.EventHandler(this.frmCapNhatHocSinh_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,5 +225,6 @@
         public System.Windows.Forms.TextBox txtSDTLienHe;
         public System.Windows.Forms.ComboBox cbLopHC;
         public System.Windows.Forms.TextBox txtDiaChi;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

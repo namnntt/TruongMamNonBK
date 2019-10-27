@@ -145,6 +145,7 @@
             // 
             this.adgvDanhSachLopDangDangKy.AllowUserToAddRows = false;
             this.adgvDanhSachLopDangDangKy.AllowUserToDeleteRows = false;
+            this.adgvDanhSachLopDangDangKy.AllowUserToResizeRows = false;
             this.adgvDanhSachLopDangDangKy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.adgvDanhSachLopDangDangKy.AutoGenerateColumns = false;
