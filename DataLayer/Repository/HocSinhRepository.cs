@@ -23,7 +23,7 @@ namespace DataLayer.Repository
             }
         }
 
-        public void ThemHocSinh(string TenHS, DateTime NgaySinh, string TenChaMe, string SDTChaMe, string DiaChi, string LopHC)
+        public int ThemHocSinh(string TenHS, DateTime NgaySinh, string TenChaMe, string SDTChaMe, string DiaChi, string LopHC)
         {
             using (MamNonBK context = new MamNonBK())
             {
@@ -35,7 +35,7 @@ namespace DataLayer.Repository
                     p.Add("@SDTChaMe", SDTChaMe);
                     p.Add("@DiaChi", DiaChi);
                     p.Add("@LopHC", LopHC);
-                    db.Execute("ThemHocSinh", p, commandType: CommandType.StoredProcedure);
+                   return db.Execute("ThemHocSinh", p, commandType: CommandType.StoredProcedure);
                 }
             }
         }

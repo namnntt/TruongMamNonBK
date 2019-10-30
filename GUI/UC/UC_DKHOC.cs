@@ -15,8 +15,8 @@ namespace GUI.UC
 {
     public partial class UC_DKHOC : DevExpress.XtraEditors.XtraUserControl
     {
-        
-        string MaHocSinh = "null";
+
+        string MaHocSinh = null;
         DataTable dthsldk = new DataTable();
         DataRowView hs;
         private static UC_DKHOC _instance;

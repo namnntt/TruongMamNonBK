@@ -113,7 +113,6 @@
             this.txtSDTLienHe.Name = "txtSDTLienHe";
             this.txtSDTLienHe.Size = new System.Drawing.Size(446, 21);
             this.txtSDTLienHe.TabIndex = 2;
-            this.txtSDTLienHe.Validating += new System.ComponentModel.CancelEventHandler(this.txtSDTLienHe_Validating);
             // 
             // cbLopHC
             // 

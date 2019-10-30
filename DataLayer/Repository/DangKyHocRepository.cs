@@ -39,6 +39,18 @@ namespace DataLayer.Repository
             }
         }
 
+        public List<DangKyHoc> GetAllsCurrent()
+        {
+            using (MamNonBK db = new MamNonBK())
+            {
+                var DsDKhocThangHienTai = from dkhoc in db.DangKyHocs.AsNoTracking()
+                              where (dkhoc.NgayDangKy.Year == DateTime.Now.Year && dkhoc.NgayDangKy.Month == DateTime.Now.Month)
+                              select dkhoc;
+                return DsDKhocThangHienTai.ToList();
+                              
+            }
+        }
+
         public void HuyDangKy(string MaHS, string MaLopDangKy)
         {
             using (MamNonBK context = new MamNonBK())

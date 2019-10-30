@@ -86,13 +86,15 @@ namespace GUI
             List<LopHanhChinh> dsLop = LopHCServices.LayDanhSachLopHanhChinh();
             int[] RowIndexData = gridView1.GetSelectedRows();
             int DemSoDongBiSai = 0;
-            if(RowIndexData.Length > 0)
+            int SoHocSinhDaThem = 0;
+            if (RowIndexData.Length > 0)
             {
                 for(int i =0; i< RowIndexData.Length; i++)
                 {
                     int selectRownHandle = RowIndexData[i];
                     DataRow gv = gridView1.GetDataRow(selectRownHandle);
                     string MaLopHC = null;
+                    
                     foreach (LopHanhChinh temp in dsLop)
                     {
                         if (string.Compare(gv[5].ToString(), temp.TenLopHC, true) == 0)
@@ -103,7 +105,7 @@ namespace GUI
                     }
                     if (!string.IsNullOrEmpty(MaLopHC))
                     {
-                        HocSinhServices.ThemHocSinhVaoHeThong(gv[0].ToString(), Convert.ToDateTime(gv[1].ToString()), gv[2].ToString(), gv[3].ToString(), gv[4].ToString(), MaLopHC);
+                        SoHocSinhDaThem += HocSinhServices.ThemHocSinhVaoHeThong(gv[0].ToString(), Convert.ToDateTime(gv[1].ToString()), gv[2].ToString(), gv[3].ToString(), gv[4].ToString(), MaLopHC);
                     }
                     else
                     {
@@ -126,7 +128,7 @@ namespace GUI
             }
             else
             {
-                if (RowIndexData.Length > 0)
+                if (RowIndexData.Length > 0 && SoHocSinhDaThem > 0)
                 {
                     MessageBox.Show("Thêm hoàn tất toàn bộ dòng đã chọn");
                     UC_CapNhatHocSinh.Instance.onload();

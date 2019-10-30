@@ -12,5 +12,6 @@ namespace DataLayer.InterFace
         List<DangKyHoc> GetAlls();
         void DangKyMoi(string MaHS, string MaLopDangKy);
         void HuyDangKy(string MaHS, string MaLopDangKy);
+        List<DangKyHoc> GetAllsCurrent();
     }
 }

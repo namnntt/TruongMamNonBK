@@ -27,8 +27,8 @@ namespace BussinesLayer
         }
         public static DataTable LayDanhSachHocSinh()
         {
-            List<DangKyHoc> DsDkHoc = DKHocRepo.GetAlls();
-            List<HoaDon> DsHoaDon = HDRepo.GetAlls();
+            List<DangKyHoc> DsDkHoc = DKHocRepo.GetAllsCurrent();
+            List<HoaDon> DsHoaDon = HDRepo.GetAllCurrent();
             List<HocSinh> dsHS = HocSinhRepo.GetAlls();
             var dsHSvaSoLopDaDangKy = from hs in dsHS
                                       join hd in DsHoaDon on hs.MaHS equals hd.HocSinh
@@ -83,9 +83,9 @@ namespace BussinesLayer
         }
         public static DataTable LayHocSinhDaDangKyTheoMaLopDangKy(string MaLopDangKy)
         {
-            List<HoaDon> dsHD = HDRepo.GetAlls();
+            List<HoaDon> dsHD = HDRepo.GetAllCurrent();
             List<HocSinh> dsHS = HocSinhRepo.GetAlls();
-            List<DangKyHoc> dsDK = DKHocRepo.GetAlls();
+            List<DangKyHoc> dsDK = DKHocRepo.GetAllsCurrent();
             var dsHSDaDK = (from hs in dsHS
                            join hd in dsHD on hs.MaHS equals hd.HocSinh
                            join dk in dsDK on hd.MaHD equals dk.HoaDon
@@ -107,7 +107,7 @@ namespace BussinesLayer
         {
             List<HoaDon> dsHD = HDRepo.GetAlls();
             List<HocSinh> dsHS = HocSinhRepo.GetAlls();
-            List<DangKyHoc> dsDK = DKHocRepo.GetAlls();
+            List<DangKyHoc> dsDK = DKHocRepo.GetAllsCurrent();
             var dsHSDKThangTruoc = (from hs in dsHS
                              join hd in dsHD on hs.MaHS equals hd.HocSinh
                              join dk in dsDK on hd.MaHD equals dk.HoaDon
@@ -148,9 +148,9 @@ namespace BussinesLayer
                               select dk;
             return dsLopDangKy.ToList();
         }
-        public static void ThemHocSinhVaoHeThong(string TenHS, DateTime NgaySinh, string TenChaMe, string SDT, string DiaChi, string LopHC)
+        public static int ThemHocSinhVaoHeThong(string TenHS, DateTime NgaySinh, string TenChaMe, string SDT, string DiaChi, string LopHC)
         {
-            HocSinhRepo.ThemHocSinh(TenHS, NgaySinh, TenChaMe, SDT, DiaChi, LopHC);
+            return HocSinhRepo.ThemHocSinh(TenHS, NgaySinh, TenChaMe, SDT, DiaChi, LopHC);
         }
         public static int UpdateTTHocSinh(string MaHs, string TenHS, DateTime NgaySinh, string TenchaMe, string SDTChame, string Diachi, string LopHC)
         {

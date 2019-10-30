@@ -38,23 +38,73 @@ namespace GUI
             {
                 cbLopHC.SelectedIndex = cbLopHC.FindStringExact(_TenLopHC);
             }
+            foreach (TextBox tb in this.Controls.OfType<TextBox>())
+            {
+                tb.TextChanged += Tb_TextChanged;
+            }
+        }
+
+        private void Tb_TextChanged(object sender, EventArgs e)
+        {
+            TextBox tb = sender as TextBox;
+            switch(tb.Name)
+            {
+                case "txtTenHS":
+                    {
+                        if (tb.Text.EmailValidation() || tb.Text.Length > 255)
+                        {
+                            errorProvider.SetError(tb, "Sai dinh dang Email");
+                        }
+                        else errorProvider.SetError(tb, null);
+                        break;
+                    }
+                case "txtSDTLienHe":
+                    {
+                        if (tb.Text.PhoneVietNamValidation() || tb.Text.Length > 16)
+                        {
+                            errorProvider.SetError(tb, "Sai dinh dang SDT roi");
+                        }
+                        else errorProvider.SetError(tb, null);
+                        break;
+                    }
+                default:
+                    errorProvider.SetError(tb, null);
+                    break;
+            }
         }
 
         private void btnThemHS_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtDiaChi.Text) || !string.IsNullOrEmpty(txtSDTLienHe.Text) || !string.IsNullOrEmpty(txtTenChaMe.Text) || !string.IsNullOrEmpty(txtTenHS.Text))
+            bool CheckValidation = true ;
+            foreach (TextBox tb in this.Controls.OfType<TextBox>())
             {
-                HocSinhServices.ThemHocSinhVaoHeThong(txtTenHS.Text, datNgaySinh.Value, txtTenChaMe.Text, txtSDTLienHe.Text, txtDiaChi.Text, cbLopHC.SelectedValue.ToString());
-                UC_CapNhatHocSinh.Instance.onload();
-                UC_DKHOC.Instance.onload();
-                MessageBox.Show("Thêm thành công");
-                txtTenHS.Clear();
-                txtDiaChi.Clear();
-                txtSDTLienHe.Clear();
-                txtTenChaMe.Clear();
+                if(!string.IsNullOrEmpty(errorProvider.GetError(tb)) || string.IsNullOrEmpty(tb.Text))
+                {
+                    CheckValidation = false;
+                    break;
+                }
+
             }
-            else MessageBox.Show("Không được Có trường bị để trống");
-            
+            if (CheckValidation)
+            {
+                if (HocSinhServices.ThemHocSinhVaoHeThong(txtTenHS.Text, datNgaySinh.Value, txtTenChaMe.Text, txtSDTLienHe.Text, txtDiaChi.Text, cbLopHC.SelectedValue.ToString()) > 0)
+                {
+                    UC_CapNhatHocSinh.Instance.onload();
+                    UC_DKHOC.Instance.onload();
+                    MessageBox.Show("Thêm thành công");
+                    txtTenHS.Clear();
+                    txtDiaChi.Clear();
+                    txtSDTLienHe.Clear();
+                    txtTenChaMe.Clear();
+                    errorProvider.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi CSDL");
+                }
+            }
+            else MessageBox.Show("Không được Có trường bị để trống hoặc sai định dạng");
+
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -67,7 +117,7 @@ namespace GUI
             }
             else
             {
-                MessageBox.Show("các trường không được để trống");
+                MessageBox.Show("các trường không được để trống hoặc sai định dạng");
             }
             if (change == 0)
             {
@@ -81,21 +131,6 @@ namespace GUI
             }
         }
 
-        private void txtSDTLienHe_Validating(object sender, CancelEventArgs e)
-        {
-            if (txtSDTLienHe.Text.PhoneVietNamValidation() || txtSDTLienHe.Text.Length < 10)
-            {
-                e.Cancel = true;
-                txtSDTLienHe.Focus();
-                errorProvider.SetError(txtSDTLienHe, "Nhập sai định dạng SĐT");
-            }
-            else
-            {
-                e.Cancel = false;
-                errorProvider.SetError(txtSDTLienHe, null);
-            }
-
-
-        }
+        
     }
 }

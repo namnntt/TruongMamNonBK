@@ -28,5 +28,13 @@ namespace BussinesLayer
         {
             AccRepo.DoiMatKhau(MaGiaoVu, MatKhauMoi);
         }
+        public static int ThayDoiThongTinTaiKhoan(string MaGiaoVu, string TenGiaoVu, string SDT, string Email, string TaiKhoan)
+        {
+            return AccRepo.DoiThongTinTaiKhoan(MaGiaoVu, TenGiaoVu, SDT, Email, TaiKhoan);
+        }
+        public static GiaoVu LayThongTinGiaoVuTheoMa(string MaGV)
+        {
+            return AccRepo.LayThongTinGiaoVuBangMaGiaoVu(MaGV);
+        }
     }
 }

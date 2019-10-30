@@ -31,9 +31,9 @@ namespace BussinesLayer
         public static DataTable LayDanhSachLopDangKy(string MaHS)
         {
             List<LopDangKy> dslopDK = LopDangKyRepo.LayDanhSachLopDangKy();
-            List<HoaDon> dsHD = dsHDRepo.GetAlls();
+            List<HoaDon> dsHD = dsHDRepo.GetAllCurrent();
             List<HocSinh> dsHS = hsRepo.GetAlls();
-            List<DangKyHoc> dsDK = dkhocRepo.GetAlls();
+            List<DangKyHoc> dsDK = dkhocRepo.GetAllsCurrent();
             var dsLDKMaHSDaThamGiaTrongThang = from ldk in dslopDK
                                                join dk in dsDK on ldk.MaLopDangKy equals dk.LopDangKy
                                                join hd in dsHD on dk.HoaDon equals hd.MaHD
@@ -67,7 +67,7 @@ namespace BussinesLayer
         }
         public static DataTable cacLopcoHocSinhdangKy()
         {
-            List<DangKyHoc> dsdkHoc = dkhocRepo.GetAlls();
+            List<DangKyHoc> dsdkHoc = dkhocRepo.GetAllsCurrent();
             List<LopDangKy> dslDK = LopDangKyRepo.LayDanhSachLopDangKy();
             var IDlopVaCount = from Dk in dsdkHoc
                               group Dk by new
@@ -100,9 +100,9 @@ namespace BussinesLayer
         public static DataTable LayDanhCacLopDangKyCuaMotHocSinh(string MaHS)
         {
             List<LopDangKy> dslopDK = LopDangKyRepo.LayDanhSachLopDangKy();
-            List<HoaDon> dsHD = dsHDRepo.GetAlls();
+            List<HoaDon> dsHD = dsHDRepo.GetAllCurrent();
             List<HocSinh> dsHS = hsRepo.GetAlls();
-            List<DangKyHoc> dsDK = dkhocRepo.GetAlls();
+            List<DangKyHoc> dsDK = dkhocRepo.GetAllsCurrent();
             var dsLDKMaHSDaThamGiaTrongThang = from ldk in dslopDK
                                                join dk in dsDK on ldk.MaLopDangKy equals dk.LopDangKy
                                                join hd in dsHD on dk.HoaDon equals hd.MaHD

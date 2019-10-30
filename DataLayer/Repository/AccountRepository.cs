@@ -42,6 +42,23 @@ namespace DataLayer.Repository
             }
         }
 
+        public int DoiThongTinTaiKhoan(string MaGiaoVU, string TenGiaoVu, string SDT, string Email, string TaiKhoan)
+        {
+            using (MamNonBK context = new MamNonBK())
+            {
+                using (IDbConnection db = new SqlConnection(context.Database.Connection.ConnectionString))
+                {
+                    var p = new DynamicParameters();
+                    p.Add("@TenGiaoVu", TenGiaoVu);
+                    p.Add("@Email", Email);
+                    p.Add("@DienThoai", SDT);
+                    p.Add("@TaiKhoan", TaiKhoan);
+                    p.Add("@MaGiaoVu", MaGiaoVU);
+                    return db.Execute("UpdateTTGiaoVu", p, commandType: CommandType.StoredProcedure);
+                }
+            }
+        }
+
         public GiaoVu LayThongtinGiaoVu(string TaiKhoan)
         {
             
@@ -53,6 +70,17 @@ namespace DataLayer.Repository
                     return TTGiaoVu.ToList().FirstOrDefault();
                
                 }
+        }
+
+        public GiaoVu LayThongTinGiaoVuBangMaGiaoVu(string MaGiaoVu)
+        {
+            using (MamNonBK context = new MamNonBK())
+            {
+                var TTGiaoVu = from gv in context.GiaoVus.AsNoTracking()
+                               where MaGiaoVu == gv.MaGV
+                               select gv;
+                return TTGiaoVu.ToList().FirstOrDefault();
+            }
         }
     }
 }

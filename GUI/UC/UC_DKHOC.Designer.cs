@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_DKHOC));
             this.adgvDanhSachLop = new Zuby.ADGV.AdvancedDataGridView();
             this.clLDKSTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -90,12 +90,12 @@
             this.CLB});
             this.adgvDanhSachLop.DataSource = this.bdLopDangKy;
             this.adgvDanhSachLop.FilterAndSortEnabled = true;
-            this.adgvDanhSachLop.Location = new System.Drawing.Point(27, 306);
+            this.adgvDanhSachLop.Location = new System.Drawing.Point(27, 318);
             this.adgvDanhSachLop.MultiSelect = false;
             this.adgvDanhSachLop.Name = "adgvDanhSachLop";
             this.adgvDanhSachLop.RowHeadersVisible = false;
             this.adgvDanhSachLop.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.adgvDanhSachLop.Size = new System.Drawing.Size(1158, 177);
+            this.adgvDanhSachLop.Size = new System.Drawing.Size(1158, 165);
             this.adgvDanhSachLop.TabIndex = 0;
             this.adgvDanhSachLop.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.adgvDanhSachLop_CellContentClick);
             this.adgvDanhSachLop.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.adgvDanhSachLop_RowPostPaint);
@@ -203,7 +203,7 @@
             this.adgvHocSinhDuDK.Name = "adgvHocSinhDuDK";
             this.adgvHocSinhDuDK.RowHeadersVisible = false;
             this.adgvHocSinhDuDK.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.adgvHocSinhDuDK.Size = new System.Drawing.Size(1158, 172);
+            this.adgvHocSinhDuDK.Size = new System.Drawing.Size(1158, 185);
             this.adgvHocSinhDuDK.TabIndex = 4;
             this.adgvHocSinhDuDK.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.adgvHocSinhDuDK_CellFormatting);
             this.adgvHocSinhDuDK.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.adgvHocSinhDuDK_RowPostPaint);
@@ -246,8 +246,8 @@
             // clDiaChi
             // 
             this.clDiaChi.DataPropertyName = "DiaChi";
-            dataGridViewCellStyle10.NullValue = "(Trống)";
-            this.clDiaChi.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.NullValue = "(Trống)";
+            this.clDiaChi.DefaultCellStyle = dataGridViewCellStyle1;
             this.clDiaChi.HeaderText = "Địa chỉ";
             this.clDiaChi.MinimumWidth = 22;
             this.clDiaChi.Name = "clDiaChi";
@@ -272,8 +272,8 @@
             // clSoluongDK
             // 
             this.clSoluongDK.DataPropertyName = "SoluongLopDaDangKy";
-            dataGridViewCellStyle11.NullValue = "Chưa có đăng ký nào";
-            this.clSoluongDK.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.NullValue = "Chưa có đăng ký nào";
+            this.clSoluongDK.DefaultCellStyle = dataGridViewCellStyle2;
             this.clSoluongDK.HeaderText = "Đã Đăng ký";
             this.clSoluongDK.MinimumWidth = 22;
             this.clSoluongDK.Name = "clSoluongDK";
@@ -282,8 +282,8 @@
             // clTinhTrangHoaDon
             // 
             this.clTinhTrangHoaDon.DataPropertyName = "TinhTrang";
-            dataGridViewCellStyle12.NullValue = "không có HĐ";
-            this.clTinhTrangHoaDon.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.NullValue = "không có HĐ";
+            this.clTinhTrangHoaDon.DefaultCellStyle = dataGridViewCellStyle3;
             this.clTinhTrangHoaDon.HeaderText = "Tình Trạng";
             this.clTinhTrangHoaDon.MinimumWidth = 22;
             this.clTinhTrangHoaDon.Name = "clTinhTrangHoaDon";
@@ -340,7 +340,7 @@
             // 
             this.btnPickStd.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnPickStd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPickStd.ImageOptions.Image")));
-            this.btnPickStd.Location = new System.Drawing.Point(593, 253);
+            this.btnPickStd.Location = new System.Drawing.Point(593, 266);
             this.btnPickStd.Name = "btnPickStd";
             this.btnPickStd.Size = new System.Drawing.Size(126, 34);
             this.btnPickStd.TabIndex = 5;

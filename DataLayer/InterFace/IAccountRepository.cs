@@ -12,6 +12,8 @@ namespace DataLayer.InterFace
         bool CheckuserName(string username);
         GiaoVu LayThongtinGiaoVu(string TaiKhoan);
         void DoiMatKhau(string MaGiaoVu, string MatKhauMoi);
+        int DoiThongTinTaiKhoan(string MaGiaoVU, string TenGiaoVu, string SDT, string Email, string TaiKhoan);
+        GiaoVu LayThongTinGiaoVuBangMaGiaoVu(string MaGiaoVu);
         
     }
 }

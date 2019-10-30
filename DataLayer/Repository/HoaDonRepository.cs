@@ -13,6 +13,17 @@ namespace DataLayer.Repository
 {
     public class HoaDonRepository : IHoaDonRepository
     {
+        public List<HoaDon> GetAllCurrent()
+        {
+            using (MamNonBK db = new MamNonBK())
+            {
+                var DsHoaDonThangHienTai = from hd in db.HoaDons.AsNoTracking()
+                                           where (hd.NgayTao.Value.Month == DateTime.Now.Month && hd.NgayTao.Value.Year == DateTime.Now.Year)
+                                           select hd;
+                return DsHoaDonThangHienTai.ToList();
+            }
+        }
+
         public List<HoaDon> GetAlls()
         {
             using (MamNonBK db = new MamNonBK())

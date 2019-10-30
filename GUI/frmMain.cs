@@ -1,4 +1,5 @@
-﻿using GUI.UC;
+﻿using BussinesLayer;
+using GUI.UC;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -117,10 +118,16 @@ namespace GUI
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            onload();
+
+        }
+        private void onload()
+        {
             var LastName = _gv.TenGiaoVu.Split(' ').Last();
             string TenGiaoVu = LastName.ToString();
-            btnDownDropAccount.Text += TenGiaoVu;
+            btnDownDropAccount.Text = $"Xin Chào: {LastName}";
         }
+
 
         private void btnDoiMatKhau_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -143,6 +150,20 @@ namespace GUI
                 UC_ThongKe.Instance.BringToFront();
 
             }
+        }
+        private void btnDownDropAccount_Click(object sender, EventArgs e)
+        {
+            using (frmThongTinGiaoVu frm = new frmThongTinGiaoVu(_gv))
+            {
+                frm.FormClosing += Frm_FormClosing;
+                frm.ShowDialog();
+            }
+        }
+
+        private void Frm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _gv = AccountServices.LayThongTinGiaoVuTheoMa(_gv.MaGV);
+            onload();
         }
     }
 }

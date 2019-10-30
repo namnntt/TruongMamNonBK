@@ -35,20 +35,20 @@
             ((object)(0D))});
             DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.ChartTitle chartTitle1 = new DevExpress.XtraCharts.ChartTitle();
+            this.bdnavi = new System.Windows.Forms.BindingSource(this.components);
+            this.bdbaocao = new System.Windows.Forms.BindingSource(this.components);
             this.chrBaoCaoSoLuongDangky = new DevExpress.XtraCharts.ChartControl();
             this.datdrawrtChart = new System.Windows.Forms.DateTimePicker();
             this.cbChart = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnDuLieu = new DevExpress.XtraEditors.SimpleButton();
-            this.bdbaocao = new System.Windows.Forms.BindingSource(this.components);
-            this.bdnavi = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.bdnavi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdbaocao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chrBaoCaoSoLuongDangky)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdbaocao)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdnavi)).BeginInit();
             this.SuspendLayout();
             // 
             // chrBaoCaoSoLuongDangky
@@ -91,7 +91,7 @@
             this.cbChart.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbChart.FormattingEnabled = true;
             this.cbChart.Items.AddRange(new object[] {
-            "Thống kê Theo Lớp",
+            "$\"Quý I Năm {DateTime.Now.Year}\"",
             "Thống kê Theo CLB"});
             this.cbChart.Location = new System.Drawing.Point(471, 66);
             this.cbChart.Name = "cbChart";
@@ -142,12 +142,12 @@
             this.Controls.Add(this.chrBaoCaoSoLuongDangky);
             this.Name = "UC_ThongKe";
             this.Size = new System.Drawing.Size(1117, 545);
+            ((System.ComponentModel.ISupportInitialize)(this.bdnavi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdbaocao)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chrBaoCaoSoLuongDangky)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdbaocao)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdnavi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

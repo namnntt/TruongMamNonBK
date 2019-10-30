@@ -257,6 +257,7 @@
             this.btnDownDropAccount.Size = new System.Drawing.Size(161, 36);
             this.btnDownDropAccount.TabIndex = 10;
             this.btnDownDropAccount.Text = "Xin Chào ";
+            this.btnDownDropAccount.Click += new System.EventHandler(this.btnDownDropAccount_Click);
             // 
             // popupMenu1
             // 
@@ -385,7 +386,6 @@
         private DevExpress.XtraBars.BarButtonItem btnCapNhapTTHS;
         private DevExpress.XtraEditors.Repository.RepositoryItemHypertextLabel repositoryItemHypertextLabel1;
         private DevExpress.XtraEditors.Repository.RepositoryItemHypertextLabel repositoryItemHypertextLabel2;
-        private DevExpress.XtraEditors.DropDownButton btnDownDropAccount;
         private DevExpress.XtraBars.PopupMenu popupMenu1;
         private DevExpress.XtraBars.BarButtonItem btnDoiMatKhau;
         private DevExpress.XtraBars.BarManager barManager1;
@@ -395,6 +395,7 @@
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.Utils.ImageCollection imageCollection1;
         private DevExpress.XtraBars.BarButtonItem btnDangXuat;
+        public DevExpress.XtraEditors.DropDownButton btnDownDropAccount;
     }
 }
 

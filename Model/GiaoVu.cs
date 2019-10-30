@@ -11,7 +11,7 @@ namespace Model
 {
     using System;
     using System.Collections.Generic;
-    
+    [Serializable]
     public partial class GiaoVu
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,8 +19,15 @@ namespace Model
         {
             this.HoaDons = new HashSet<HoaDon>();
         }
-    
-        public string MaGV { get; set; }
+        public string MaGiaoVu;
+        public string MaGV
+        {
+            get { return this.MaGiaoVu; }
+            set
+            {
+                MaGiaoVu = value;
+            }
+        } 
         public string TenGiaoVu { get; set; }
         public string TaiKhoan { get; set; }
         public string MatKhau { get; set; }
