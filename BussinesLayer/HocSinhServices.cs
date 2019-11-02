@@ -107,7 +107,7 @@ namespace BussinesLayer
         {
             List<HoaDon> dsHD = HDRepo.GetAlls();
             List<HocSinh> dsHS = HocSinhRepo.GetAlls();
-            List<DangKyHoc> dsDK = DKHocRepo.GetAllsCurrent();
+            List<DangKyHoc> dsDK = DKHocRepo.GetAlls();
             var dsHSDKThangTruoc = (from hs in dsHS
                              join hd in dsHD on hs.MaHS equals hd.HocSinh
                              join dk in dsDK on hd.MaHD equals dk.HoaDon

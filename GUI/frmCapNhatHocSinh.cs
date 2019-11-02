@@ -51,9 +51,9 @@ namespace GUI
             {
                 case "txtTenHS":
                     {
-                        if (tb.Text.EmailValidation() || tb.Text.Length > 255)
+                        if (tb.Text.VietNameseNameValidation() || tb.Text.Length > 255)
                         {
-                            errorProvider.SetError(tb, "Sai dinh dang Email");
+                            errorProvider.SetError(tb, "Sai dinh dạng Tên");
                         }
                         else errorProvider.SetError(tb, null);
                         break;
@@ -63,6 +63,24 @@ namespace GUI
                         if (tb.Text.PhoneVietNamValidation() || tb.Text.Length > 16)
                         {
                             errorProvider.SetError(tb, "Sai dinh dang SDT roi");
+                        }
+                        else errorProvider.SetError(tb, null);
+                        break;
+                    }
+                case "txtTenChaMe":
+                    {
+                        if (tb.Text.VietNameseNameValidation() || tb.Text.Length > 255)
+                        {
+                            errorProvider.SetError(tb, "Sai Định dạng Tên");
+                        }
+                        else errorProvider.SetError(tb, null);
+                        break;
+                    }
+                case "txtDiaChi":
+                    {
+                        if (tb.Text.Length > 255)
+                        {
+                            errorProvider.SetError(tb, "Địa chỉ quá dài rồi");
                         }
                         else errorProvider.SetError(tb, null);
                         break;
@@ -110,10 +128,19 @@ namespace GUI
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             int change = 0;
-            if (!string.IsNullOrEmpty(txtDiaChi.Text) || !string.IsNullOrEmpty(txtSDTLienHe.Text) || !string.IsNullOrEmpty(txtTenChaMe.Text) || !string.IsNullOrEmpty(txtTenHS.Text))
+            bool CheckValidation = true;
+            foreach (TextBox tb in this.Controls.OfType<TextBox>())
+            {
+                if (!string.IsNullOrEmpty(errorProvider.GetError(tb)) || string.IsNullOrEmpty(tb.Text))
+                {
+                    CheckValidation = false;
+                    break;
+                }
+
+            }
+            if (CheckValidation)
             {
                 change = HocSinhServices.UpdateTTHocSinh(_MaHocSinh, txtTenHS.Text, datNgaySinh.Value, txtTenChaMe.Text, txtSDTLienHe.Text, txtDiaChi.Text, cbLopHC.SelectedValue.ToString());
-                
             }
             else
             {

@@ -59,6 +59,16 @@ namespace DataLayer.Repository
             }
         }
 
+        public List<GiaoVu> LayDanhSachGiaoVu()
+        {
+            using (MamNonBK context = new MamNonBK())
+            {
+                var DsGiaoVu = from gv in context.GiaoVus.AsNoTracking()
+                               select gv;
+                return DsGiaoVu.ToList();
+            }
+        }
+
         public GiaoVu LayThongtinGiaoVu(string TaiKhoan)
         {
             

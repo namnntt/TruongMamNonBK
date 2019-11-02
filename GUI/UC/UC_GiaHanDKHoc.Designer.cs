@@ -49,7 +49,7 @@
             // 
             this.adgvdsHSGiaHanDK.AllowUserToAddRows = false;
             this.adgvdsHSGiaHanDK.AllowUserToDeleteRows = false;
-            this.adgvdsHSGiaHanDK.AllowUserToResizeColumns = false;
+            this.adgvdsHSGiaHanDK.AllowUserToResizeRows = false;
             this.adgvdsHSGiaHanDK.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.adgvdsHSGiaHanDK.AutoGenerateColumns = false;

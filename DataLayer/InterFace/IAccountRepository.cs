@@ -14,6 +14,7 @@ namespace DataLayer.InterFace
         void DoiMatKhau(string MaGiaoVu, string MatKhauMoi);
         int DoiThongTinTaiKhoan(string MaGiaoVU, string TenGiaoVu, string SDT, string Email, string TaiKhoan);
         GiaoVu LayThongTinGiaoVuBangMaGiaoVu(string MaGiaoVu);
+        List<GiaoVu> LayDanhSachGiaoVu();
         
     }
 }

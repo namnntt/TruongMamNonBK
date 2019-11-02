@@ -78,6 +78,22 @@ namespace BussinesLayer
             }
             else return false;
         }
+        public static bool VietNameseNameValidation(this string txt)
+        {
+            Regex r = new Regex(@"^[^\s]+([a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệếỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹý\s])+$");
+            if (!(r.IsMatch(txt)))
+                return true;
+            else return false;
+        }
+        public static bool AccountValidaion(this string txt)
+        {
+            Regex r = new Regex(@"^\S+$");
+            if (!(r.IsMatch(txt)))
+            {
+                return true;
+            }
+            else return false;
+        }
 
     }
 }

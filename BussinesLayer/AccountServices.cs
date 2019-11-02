@@ -36,5 +36,13 @@ namespace BussinesLayer
         {
             return AccRepo.LayThongTinGiaoVuBangMaGiaoVu(MaGV);
         }
+        public static List<GiaoVu> DanhSachGiaoVuCoNgoaiTru(string MaGV)
+        {
+            List<GiaoVu> AllGv = AccRepo.LayDanhSachGiaoVu();
+            var DsGiaoVu = from gv in AllGv
+                           where gv.MaGiaoVu != MaGV
+                           select gv;
+            return DsGiaoVu.ToList();
+        }
     }
 }

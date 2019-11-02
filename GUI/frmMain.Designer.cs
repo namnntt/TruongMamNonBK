@@ -38,6 +38,7 @@
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.btnLichSuHoaDon = new DevExpress.XtraBars.BarButtonItem();
             this.btnCapNhapTTHS = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAccountManaGer = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -45,16 +46,17 @@
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.repositoryItemHypertextLabel1 = new DevExpress.XtraEditors.Repository.RepositoryItemHypertextLabel();
             this.repositoryItemHypertextLabel2 = new DevExpress.XtraEditors.Repository.RepositoryItemHypertextLabel();
             this.btnDownDropAccount = new DevExpress.XtraEditors.DropDownButton();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
             this.btnDoiMatKhau = new DevExpress.XtraBars.BarButtonItem();
             this.btnDangXuat = new DevExpress.XtraBars.BarButtonItem();
+            this.btnInformation = new DevExpress.XtraBars.BarButtonItem();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -81,16 +83,17 @@
             this.btnShowHoaDon,
             this.barButtonItem4,
             this.btnLichSuHoaDon,
-            this.btnCapNhapTTHS});
+            this.btnCapNhapTTHS,
+            this.btnAccountManaGer});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 34;
+            this.ribbonControl1.MaxItemId = 36;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
             this.ribbonPage2,
             this.ribbonPage3,
-            this.ribbonPage4,
-            this.ribbonPage5});
+            this.ribbonPage5,
+            this.ribbonPage4});
             this.ribbonControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemHypertextLabel1,
             this.repositoryItemHypertextLabel2});
@@ -162,6 +165,15 @@
             this.btnCapNhapTTHS.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btnCapNhapTTHS.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCapNhapTTHS_ItemClick);
             // 
+            // btnAccountManaGer
+            // 
+            this.btnAccountManaGer.Caption = "Tài Khoản Giáo Vụ";
+            this.btnAccountManaGer.Id = 34;
+            this.btnAccountManaGer.ImageOptions.Image = global::GUI.Properties.Resources.KeToan_Account_icon;
+            this.btnAccountManaGer.Name = "btnAccountManaGer";
+            this.btnAccountManaGer.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnAccountManaGer.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAccountManaGer_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -210,21 +222,9 @@
             // 
             // ribbonPageGroup4
             // 
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnAccountManaGer);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
-            this.ribbonPageGroup4.Text = "ribbonPageGroup4";
-            // 
-            // ribbonPage4
-            // 
-            this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup5});
-            this.ribbonPage4.ImageOptions.Image = global::GUI.Properties.Resources.club_1306525;
-            this.ribbonPage4.Name = "ribbonPage4";
-            this.ribbonPage4.Text = "Quản Lý các CLB";
-            // 
-            // ribbonPageGroup5
-            // 
-            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
-            this.ribbonPageGroup5.Text = "ribbonPageGroup5";
+            this.ribbonPageGroup4.Text = "Quản Trị Tài Khoản";
             // 
             // ribbonPage5
             // 
@@ -238,6 +238,19 @@
             // 
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.Text = "ribbonPageGroup6";
+            // 
+            // ribbonPage4
+            // 
+            this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup5});
+            this.ribbonPage4.ImageOptions.Image = global::GUI.Properties.Resources.club_1306525;
+            this.ribbonPage4.Name = "ribbonPage4";
+            this.ribbonPage4.Text = "Quản Lý các CLB";
+            // 
+            // ribbonPageGroup5
+            // 
+            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
+            this.ribbonPageGroup5.Text = "ribbonPageGroup5";
             // 
             // repositoryItemHypertextLabel1
             // 
@@ -263,7 +276,8 @@
             // 
             this.popupMenu1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnDoiMatKhau),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnDangXuat)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnDangXuat),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnInformation)});
             this.popupMenu1.Manager = this.barManager1;
             this.popupMenu1.Name = "popupMenu1";
             // 
@@ -283,6 +297,14 @@
             this.btnDangXuat.Name = "btnDangXuat";
             this.btnDangXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDangXuat_ItemClick);
             // 
+            // btnInformation
+            // 
+            this.btnInformation.Caption = "Giới Thiệu Phần mềm";
+            this.btnInformation.Id = 4;
+            this.btnInformation.ImageOptions.Image = global::GUI.Properties.Resources.gioi_thieu_icon1;
+            this.btnInformation.Name = "btnInformation";
+            this.btnInformation.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnInformation_ItemClick);
+            // 
             // barManager1
             // 
             this.barManager1.DockControls.Add(this.barDockControlTop);
@@ -293,8 +315,9 @@
             this.barManager1.Images = this.imageCollection1;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.btnDoiMatKhau,
-            this.btnDangXuat});
-            this.barManager1.MaxItemId = 4;
+            this.btnDangXuat,
+            this.btnInformation});
+            this.barManager1.MaxItemId = 5;
             // 
             // barDockControlTop
             // 
@@ -396,6 +419,8 @@
         private DevExpress.Utils.ImageCollection imageCollection1;
         private DevExpress.XtraBars.BarButtonItem btnDangXuat;
         public DevExpress.XtraEditors.DropDownButton btnDownDropAccount;
+        private DevExpress.XtraBars.BarButtonItem btnAccountManaGer;
+        private DevExpress.XtraBars.BarButtonItem btnInformation;
     }
 }
 

@@ -126,6 +126,18 @@ namespace GUI
             var LastName = _gv.TenGiaoVu.Split(' ').Last();
             string TenGiaoVu = LastName.ToString();
             btnDownDropAccount.Text = $"Xin Chào: {LastName}";
+            if (!this.Controls.Contains(UC_About.Instance))
+            {
+                this.Controls.Add(UC_About.Instance);
+
+                UC_About.Instance.Dock = DockStyle.Fill;
+                UC_About.Instance.BringToFront();
+            }
+            else
+            {
+                UC_About.Instance.BringToFront();
+
+            }
         }
 
 
@@ -142,6 +154,7 @@ namespace GUI
             if (!this.Controls.Contains(UC_ThongKe.Instance))
             {
                 this.Controls.Add(UC_ThongKe.Instance);
+               
                 UC_ThongKe.Instance.Dock = DockStyle.Fill;
                 UC_ThongKe.Instance.BringToFront();
             }
@@ -164,6 +177,40 @@ namespace GUI
         {
             _gv = AccountServices.LayThongTinGiaoVuTheoMa(_gv.MaGV);
             onload();
+        }
+
+        private void btnAccountManaGer_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            UC_QuanLyTaiKhoan.gvcurrent = _gv;
+            if(!this.Controls.Contains(UC_QuanLyTaiKhoan.Instance))
+            {
+                this.Controls.Add(UC_QuanLyTaiKhoan.Instance);
+                UC_QuanLyTaiKhoan.Instance.Dock = DockStyle.Fill;
+                UC_QuanLyTaiKhoan.Instance.onload();
+                UC_QuanLyTaiKhoan.Instance.BringToFront();
+                
+            }
+            else
+            {
+                UC_QuanLyTaiKhoan.Instance.onload();
+                UC_QuanLyTaiKhoan.Instance.BringToFront();
+            }
+        }
+
+        private void btnInformation_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (!this.Controls.Contains(UC_About.Instance))
+            {
+                this.Controls.Add(UC_About.Instance);
+
+                UC_About.Instance.Dock = DockStyle.Fill;
+                UC_About.Instance.BringToFront();
+            }
+            else
+            {
+                UC_About.Instance.BringToFront();
+
+            }
         }
     }
 }

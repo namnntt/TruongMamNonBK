@@ -43,6 +43,7 @@
             this.clNgayNhapHoc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnAddEcxel = new DevExpress.XtraEditors.SimpleButton();
             this.btnUpdateHocSinh = new DevExpress.XtraEditors.SimpleButton();
+            this.lbnThongBao = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bdHocSinh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcdHocSinh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewHocSinh)).BeginInit();
@@ -101,8 +102,12 @@
             // 
             this.clMaHs.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clMaHs.AppearanceCell.Options.UseFont = true;
+            this.clMaHs.AppearanceCell.Options.UseTextOptions = true;
+            this.clMaHs.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clMaHs.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clMaHs.AppearanceHeader.Options.UseFont = true;
+            this.clMaHs.AppearanceHeader.Options.UseTextOptions = true;
+            this.clMaHs.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clMaHs.Caption = "Mã HS";
             this.clMaHs.FieldName = "MaHS";
             this.clMaHs.Name = "clMaHs";
@@ -114,8 +119,12 @@
             // 
             this.clTenHocSinh.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clTenHocSinh.AppearanceCell.Options.UseFont = true;
+            this.clTenHocSinh.AppearanceCell.Options.UseTextOptions = true;
+            this.clTenHocSinh.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clTenHocSinh.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clTenHocSinh.AppearanceHeader.Options.UseFont = true;
+            this.clTenHocSinh.AppearanceHeader.Options.UseTextOptions = true;
+            this.clTenHocSinh.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clTenHocSinh.Caption = "Tên Học Sinh";
             this.clTenHocSinh.FieldName = "TenHS";
             this.clTenHocSinh.Name = "clTenHocSinh";
@@ -127,8 +136,12 @@
             // 
             this.clNgaySinh.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clNgaySinh.AppearanceCell.Options.UseFont = true;
+            this.clNgaySinh.AppearanceCell.Options.UseTextOptions = true;
+            this.clNgaySinh.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clNgaySinh.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clNgaySinh.AppearanceHeader.Options.UseFont = true;
+            this.clNgaySinh.AppearanceHeader.Options.UseTextOptions = true;
+            this.clNgaySinh.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clNgaySinh.Caption = "Ngày Sinh";
             this.clNgaySinh.FieldName = "NgaySinh";
             this.clNgaySinh.Name = "clNgaySinh";
@@ -140,8 +153,12 @@
             // 
             this.clLopHanhChinh.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clLopHanhChinh.AppearanceCell.Options.UseFont = true;
+            this.clLopHanhChinh.AppearanceCell.Options.UseTextOptions = true;
+            this.clLopHanhChinh.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clLopHanhChinh.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clLopHanhChinh.AppearanceHeader.Options.UseFont = true;
+            this.clLopHanhChinh.AppearanceHeader.Options.UseTextOptions = true;
+            this.clLopHanhChinh.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clLopHanhChinh.Caption = "Lớp Hành chính";
             this.clLopHanhChinh.FieldName = "TenLopHC";
             this.clLopHanhChinh.Name = "clLopHanhChinh";
@@ -153,8 +170,12 @@
             // 
             this.clDiaChi.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clDiaChi.AppearanceCell.Options.UseFont = true;
+            this.clDiaChi.AppearanceCell.Options.UseTextOptions = true;
+            this.clDiaChi.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clDiaChi.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clDiaChi.AppearanceHeader.Options.UseFont = true;
+            this.clDiaChi.AppearanceHeader.Options.UseTextOptions = true;
+            this.clDiaChi.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clDiaChi.Caption = "Địa chỉ";
             this.clDiaChi.FieldName = "DiaChi";
             this.clDiaChi.Name = "clDiaChi";
@@ -166,8 +187,12 @@
             // 
             this.clTenChaMe.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clTenChaMe.AppearanceCell.Options.UseFont = true;
+            this.clTenChaMe.AppearanceCell.Options.UseTextOptions = true;
+            this.clTenChaMe.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clTenChaMe.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clTenChaMe.AppearanceHeader.Options.UseFont = true;
+            this.clTenChaMe.AppearanceHeader.Options.UseTextOptions = true;
+            this.clTenChaMe.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clTenChaMe.Caption = "Tên Cha Mẹ";
             this.clTenChaMe.FieldName = "TenChaMe";
             this.clTenChaMe.Name = "clTenChaMe";
@@ -179,8 +204,12 @@
             // 
             this.clSDTChaMe.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clSDTChaMe.AppearanceCell.Options.UseFont = true;
+            this.clSDTChaMe.AppearanceCell.Options.UseTextOptions = true;
+            this.clSDTChaMe.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clSDTChaMe.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clSDTChaMe.AppearanceHeader.Options.UseFont = true;
+            this.clSDTChaMe.AppearanceHeader.Options.UseTextOptions = true;
+            this.clSDTChaMe.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clSDTChaMe.Caption = "SĐT Cha mẹ";
             this.clSDTChaMe.FieldName = "SDTChaMe";
             this.clSDTChaMe.Name = "clSDTChaMe";
@@ -192,8 +221,12 @@
             // 
             this.clNgayNhapHoc.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clNgayNhapHoc.AppearanceCell.Options.UseFont = true;
+            this.clNgayNhapHoc.AppearanceCell.Options.UseTextOptions = true;
+            this.clNgayNhapHoc.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clNgayNhapHoc.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clNgayNhapHoc.AppearanceHeader.Options.UseFont = true;
+            this.clNgayNhapHoc.AppearanceHeader.Options.UseTextOptions = true;
+            this.clNgayNhapHoc.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clNgayNhapHoc.Caption = "Nhập học";
             this.clNgayNhapHoc.FieldName = "NgayNhapHoc";
             this.clNgayNhapHoc.Name = "clNgayNhapHoc";
@@ -221,10 +254,22 @@
             this.btnUpdateHocSinh.Text = "Cập nhật HS";
             this.btnUpdateHocSinh.Click += new System.EventHandler(this.btnUpdateHocSinh_Click);
             // 
+            // lbnThongBao
+            // 
+            this.lbnThongBao.AutoSize = true;
+            this.lbnThongBao.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbnThongBao.ForeColor = System.Drawing.Color.Red;
+            this.lbnThongBao.Location = new System.Drawing.Point(390, 19);
+            this.lbnThongBao.Name = "lbnThongBao";
+            this.lbnThongBao.Size = new System.Drawing.Size(440, 23);
+            this.lbnThongBao.TabIndex = 11;
+            this.lbnThongBao.Text = "Danh sách Học sinh của trường Mẫu giáo bách khoa";
+            // 
             // UC_CapNhatHocSinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lbnThongBao);
             this.Controls.Add(this.btnUpdateHocSinh);
             this.Controls.Add(this.btnAddEcxel);
             this.Controls.Add(this.gcdHocSinh);
@@ -236,6 +281,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcdHocSinh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewHocSinh)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -254,5 +300,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn clNgayNhapHoc;
         private DevExpress.XtraEditors.SimpleButton btnAddEcxel;
         private DevExpress.XtraEditors.SimpleButton btnUpdateHocSinh;
+        private System.Windows.Forms.Label lbnThongBao;
     }
 }
