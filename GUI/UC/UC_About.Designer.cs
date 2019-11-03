@@ -39,10 +39,10 @@
             // 
             this.lblGioiTHieu.AutoSize = true;
             this.lblGioiTHieu.BackColor = System.Drawing.Color.White;
-            this.lblGioiTHieu.Font = new System.Drawing.Font("Lucida Bright", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGioiTHieu.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGioiTHieu.Location = new System.Drawing.Point(246, 32);
             this.lblGioiTHieu.Name = "lblGioiTHieu";
-            this.lblGioiTHieu.Size = new System.Drawing.Size(772, 31);
+            this.lblGioiTHieu.Size = new System.Drawing.Size(697, 31);
             this.lblGioiTHieu.TabIndex = 0;
             this.lblGioiTHieu.Text = "Phần Mềm Quản Lý Học Phí trường Mầm Non bách Khoa";
             // 
