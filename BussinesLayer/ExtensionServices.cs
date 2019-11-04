@@ -94,6 +94,15 @@ namespace BussinesLayer
             }
             else return false;
         }
+        public static bool YearStringValidation(this string txt)
+        {
+            Regex r = new Regex(@"^\b(19|20)\d{2}\b$");
+            if (!(r.IsMatch(txt)))
+            {
+                return true;
+            }
+            else return false;
+        }
 
     }
 }

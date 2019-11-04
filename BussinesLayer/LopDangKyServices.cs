@@ -17,6 +17,7 @@ namespace BussinesLayer
         static IHoaDonRepository dsHDRepo;
         static IHocSinhRepository hsRepo;
         static IDangKyHocRepository dkHocRepo;
+        static ICLBRepository CLBRepo;
         
         static LopDangKyServices()
         {
@@ -25,7 +26,7 @@ namespace BussinesLayer
             dsHDRepo = new HoaDonRepository();
             hsRepo = new HocSinhRepository();
             dkHocRepo = new DangKyHocRepository();
-            
+            CLBRepo = new CLBRepository();
         }
 
         public static DataTable LayDanhSachLopDangKy(string MaHS)
@@ -153,5 +154,6 @@ namespace BussinesLayer
                         };
             return GenericServices.ToDataTable(dsLop.ToList());
         }
+        
     }
 }

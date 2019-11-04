@@ -118,5 +118,17 @@ namespace GUI.UC
                 MessageBox.Show("Chưa chọn gì sao mà xóa");
             }
         }
+
+        private void btnResetPassword_Click(object sender, EventArgs e)
+        {
+            GiaoVu CurrentSelected = bdDanhSachTaiKhoan.Current as GiaoVu;
+            using (frmDoiMatKhau frm = new frmDoiMatKhau(CurrentSelected))
+            {
+                frm.txtPasswordCu.Text = GenericServices.Decrypts(CurrentSelected.MatKhau);
+                frm.txtPasswordCu.Visible = false;
+                frm.lblPasswordCu.Visible = false;
+                frm.ShowDialog();
+            }
+        }
     }
 }

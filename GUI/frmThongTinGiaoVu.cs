@@ -102,7 +102,10 @@ namespace GUI
                 if (change > 0)
                 {
                     MessageBox.Show($"Đã cập nhật thành công cho Giáo vụ có Mã {_gv.MaGV}");
-                    UC_QuanLyTaiKhoan.Instance.onload();
+                    if (UC_QuanLyTaiKhoan.gvcurrent != null)
+                    {
+                        UC_QuanLyTaiKhoan.Instance.onload();
+                    }
 
                 }
                 else

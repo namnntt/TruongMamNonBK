@@ -63,6 +63,8 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
+            this.btnCLB = new DevExpress.XtraBars.BarButtonItem();
+            this.btnLopDangKy = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel2)).BeginInit();
@@ -84,9 +86,11 @@
             this.barButtonItem4,
             this.btnLichSuHoaDon,
             this.btnCapNhapTTHS,
-            this.btnAccountManaGer});
+            this.btnAccountManaGer,
+            this.btnCLB,
+            this.btnLopDangKy});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 36;
+            this.ribbonControl1.MaxItemId = 38;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -232,12 +236,14 @@
             this.ribbonPageGroup6});
             this.ribbonPage5.ImageOptions.Image = global::GUI.Properties.Resources.class_icon;
             this.ribbonPage5.Name = "ribbonPage5";
-            this.ribbonPage5.Text = "Quản Lý Các Lớp CLB";
+            this.ribbonPage5.Text = "Quản Lý Các CLB & Lớp";
             // 
             // ribbonPageGroup6
             // 
+            this.ribbonPageGroup6.ItemLinks.Add(this.btnCLB);
+            this.ribbonPageGroup6.ItemLinks.Add(this.btnLopDangKy);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
-            this.ribbonPageGroup6.Text = "ribbonPageGroup6";
+            this.ribbonPageGroup6.Text = "CLB và Lớp";
             // 
             // ribbonPage4
             // 
@@ -245,7 +251,7 @@
             this.ribbonPageGroup5});
             this.ribbonPage4.ImageOptions.Image = global::GUI.Properties.Resources.club_1306525;
             this.ribbonPage4.Name = "ribbonPage4";
-            this.ribbonPage4.Text = "Quản Lý các CLB";
+            this.ribbonPage4.Text = "Quản Lý các Lớp Hành chính";
             // 
             // ribbonPageGroup5
             // 
@@ -359,6 +365,22 @@
             this.imageCollection1.Images.SetKeyName(1, "ChangePassword-icon.png");
             this.imageCollection1.Images.SetKeyName(2, "logout-icon.png");
             // 
+            // btnCLB
+            // 
+            this.btnCLB.Caption = "Cập nhật CLB";
+            this.btnCLB.Id = 36;
+            this.btnCLB.ImageOptions.Image = global::GUI.Properties.Resources.clb_icon;
+            this.btnCLB.Name = "btnCLB";
+            this.btnCLB.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // btnLopDangKy
+            // 
+            this.btnLopDangKy.Caption = "Cập Nhật Lớp Đăng Ký";
+            this.btnLopDangKy.Id = 37;
+            this.btnLopDangKy.ImageOptions.Image = global::GUI.Properties.Resources.class_icon;
+            this.btnLopDangKy.Name = "btnLopDangKy";
+            this.btnLopDangKy.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -421,6 +443,8 @@
         public DevExpress.XtraEditors.DropDownButton btnDownDropAccount;
         private DevExpress.XtraBars.BarButtonItem btnAccountManaGer;
         private DevExpress.XtraBars.BarButtonItem btnInformation;
+        private DevExpress.XtraBars.BarButtonItem btnCLB;
+        private DevExpress.XtraBars.BarButtonItem btnLopDangKy;
     }
 }
 

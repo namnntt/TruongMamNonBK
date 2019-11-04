@@ -42,15 +42,19 @@ namespace GUI
         {
             if (!this.Controls.Contains(UC_HuyDKHoc.Instance))
             {
-                this.Controls.Add(UC_HuyDKHoc.Instance);
-                UC_HuyDKHoc.Instance.Dock = DockStyle.Fill;
-                UC_HuyDKHoc.Instance.BringToFront();
-                
+                using (frmKey frm = new frmKey())
+                {
+                    frm.ShowDialog();
+                    if (frm.DialogResult == DialogResult.OK)
+                    {
+                        this.Controls.Add(UC_HuyDKHoc.Instance);
+                        UC_HuyDKHoc.Instance.Dock = DockStyle.Fill;
+                        UC_HuyDKHoc.Instance.BringToFront();
+                    }
+                }
             }
             else
-            {
                 UC_HuyDKHoc.Instance.BringToFront();
-            }
         }
 
         private void btnGiaHanDangKyHoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

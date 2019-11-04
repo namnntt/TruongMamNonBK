@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_QuanLyTaiKhoan));
             this.lbnThongBao = new System.Windows.Forms.Label();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.bdDanhSachTaiKhoan = new System.Windows.Forms.BindingSource(this.components);
@@ -39,6 +40,8 @@
             this.clEmail = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clPhone = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnSuaThongTinTK = new DevExpress.XtraEditors.SimpleButton();
+            this.btnResetPassword = new DevExpress.XtraEditors.SimpleButton();
+            this.btnThemTaiKhoan = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdDanhSachTaiKhoan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvGiaoVu)).BeginInit();
@@ -175,17 +178,38 @@
             // btnSuaThongTinTK
             // 
             this.btnSuaThongTinTK.ImageOptions.Image = global::GUI.Properties.Resources.edit_tt_Giao_vu;
-            this.btnSuaThongTinTK.Location = new System.Drawing.Point(609, 481);
+            this.btnSuaThongTinTK.Location = new System.Drawing.Point(505, 483);
             this.btnSuaThongTinTK.Name = "btnSuaThongTinTK";
-            this.btnSuaThongTinTK.Size = new System.Drawing.Size(100, 44);
+            this.btnSuaThongTinTK.Size = new System.Drawing.Size(109, 44);
             this.btnSuaThongTinTK.TabIndex = 13;
             this.btnSuaThongTinTK.Text = "Sửa TTGV";
             this.btnSuaThongTinTK.Click += new System.EventHandler(this.btnSuaThongTinTK_Click);
+            // 
+            // btnResetPassword
+            // 
+            this.btnResetPassword.ImageOptions.Image = global::GUI.Properties.Resources.reset_Password_gv_icon;
+            this.btnResetPassword.Location = new System.Drawing.Point(682, 483);
+            this.btnResetPassword.Name = "btnResetPassword";
+            this.btnResetPassword.Size = new System.Drawing.Size(108, 44);
+            this.btnResetPassword.TabIndex = 14;
+            this.btnResetPassword.Text = "Đặt Lại PW";
+            this.btnResetPassword.Click += new System.EventHandler(this.btnResetPassword_Click);
+            // 
+            // btnThemTaiKhoan
+            // 
+            this.btnThemTaiKhoan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThemTaiKhoan.ImageOptions.Image")));
+            this.btnThemTaiKhoan.Location = new System.Drawing.Point(846, 483);
+            this.btnThemTaiKhoan.Name = "btnThemTaiKhoan";
+            this.btnThemTaiKhoan.Size = new System.Drawing.Size(107, 44);
+            this.btnThemTaiKhoan.TabIndex = 15;
+            this.btnThemTaiKhoan.Text = "Thêm TK mới";
             // 
             // UC_QuanLyTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnThemTaiKhoan);
+            this.Controls.Add(this.btnResetPassword);
             this.Controls.Add(this.btnSuaThongTinTK);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.lbnThongBao);
@@ -212,5 +236,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn clEmail;
         private DevExpress.XtraGrid.Columns.GridColumn clPhone;
         private DevExpress.XtraEditors.SimpleButton btnSuaThongTinTK;
+        private DevExpress.XtraEditors.SimpleButton btnResetPassword;
+        private DevExpress.XtraEditors.SimpleButton btnThemTaiKhoan;
     }
 }

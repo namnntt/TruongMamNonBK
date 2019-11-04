@@ -32,34 +32,75 @@ namespace GUI.UC
 
         private void btnDuLieu_Click(object sender, EventArgs e)
         {
-            if (cbChart.SelectedIndex == 0)
+            if (cbChart.SelectedIndex < 0 || cbQuyThongKe.SelectedIndex < 0 || string.IsNullOrEmpty(txtNam.Text))
+                MessageBox.Show("Vui lòng chọn các trường để load dữ liệu");
+            else
             {
-                bdbaocao.DataSource = LopDangKyServices.DanhsachLopDangKyVaSoHocSinh(datdrawrtChart.Value.Year, datdrawrtChart.Value.Month);
-                bdnavi.DataSource = LopDangKyServices.DanhsachLopDangKyVaSoHocSinh(2019, 9);
-                chrBaoCaoSoLuongDangky.Series["Tháng 9"].ArgumentScaleType = ScaleType.Auto;
-                chrBaoCaoSoLuongDangky.Series["Tháng 10"].ArgumentScaleType = ScaleType.Auto;
-                chrBaoCaoSoLuongDangky.Series["Tháng 9"].ArgumentDataMember = "TenVaMaLop";
-                chrBaoCaoSoLuongDangky.Series["Tháng 10"].ArgumentDataMember = "TenVaMaLop";
 
-                chrBaoCaoSoLuongDangky.Series["Tháng 9"].ValueDataMembers.AddRange(new string[] { "Count" });
-                chrBaoCaoSoLuongDangky.Series["Tháng 10"].ValueDataMembers.AddRange(new string[] { "Count" });
-
-
-
-                //ChartTitle chartTitle1 = new ChartTitle();
-                //chartTitle1.Text = $"Báo cáo thống kế số lượng đăng ký theo lớp trong tháng {datdrawrtChart.Value.Month.ToString()}/{datdrawrtChart.Value.Year.ToString()}";
-                //chrBaoCaoSoLuongDangky.Titles.Add(chartTitle1);
+                chrBaoCaoSoLuongDangky.Series.Clear();
+                int Thang = (cbQuyThongKe.SelectedIndex + 1) * 3;
+                List<Series> DanhSachSeries = new List<Series>();
+                DanhSachSeries.Add(new Series($"Tháng {(Thang - 2).ToString()}", ViewType.Bar));
+                DanhSachSeries.Add(new Series($"Tháng {(Thang - 1).ToString()}", ViewType.Bar));
+                DanhSachSeries.Add(new Series($"Tháng {Thang.ToString()}", ViewType.Bar));
+                if (cbChart.SelectedIndex == 0)
+                {
+                    DataTable dtLA = LopDangKyServices.DanhsachLopDangKyVaSoHocSinh(Int32.Parse(txtNam.Text), Thang - 2);
+                    DataTable dtLB = LopDangKyServices.DanhsachLopDangKyVaSoHocSinh(Int32.Parse(txtNam.Text), Thang - 1);
+                    DataTable dtLC = LopDangKyServices.DanhsachLopDangKyVaSoHocSinh(Int32.Parse(txtNam.Text), Thang);
+                    if (dtLA.Rows.Count != 0 || dtLB.Rows.Count != 0 || dtLC.Rows.Count != 0)
+                    {
+                        DanhSachSeries[0].DataSource = dtLA;
+                        DanhSachSeries[1].DataSource = dtLB;
+                        DanhSachSeries[2].DataSource = dtLC;
+                        DanhSachSeries.ForEach(
+                            x =>
+                            {
+                                chrBaoCaoSoLuongDangky.Series.Add(x);
+                                x.ArgumentScaleType = ScaleType.Auto;
+                                x.ArgumentDataMember = "TenVaMaLop";
+                                x.ValueDataMembers.AddRange(new string[] { "Count" });
+                            });
+                    }
+                    else MessageBox.Show("Không có dữ liệu nào");
+                }
+                else
+                {
+                    DataTable dtclbA = CLBServices.DanhSachCLBvaSoHocSinh(Int32.Parse(txtNam.Text), Thang - 2);
+                    DataTable dtclbB = CLBServices.DanhSachCLBvaSoHocSinh(Int32.Parse(txtNam.Text), Thang - 1);
+                    DataTable dtclbC = CLBServices.DanhSachCLBvaSoHocSinh(Int32.Parse(txtNam.Text), Thang);
+                    if (dtclbA.Rows.Count != 0 || dtclbB.Rows.Count != 0 || dtclbC.Rows.Count != 0)
+                    {
+                        DanhSachSeries[0].DataSource = dtclbA;
+                        DanhSachSeries[1].DataSource = dtclbB;
+                        DanhSachSeries[2].DataSource = dtclbC;
+                        DanhSachSeries.ForEach(
+                            x =>
+                            {
+                                chrBaoCaoSoLuongDangky.Series.Add(x);
+                                x.ArgumentScaleType = ScaleType.Auto;
+                                x.ArgumentDataMember = "ID";
+                                x.ValueDataMembers.AddRange(new string[] { "Count" });
+                            });
+                    }
+                    else MessageBox.Show("khoong co data");
+                }
             }
+        }
 
-            // Set some properties to get a nice-looking chart. 
-            //((SideBySideBarSeriesView)chrBaoCaoSoLuongDangky.Series["Số Lượng đăng ký"].View).ColorEach = true;
-            //((XYDiagram)chrBaoCaoSoLuongDangky.Diagram).AxisY.Visibility = DevExpress.Utils.DefaultBoolean.True;
-            //chrBaoCaoSoLuongDangky.Legend.Visibility = DevExpress.Utils.DefaultBoolean.True;
+        private void UC_ThongKe_Load(object sender, EventArgs e)
+        {
+            txtNam.Text = DateTime.Now.Year.ToString();
+        }
 
+        private void txtNam_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNam.Text.YearStringValidation())
+            {
+                errorYear.SetError(txtNam, "Yêu cầu điền đúng định dạng Năm");
 
-
-
-
+            }
+            else errorYear.SetError(txtNam, null);
         }
     }
 }

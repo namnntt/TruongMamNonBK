@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblPasswordCu = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtPasswordCu = new System.Windows.Forms.TextBox();
@@ -37,15 +37,15 @@
             this.btnDoiMatKhau = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
             // 
-            // label1
+            // lblPasswordCu
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(48, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Mật Khẩu cũ";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblPasswordCu.AutoSize = true;
+            this.lblPasswordCu.Location = new System.Drawing.Point(48, 13);
+            this.lblPasswordCu.Name = "lblPasswordCu";
+            this.lblPasswordCu.Size = new System.Drawing.Size(66, 13);
+            this.lblPasswordCu.TabIndex = 0;
+            this.lblPasswordCu.Text = "Mật Khẩu cũ";
+            this.lblPasswordCu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label2
             // 
@@ -116,7 +116,7 @@
             this.Controls.Add(this.txtPasswordCu);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblPasswordCu);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmDoiMatKhau";
@@ -130,13 +130,12 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtPasswordCu;
         private System.Windows.Forms.TextBox txtPassWordMoi;
         private System.Windows.Forms.TextBox txtComFirm;
         private DevExpress.XtraEditors.SimpleButton btnDoiMatKhau;
+        public System.Windows.Forms.TextBox txtPasswordCu;
+        public System.Windows.Forms.Label lblPasswordCu;
     }
 }

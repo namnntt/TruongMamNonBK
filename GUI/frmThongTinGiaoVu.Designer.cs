@@ -152,6 +152,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmThongTinGiaoVu";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cập nhật thông tin giáo vụ";
             this.Load += new System.EventHandler(this.frmThongTinGiaoVu_Load);
@@ -171,7 +173,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private DevExpress.XtraEditors.SimpleButton btnUpdate;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        public DevExpress.XtraEditors.SimpleButton btnUpdate;
     }
 }

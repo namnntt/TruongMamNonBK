@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountServices.cs" />
+    <Compile Include="CLBServices.cs" />
     <Compile Include="DangKyHocServices.cs" />
     <Compile Include="ExtensionServices.cs" />
     <Compile Include="GenericServices.cs" />

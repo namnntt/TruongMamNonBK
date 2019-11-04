@@ -21,6 +21,7 @@ namespace GUI
             _gv = gv;
             InitializeComponent();
         }
+        
 
         private void btnDoiMatKhau_Click(object sender, EventArgs e)
         {
