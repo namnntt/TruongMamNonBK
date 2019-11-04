@@ -293,7 +293,7 @@
             this.btnExport.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExport.Appearance.Options.UseFont = true;
             this.btnExport.ImageOptions.Image = global::GUI.Properties.Resources.excell_icon;
-            this.btnExport.Location = new System.Drawing.Point(444, 476);
+            this.btnExport.Location = new System.Drawing.Point(461, 476);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(138, 39);
             this.btnExport.TabIndex = 4;

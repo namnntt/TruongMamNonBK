@@ -69,9 +69,18 @@ namespace GUI
                     }
                 case "txtTaiKhoan":
                     {
-                        if (tb.Text.AccountValidaion() || tb.Text.Length > 255)
+                        if (tb.Text.AccountandPasswordValidaion() || tb.Text.Length > 255)
                         {
                             errorProvider.SetError(tb, "Tài Khoản không được có khoảng trắng");
+                        }
+                        else errorProvider.SetError(tb, null);
+                        break;
+                    }
+                case "txtPassword":
+                    {
+                        if (tb.Text.AccountandPasswordValidaion() || tb.Text.Length > 255)
+                        {
+                            errorProvider.SetError(tb, "Mật khẩu không được có khoảng trống");
                         }
                         else errorProvider.SetError(tb, null);
                         break;
@@ -117,6 +126,43 @@ namespace GUI
             {
                 MessageBox.Show("có trường bị sai định dạng hoặc đang bị để trống");
             }
+        }
+
+        private void btnThuchienThemhocsinh_Click(object sender, EventArgs e)
+        {
+            int change = 0;
+            bool CheckValidation = true;
+            foreach (TextBox tb in this.Controls.OfType<TextBox>())
+            {
+                if (!string.IsNullOrEmpty(errorProvider.GetError(tb)) || string.IsNullOrEmpty(tb.Text))
+                {
+                    CheckValidation = false;
+                    break;
+                }
+
+            }
+            if(CheckValidation)
+            {
+                if (txtComfirm.Text.Equals(txtPassword.Text))
+                {
+                    int changeaddevent = AccountServices.ThemGiaoVu(txtTenGiaovu.Text, txtSDT.Text, txtEmail.Text, txtTaiKhoan.Text, GenericServices.Encrypts(txtPassword.Text));
+                    if (changeaddevent > 0)
+                    {
+                        MessageBox.Show("Thêm thành công giáo vụ");
+                        UC_QuanLyTaiKhoan.Instance.onload();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lỗi từ phí CSDL");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Mật khẩu và xác nhận phải giống nhau");
+                }
+            }
+            else MessageBox.Show("có trường bị sai định dạng hoặc đang bị để trống");
+
         }
     }
 }

@@ -85,9 +85,9 @@ namespace BussinesLayer
                 return true;
             else return false;
         }
-        public static bool AccountValidaion(this string txt)
+        public static bool AccountandPasswordValidaion(this string txt)
         {
-            Regex r = new Regex(@"^\S+$");
+            Regex r = new Regex(@"^[a-z][a-z0-9]*$");
             if (!(r.IsMatch(txt)))
             {
                 return true;
@@ -104,5 +104,6 @@ namespace BussinesLayer
             else return false;
         }
 
-    }
+
+}
 }

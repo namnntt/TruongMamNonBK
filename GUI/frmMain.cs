@@ -172,6 +172,10 @@ namespace GUI
         {
             using (frmThongTinGiaoVu frm = new frmThongTinGiaoVu(_gv))
             {
+                frm.Size = new Size(530, 283);
+                frm.Controls.Remove(frm.lbPassword); frm.Controls.Remove(frm.lblcomfirmPassword);
+                frm.Controls.Remove(frm.btnThuchienThemhocsinh); frm.Controls.Remove(frm.txtComfirm); frm.Controls.Remove(frm.txtPassword);
+                frm.btnUpdate.Location = new Point(232, 199);
                 frm.FormClosing += Frm_FormClosing;
                 frm.ShowDialog();
             }

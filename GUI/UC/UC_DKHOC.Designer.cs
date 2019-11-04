@@ -307,9 +307,9 @@
             // 
             this.btnChiTietDangKy.Enabled = false;
             this.btnChiTietDangKy.ImageOptions.Image = global::GUI.Properties.Resources.detail_con;
-            this.btnChiTietDangKy.Location = new System.Drawing.Point(774, 509);
+            this.btnChiTietDangKy.Location = new System.Drawing.Point(773, 502);
             this.btnChiTietDangKy.Name = "btnChiTietDangKy";
-            this.btnChiTietDangKy.Size = new System.Drawing.Size(128, 33);
+            this.btnChiTietDangKy.Size = new System.Drawing.Size(128, 40);
             this.btnChiTietDangKy.TabIndex = 9;
             this.btnChiTietDangKy.Text = "C.Tiết Lớp đã ĐK";
             this.btnChiTietDangKy.Click += new System.EventHandler(this.btnChiTietDangKy_Click);
@@ -318,7 +318,7 @@
             // 
             this.btnChiTietHoaDon.Enabled = false;
             this.btnChiTietHoaDon.ImageOptions.Image = global::GUI.Properties.Resources.printer_32x322;
-            this.btnChiTietHoaDon.Location = new System.Drawing.Point(603, 502);
+            this.btnChiTietHoaDon.Location = new System.Drawing.Point(595, 502);
             this.btnChiTietHoaDon.Name = "btnChiTietHoaDon";
             this.btnChiTietHoaDon.Size = new System.Drawing.Size(116, 40);
             this.btnChiTietHoaDon.TabIndex = 8;

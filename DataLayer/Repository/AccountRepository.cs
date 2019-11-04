@@ -92,5 +92,25 @@ namespace DataLayer.Repository
                 return TTGiaoVu.ToList().FirstOrDefault();
             }
         }
+
+        public int ThemGiaoVu(string TenGiaoVu, string SDT, string Email, string TaiKhoan, string MatKhau)
+        {
+            
+            using(MamNonBK context = new MamNonBK())
+            {
+                using (IDbConnection db = new SqlConnection(context.Database.Connection.ConnectionString))
+                {
+                    var p = new DynamicParameters();
+                    p.Add("@TenGiaoVu", TenGiaoVu);
+                    p.Add("@TaiKhoan", TaiKhoan);
+                    p.Add("@MatKhau", MatKhau);
+                    p.Add("@Email", Email);
+                    p.Add("@SDT", SDT);
+                    return db.Execute("ThemTaiKhoanGiaoVu", p, commandType: CommandType.StoredProcedure);
+                }
+            }
+
+
+        }
     }
 }

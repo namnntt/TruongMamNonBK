@@ -44,5 +44,9 @@ namespace BussinesLayer
                            select gv;
             return DsGiaoVu.ToList();
         }
+        public static int ThemGiaoVu(string TenGiaoVu, string SDT, string Email, string TaiKhoan, string MatKhau)
+        {
+            return AccRepo.ThemGiaoVu(TenGiaoVu, SDT, Email, TaiKhoan, MatKhau);
+        }
     }
 }

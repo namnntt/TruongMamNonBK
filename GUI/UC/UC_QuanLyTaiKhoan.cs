@@ -110,6 +110,10 @@ namespace GUI.UC
                 GiaoVu CurrentSelected = bdDanhSachTaiKhoan.Current as GiaoVu;
                 using (frmThongTinGiaoVu frm = new frmThongTinGiaoVu(CurrentSelected))
                 {
+                    frm.Size = new Size(530, 283);
+                    frm.Controls.Remove(frm.lbPassword); frm.Controls.Remove(frm.lblcomfirmPassword);
+                    frm.Controls.Remove(frm.btnThuchienThemhocsinh); frm.Controls.Remove(frm.txtComfirm); frm.Controls.Remove(frm.txtPassword);
+                    frm.btnUpdate.Location = new Point(232, 199);
                     frm.ShowDialog();
                 }
             }
@@ -127,6 +131,16 @@ namespace GUI.UC
                 frm.txtPasswordCu.Text = GenericServices.Decrypts(CurrentSelected.MatKhau);
                 frm.txtPasswordCu.Visible = false;
                 frm.lblPasswordCu.Visible = false;
+                frm.ShowDialog();
+            }
+        }
+
+        private void btnThemTaiKhoan_Click(object sender, EventArgs e)
+        {
+            GiaoVu gv = new GiaoVu();
+            using(frmThongTinGiaoVu frm = new frmThongTinGiaoVu(gv))
+            {
+                frm.Controls.Remove(frm.btnUpdate);
                 frm.ShowDialog();
             }
         }

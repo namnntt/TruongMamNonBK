@@ -39,6 +39,8 @@
             this.btnLichSuHoaDon = new DevExpress.XtraBars.BarButtonItem();
             this.btnCapNhapTTHS = new DevExpress.XtraBars.BarButtonItem();
             this.btnAccountManaGer = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCLB = new DevExpress.XtraBars.BarButtonItem();
+            this.btnLopDangKy = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -63,8 +65,6 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
-            this.btnCLB = new DevExpress.XtraBars.BarButtonItem();
-            this.btnLopDangKy = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel2)).BeginInit();
@@ -177,6 +177,22 @@
             this.btnAccountManaGer.Name = "btnAccountManaGer";
             this.btnAccountManaGer.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btnAccountManaGer.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAccountManaGer_ItemClick);
+            // 
+            // btnCLB
+            // 
+            this.btnCLB.Caption = "Cập nhật CLB";
+            this.btnCLB.Id = 36;
+            this.btnCLB.ImageOptions.Image = global::GUI.Properties.Resources.clb_icon;
+            this.btnCLB.Name = "btnCLB";
+            this.btnCLB.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // btnLopDangKy
+            // 
+            this.btnLopDangKy.Caption = "Cập Nhật Lớp Đăng Ký";
+            this.btnLopDangKy.Id = 37;
+            this.btnLopDangKy.ImageOptions.Image = global::GUI.Properties.Resources.class_icon;
+            this.btnLopDangKy.Name = "btnLopDangKy";
+            this.btnLopDangKy.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
             // ribbonPage1
             // 
@@ -365,22 +381,6 @@
             this.imageCollection1.Images.SetKeyName(1, "ChangePassword-icon.png");
             this.imageCollection1.Images.SetKeyName(2, "logout-icon.png");
             // 
-            // btnCLB
-            // 
-            this.btnCLB.Caption = "Cập nhật CLB";
-            this.btnCLB.Id = 36;
-            this.btnCLB.ImageOptions.Image = global::GUI.Properties.Resources.clb_icon;
-            this.btnCLB.Name = "btnCLB";
-            this.btnCLB.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            // 
-            // btnLopDangKy
-            // 
-            this.btnLopDangKy.Caption = "Cập Nhật Lớp Đăng Ký";
-            this.btnLopDangKy.Id = 37;
-            this.btnLopDangKy.ImageOptions.Image = global::GUI.Properties.Resources.class_icon;
-            this.btnLopDangKy.Name = "btnLopDangKy";
-            this.btnLopDangKy.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -392,6 +392,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.MaximizeBox = false;
             this.Name = "frmMain";
             this.Ribbon = this.ribbonControl1;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

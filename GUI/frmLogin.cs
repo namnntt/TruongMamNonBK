@@ -60,6 +60,7 @@ namespace GUI
                     frm.ShowDialog();
                 }
                 this.Close();
+
             }
             catch (Exception ex)
             {

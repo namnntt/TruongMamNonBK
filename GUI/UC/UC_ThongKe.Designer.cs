@@ -103,7 +103,7 @@
             this.btnDuLieu.Location = new System.Drawing.Point(698, 29);
             this.btnDuLieu.Name = "btnDuLieu";
             this.btnDuLieu.Size = new System.Drawing.Size(121, 36);
-            this.btnDuLieu.TabIndex = 5;
+            this.btnDuLieu.TabIndex = 3;
             this.btnDuLieu.Text = "Load Dữ liệu";
             this.btnDuLieu.Click += new System.EventHandler(this.btnDuLieu_Click);
             // 
@@ -119,7 +119,7 @@
             this.cbQuyThongKe.Location = new System.Drawing.Point(482, 19);
             this.cbQuyThongKe.Name = "cbQuyThongKe";
             this.cbQuyThongKe.Size = new System.Drawing.Size(60, 25);
-            this.cbQuyThongKe.TabIndex = 6;
+            this.cbQuyThongKe.TabIndex = 0;
             // 
             // txtNam
             // 
@@ -128,7 +128,7 @@
             this.txtNam.MaxLength = 4;
             this.txtNam.Name = "txtNam";
             this.txtNam.Size = new System.Drawing.Size(68, 25);
-            this.txtNam.TabIndex = 7;
+            this.txtNam.TabIndex = 1;
             this.txtNam.TextChanged += new System.EventHandler(this.txtNam_TextChanged);
             // 
             // lblNam

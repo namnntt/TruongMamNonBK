@@ -178,7 +178,7 @@
             // btnSuaThongTinTK
             // 
             this.btnSuaThongTinTK.ImageOptions.Image = global::GUI.Properties.Resources.edit_tt_Giao_vu;
-            this.btnSuaThongTinTK.Location = new System.Drawing.Point(505, 483);
+            this.btnSuaThongTinTK.Location = new System.Drawing.Point(387, 484);
             this.btnSuaThongTinTK.Name = "btnSuaThongTinTK";
             this.btnSuaThongTinTK.Size = new System.Drawing.Size(109, 44);
             this.btnSuaThongTinTK.TabIndex = 13;
@@ -188,7 +188,7 @@
             // btnResetPassword
             // 
             this.btnResetPassword.ImageOptions.Image = global::GUI.Properties.Resources.reset_Password_gv_icon;
-            this.btnResetPassword.Location = new System.Drawing.Point(682, 483);
+            this.btnResetPassword.Location = new System.Drawing.Point(558, 484);
             this.btnResetPassword.Name = "btnResetPassword";
             this.btnResetPassword.Size = new System.Drawing.Size(108, 44);
             this.btnResetPassword.TabIndex = 14;
@@ -198,11 +198,12 @@
             // btnThemTaiKhoan
             // 
             this.btnThemTaiKhoan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThemTaiKhoan.ImageOptions.Image")));
-            this.btnThemTaiKhoan.Location = new System.Drawing.Point(846, 483);
+            this.btnThemTaiKhoan.Location = new System.Drawing.Point(728, 484);
             this.btnThemTaiKhoan.Name = "btnThemTaiKhoan";
             this.btnThemTaiKhoan.Size = new System.Drawing.Size(107, 44);
             this.btnThemTaiKhoan.TabIndex = 15;
             this.btnThemTaiKhoan.Text = "Thêm TK mới";
+            this.btnThemTaiKhoan.Click += new System.EventHandler(this.btnThemTaiKhoan_Click);
             // 
             // UC_QuanLyTaiKhoan
             // 
