@@ -154,6 +154,40 @@ namespace BussinesLayer
                         };
             return GenericServices.ToDataTable(dsLop.ToList());
         }
+        public static DataTable LayDanhSachToanBoLopDangKy()
+        {
+            List<LopDangKy> dsLopDangKyFromDataBase = LopDangKyRepo.LayDanhSachLopDangKy();
+            var dsLopDangKy = from ldk in dsLopDangKyFromDataBase
+                              select new
+                              {
+                                  ldk.MaLopDangKy,
+                                  ldk.TenLopDangKy,
+                                  ldk.HocPhi,
+                                  ldk.LichHoc,
+                                  ldk.CLB1.TenCLB,
+                                  ldk.CLB,
+                                  ldk.NamHoc
+                              };
+            return GenericServices.ToDataTable(dsLopDangKy.ToList());
+        }
+        public static int CapNhatThongTinLopDangky(string MaLopDK, string TenLopDK, string MaCLB, string NamHoc, decimal HocPhi, int LichHoc)
+        {
+            return LopDangKyRepo.ThayDoiThongTinLopDangKy(MaLopDK, TenLopDK, MaCLB, NamHoc, HocPhi, LichHoc);
+        }
+        public static bool CheckDangKyHienTaiCuaLop(string MaLopDK)
+        {
+            List<HoaDon> dsHDHienTai = dsHDRepo.GetAllCurrent();
+            List<DangKyHoc> dsDangKyHoc = dkHocRepo.GetAllsCurrent();
+            var dsMaLopCacLopCoDangKy = from hd in dsHDHienTai
+                                        join dk in dsDangKyHoc on hd.MaHD equals dk.HoaDon
+                                        select new { dk.LopDangKy };
+            return dsMaLopCacLopCoDangKy.ToList().Any(x=> x.LopDangKy == MaLopDK);
+        }
+        public static int ThemLopDangKyMoi(string TenLop, string MaCLB, string Namhoc, decimal HocPhi, int LichHoc)
+        {
+            return LopDangKyRepo.ThemThongTinLopDangKy(TenLop, MaCLB, Namhoc, HocPhi, LichHoc);
+        }
+      
         
     }
 }

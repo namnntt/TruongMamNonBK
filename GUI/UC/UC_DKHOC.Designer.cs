@@ -98,6 +98,7 @@
             this.adgvDanhSachLop.Size = new System.Drawing.Size(1158, 165);
             this.adgvDanhSachLop.TabIndex = 0;
             this.adgvDanhSachLop.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.adgvDanhSachLop_CellContentClick);
+            this.adgvDanhSachLop.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.adgvDanhSachLop_CellFormatting);
             this.adgvDanhSachLop.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.adgvDanhSachLop_RowPostPaint);
             // 
             // clLDKSTT

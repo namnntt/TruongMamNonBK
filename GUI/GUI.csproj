@@ -113,11 +113,23 @@
     <Compile Include="frmCapNhatHocSinh.Designer.cs">
       <DependentUpon>frmCapNhatHocSinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCapNhatThongTinLopDangKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCapNhatThongTinLopDangKy.Designer.cs">
+      <DependentUpon>frmCapNhatThongTinLopDangKy.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmChiTietDangKy.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmChiTietDangKy.Designer.cs">
       <DependentUpon>frmChiTietDangKy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDanhSachCLB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDanhSachCLB.Designer.cs">
+      <DependentUpon>frmDanhSachCLB.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDoiMatKhau.cs">
       <SubType>Form</SubType>
@@ -206,11 +218,17 @@
     <Compile Include="UC\UC_LICHSUHOADON.Designer.cs">
       <DependentUpon>UC_LICHSUHOADON.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\UC_QuanLyCLB.cs">
+    <Compile Include="UC\UC_LopHC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC\UC_QuanLyCLB.Designer.cs">
-      <DependentUpon>UC_QuanLyCLB.cs</DependentUpon>
+    <Compile Include="UC\UC_LopHC.Designer.cs">
+      <DependentUpon>UC_LopHC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC_QuanLyLopvaCLB.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC_QuanLyLopvaCLB.Designer.cs">
+      <DependentUpon>UC_QuanLyLopvaCLB.cs</DependentUpon>
     </Compile>
     <Compile Include="UC\UC_QuanLyTaiKhoan.cs">
       <SubType>UserControl</SubType>
@@ -227,8 +245,14 @@
     <EmbeddedResource Include="frmCapNhatHocSinh.resx">
       <DependentUpon>frmCapNhatHocSinh.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCapNhatThongTinLopDangKy.resx">
+      <DependentUpon>frmCapNhatThongTinLopDangKy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmChiTietDangKy.resx">
       <DependentUpon>frmChiTietDangKy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDanhSachCLB.resx">
+      <DependentUpon>frmDanhSachCLB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDoiMatKhau.resx">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
@@ -284,8 +308,11 @@
     <EmbeddedResource Include="UC\UC_LICHSUHOADON.resx">
       <DependentUpon>UC_LICHSUHOADON.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC\UC_QuanLyCLB.resx">
-      <DependentUpon>UC_QuanLyCLB.cs</DependentUpon>
+    <EmbeddedResource Include="UC\UC_LopHC.resx">
+      <DependentUpon>UC_LopHC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC_QuanLyLopvaCLB.resx">
+      <DependentUpon>UC_QuanLyLopvaCLB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UC_QuanLyTaiKhoan.resx">
       <DependentUpon>UC_QuanLyTaiKhoan.cs</DependentUpon>
@@ -412,6 +439,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\enter-icon-png.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\updarte-infomatrion.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

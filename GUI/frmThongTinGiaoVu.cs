@@ -124,7 +124,7 @@ namespace GUI
             }
             else
             {
-                MessageBox.Show("có trường bị sai định dạng hoặc đang bị để trống");
+                MessageBox.Show("Có trường bị để trống hoặc bị sai định dạng");
             }
         }
 
@@ -143,7 +143,7 @@ namespace GUI
             }
             if(CheckValidation)
             {
-                if (txtComfirm.Text.Equals(txtPassword.Text))
+                if (txtComfirm.Text.Equals(txtPassword.Text) && !AccountServices.CheckAccountexits(txtTaiKhoan.Text))
                 {
                     int changeaddevent = AccountServices.ThemGiaoVu(txtTenGiaovu.Text, txtSDT.Text, txtEmail.Text, txtTaiKhoan.Text, GenericServices.Encrypts(txtPassword.Text));
                     if (changeaddevent > 0)
@@ -158,7 +158,7 @@ namespace GUI
                 }
                 else
                 {
-                    MessageBox.Show("Mật khẩu và xác nhận phải giống nhau");
+                    MessageBox.Show("Mật khẩu xác nhận không giống mật khẩu hoặc Account đã tồn tại");
                 }
             }
             else MessageBox.Show("có trường bị sai định dạng hoặc đang bị để trống");

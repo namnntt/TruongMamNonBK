@@ -220,5 +220,19 @@ namespace GUI
 
             }
         }
+
+        private void btnCLB_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (!this.Controls.Contains(UC_QuanLyLopvaCLB.Instance))
+            {
+                this.Controls.Add(UC_QuanLyLopvaCLB.Instance);
+                UC_QuanLyLopvaCLB.Instance.Dock = DockStyle.Fill;
+                UC_QuanLyLopvaCLB.Instance.BringToFront();
+            }
+            else
+            {
+                UC_QuanLyLopvaCLB.Instance.BringToFront();
+            }
+        }
     }
 }

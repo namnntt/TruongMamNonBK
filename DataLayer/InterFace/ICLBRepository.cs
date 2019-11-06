@@ -10,5 +10,8 @@ namespace DataLayer.InterFace
     public interface ICLBRepository
     {
         List<CLB> GetAlls();
+        int UpdateTTCLB(string MaCLB, string TenCLB);
+
+        int ThemCLBMoi(string TenCLB);
     }
 }

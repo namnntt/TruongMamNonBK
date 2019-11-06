@@ -265,5 +265,16 @@ namespace GUI.UC
             }
 
         }
+
+        private void adgvDanhSachLop_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            DataGridView dgv = (DataGridView)sender;
+            if(dgv.Columns[e.ColumnIndex].Name == "clLichHoc" && e.RowIndex >=0)
+            {
+                string add = "Thứ " + e.Value.ToString();
+                e.Value = add;
+            }
+
+        }
     }
 }

@@ -102,6 +102,7 @@ namespace GUI.UC
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
             }
         }
 

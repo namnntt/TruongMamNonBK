@@ -11,9 +11,9 @@ using DevExpress.XtraEditors;
 
 namespace GUI.UC
 {
-    public partial class UC_QuanLyCLB : DevExpress.XtraEditors.XtraUserControl
+    public partial class UC_LopHC : DevExpress.XtraEditors.XtraUserControl
     {
-        public UC_QuanLyCLB()
+        public UC_LopHC()
         {
             InitializeComponent();
         }

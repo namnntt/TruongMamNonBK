@@ -40,7 +40,6 @@
             this.btnCapNhapTTHS = new DevExpress.XtraBars.BarButtonItem();
             this.btnAccountManaGer = new DevExpress.XtraBars.BarButtonItem();
             this.btnCLB = new DevExpress.XtraBars.BarButtonItem();
-            this.btnLopDangKy = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -87,8 +86,7 @@
             this.btnLichSuHoaDon,
             this.btnCapNhapTTHS,
             this.btnAccountManaGer,
-            this.btnCLB,
-            this.btnLopDangKy});
+            this.btnCLB});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.MaxItemId = 38;
             this.ribbonControl1.Name = "ribbonControl1";
@@ -180,19 +178,12 @@
             // 
             // btnCLB
             // 
-            this.btnCLB.Caption = "Cập nhật CLB";
+            this.btnCLB.Caption = "Cập nhật các Lớp và CLB";
             this.btnCLB.Id = 36;
             this.btnCLB.ImageOptions.Image = global::GUI.Properties.Resources.clb_icon;
             this.btnCLB.Name = "btnCLB";
             this.btnCLB.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            // 
-            // btnLopDangKy
-            // 
-            this.btnLopDangKy.Caption = "Cập Nhật Lớp Đăng Ký";
-            this.btnLopDangKy.Id = 37;
-            this.btnLopDangKy.ImageOptions.Image = global::GUI.Properties.Resources.class_icon;
-            this.btnLopDangKy.Name = "btnLopDangKy";
-            this.btnLopDangKy.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnCLB.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCLB_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -257,7 +248,6 @@
             // ribbonPageGroup6
             // 
             this.ribbonPageGroup6.ItemLinks.Add(this.btnCLB);
-            this.ribbonPageGroup6.ItemLinks.Add(this.btnLopDangKy);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.Text = "CLB và Lớp";
             // 
@@ -445,7 +435,6 @@
         private DevExpress.XtraBars.BarButtonItem btnAccountManaGer;
         private DevExpress.XtraBars.BarButtonItem btnInformation;
         private DevExpress.XtraBars.BarButtonItem btnCLB;
-        private DevExpress.XtraBars.BarButtonItem btnLopDangKy;
     }
 }
 
