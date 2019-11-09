@@ -71,7 +71,7 @@ namespace BussinesLayer
         }
         public static bool EmailValidation(this string txt)
         {
-            Regex r = new Regex(@"^[a-z][a-z0-9_\.]{5,32}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}$");
+            Regex r = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
             if (!(r.IsMatch(txt)))
             {
                 return true;
@@ -87,7 +87,7 @@ namespace BussinesLayer
         }
         public static bool AccountandPasswordValidaion(this string txt)
         {
-            Regex r = new Regex(@"^[a-z][a-z0-9]*$");
+            Regex r = new Regex(@"^[a-zA-Z][a-z0-9]*$");
             if (!(r.IsMatch(txt)))
             {
                 return true;
@@ -98,6 +98,14 @@ namespace BussinesLayer
         {
             Regex r = new Regex(@"^\b(19|20)\d{2}\b$");
             if (!(r.IsMatch(txt)))
+            {
+                return true;
+            }
+            else return false;
+        }
+        public static bool NamHocValidation(this DateTimePicker dat)
+        {
+            if ((DateTime.Now.Year - dat.Value.Year) < 4 || (DateTime.Now.Year- dat.Value.Year) > 5)
             {
                 return true;
             }

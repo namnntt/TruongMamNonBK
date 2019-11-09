@@ -45,6 +45,7 @@ namespace GUI.UC
             adgvHocSinhDuDK.AutoGenerateColumns = true;
             adgvHocSinhDuDK.FilterAndSortEnabled = true;
             adgvHocSinhDuDK.DisableFilterAndSort(clHSSTT);
+            
             DataTable dt = HocSinhServices.LayDanhSachHocSinh();
             lbnThongBao.Text = $"Nghiệp vụ Đăng ký học Tháng {DateTime.Now.Month.ToString()}/{DateTime.Now.Year.ToString()}";
             bdHocSinhDuDieuKien.DataSource = dt;
@@ -210,27 +211,34 @@ namespace GUI.UC
 
         private void btnChiTietHoaDon_Click(object sender, EventArgs e)
         {
-            DataTable hd = HoaDonServices.LayDanhSachHoaDonTheoMaHocSinh(hs["MaHS"].ToString());
-            if ((bool)hd.Rows[0][2] == false)
+            try
             {
-                DialogResult result =  MessageBox.Show("nếu thực hiện in hóa đơn bạn sẽ không thể hủy đăng ký. bạn Phải chắc chắn đăng ký đã chính xác", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dthsldk.Rows.Count > 0 && result == DialogResult.Yes)
+                DataTable hd = HoaDonServices.LayDanhSachHoaDonTheoMaHocSinh(hs["MaHS"].ToString());
+                if ((bool)hd.Rows[0][2] == false)
                 {
-                    using (frmHoaDon frm = new frmHoaDon(dthsldk, hs, hd))
+                    DialogResult result = MessageBox.Show("nếu thực hiện in hóa đơn bạn sẽ không thể hủy đăng ký. bạn Phải chắc chắn đăng ký đã chính xác", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dthsldk.Rows.Count > 0 && result == DialogResult.Yes)
                     {
-                        frm.ShowDialog();
+                        using (frmHoaDon frm = new frmHoaDon(dthsldk, hs, hd))
+                        {
+                            frm.ShowDialog();
+                        }
+                    }
+                }
+                else
+                {
+                    if (dthsldk.Rows.Count > 0)
+                    {
+                        using (frmHoaDon frm = new frmHoaDon(dthsldk, hs, hd))
+                        {
+                            frm.ShowDialog();
+                        }
                     }
                 }
             }
-            else
+            catch(Exception ex)
             {
-                if (dthsldk.Rows.Count > 0)
-                {
-                    using (frmHoaDon frm = new frmHoaDon(dthsldk, hs, hd))
-                    {
-                        frm.ShowDialog();
-                    }
-                }
+                MessageBox.Show(ex.Message);
             }
             
 

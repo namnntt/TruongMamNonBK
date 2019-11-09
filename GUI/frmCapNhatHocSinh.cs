@@ -17,6 +17,7 @@ namespace GUI
     {
         string _TenLopHC = null;
         string _MaHocSinh = null;
+        
         public frmCapNhatHocSinh(string TenLopHC, string MaHocSinh)
         {
             _TenLopHC = TenLopHC;
@@ -109,6 +110,7 @@ namespace GUI
                 {
                     UC_CapNhatHocSinh.Instance.onload();
                     UC_DKHOC.Instance.onload();
+                    UC_LopHC.Instance.onload();
                     MessageBox.Show("Thêm thành công");
                     txtTenHS.Clear();
                     txtDiaChi.Clear();
@@ -153,11 +155,21 @@ namespace GUI
             else
             {
                 UC_CapNhatHocSinh.Instance.onload();
+                UC_LopHC.Instance.onload();
                 UC_DKHOC.Instance.onload();
+                UC_DKHOC.Instance.adgvHocSinhDuDK.CleanFilterAndSort();
                 MessageBox.Show("Đã cập nhật thành công");
             }
         }
 
-        
+        private void datNgaySinh_ValueChanged(object sender, EventArgs e)
+        {
+            if (datNgaySinh.NamHocValidation())
+            {
+                MessageBox.Show("Tuổi chưa hợp lệ");
+                
+            }
+            
+        }
     }
 }

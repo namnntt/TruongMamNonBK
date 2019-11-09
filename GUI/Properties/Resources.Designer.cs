@@ -373,6 +373,16 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap class_manager_icon {
+            get {
+                object obj = ResourceManager.GetObject("class-manager-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap clb_icon {
             get {
                 object obj = ResourceManager.GetObject("clb-icon", resourceCulture);
@@ -436,6 +446,16 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap detail_con {
             get {
                 object obj = ResourceManager.GetObject("detail-con", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_info_icon {
+            get {
+                object obj = ResourceManager.GetObject("edit-info-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

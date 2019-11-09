@@ -40,6 +40,7 @@
             this.btnCapNhapTTHS = new DevExpress.XtraBars.BarButtonItem();
             this.btnAccountManaGer = new DevExpress.XtraBars.BarButtonItem();
             this.btnCLB = new DevExpress.XtraBars.BarButtonItem();
+            this.btnQuanLyLopHC = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -86,9 +87,10 @@
             this.btnLichSuHoaDon,
             this.btnCapNhapTTHS,
             this.btnAccountManaGer,
-            this.btnCLB});
+            this.btnCLB,
+            this.btnQuanLyLopHC});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 38;
+            this.ribbonControl1.MaxItemId = 40;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -185,6 +187,15 @@
             this.btnCLB.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btnCLB.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCLB_ItemClick);
             // 
+            // btnQuanLyLopHC
+            // 
+            this.btnQuanLyLopHC.Caption = "Quản Lý Lớp Hành Chính";
+            this.btnQuanLyLopHC.Id = 38;
+            this.btnQuanLyLopHC.ImageOptions.Image = global::GUI.Properties.Resources.class_manager_icon;
+            this.btnQuanLyLopHC.Name = "btnQuanLyLopHC";
+            this.btnQuanLyLopHC.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnQuanLyLopHC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnQuanLyLopHC_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -261,8 +272,9 @@
             // 
             // ribbonPageGroup5
             // 
+            this.ribbonPageGroup5.ItemLinks.Add(this.btnQuanLyLopHC);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
-            this.ribbonPageGroup5.Text = "ribbonPageGroup5";
+            this.ribbonPageGroup5.Text = "Quản Lý Các Lớp Hành Chính";
             // 
             // repositoryItemHypertextLabel1
             // 
@@ -435,6 +447,7 @@
         private DevExpress.XtraBars.BarButtonItem btnAccountManaGer;
         private DevExpress.XtraBars.BarButtonItem btnInformation;
         private DevExpress.XtraBars.BarButtonItem btnCLB;
+        private DevExpress.XtraBars.BarButtonItem btnQuanLyLopHC;
     }
 }
 

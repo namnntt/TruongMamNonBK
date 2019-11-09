@@ -72,7 +72,7 @@
             this.adgvdsHSGiaHanDK.Name = "adgvdsHSGiaHanDK";
             this.adgvdsHSGiaHanDK.RowHeadersVisible = false;
             this.adgvdsHSGiaHanDK.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.adgvdsHSGiaHanDK.Size = new System.Drawing.Size(888, 372);
+            this.adgvdsHSGiaHanDK.Size = new System.Drawing.Size(1146, 372);
             this.adgvdsHSGiaHanDK.TabIndex = 0;
             this.adgvdsHSGiaHanDK.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.adgvdsHSGiaHanDK_CellContentClick);
             this.adgvdsHSGiaHanDK.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.adgvdsHSGiaHanDK_RowPostPaint);
@@ -147,9 +147,9 @@
             // 
             this.btnGiaHan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.btnGiaHan.ImageOptions.Image = global::GUI.Properties.Resources.renew_icon;
-            this.btnGiaHan.Location = new System.Drawing.Point(450, 459);
+            this.btnGiaHan.Location = new System.Drawing.Point(577, 469);
             this.btnGiaHan.Name = "btnGiaHan";
-            this.btnGiaHan.Size = new System.Drawing.Size(117, 42);
+            this.btnGiaHan.Size = new System.Drawing.Size(117, 38);
             this.btnGiaHan.TabIndex = 1;
             this.btnGiaHan.Text = "Gia Hạn";
             this.btnGiaHan.Click += new System.EventHandler(this.btnGiaHan_Click);
@@ -163,7 +163,7 @@
             this.advancedDataGridViewSearchToolBar1.MinimumSize = new System.Drawing.Size(0, 27);
             this.advancedDataGridViewSearchToolBar1.Name = "advancedDataGridViewSearchToolBar1";
             this.advancedDataGridViewSearchToolBar1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.advancedDataGridViewSearchToolBar1.Size = new System.Drawing.Size(958, 27);
+            this.advancedDataGridViewSearchToolBar1.Size = new System.Drawing.Size(1216, 27);
             this.advancedDataGridViewSearchToolBar1.TabIndex = 2;
             this.advancedDataGridViewSearchToolBar1.Text = "advancedDataGridViewSearchToolBar1";
             this.advancedDataGridViewSearchToolBar1.Search += new Zuby.ADGV.AdvancedDataGridViewSearchToolBarSearchEventHandler(this.advancedDataGridViewSearchToolBar1_Search);
@@ -176,7 +176,7 @@
             this.Controls.Add(this.btnGiaHan);
             this.Controls.Add(this.adgvdsHSGiaHanDK);
             this.Name = "UC_GiaHanDKHoc";
-            this.Size = new System.Drawing.Size(958, 540);
+            this.Size = new System.Drawing.Size(1216, 545);
             this.Load += new System.EventHandler(this.UC_GiaHanDKHoc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.adgvdsHSGiaHanDK)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdDsHSGiaHan)).EndInit();

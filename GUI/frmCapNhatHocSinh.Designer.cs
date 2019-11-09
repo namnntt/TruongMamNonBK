@@ -89,6 +89,7 @@
             this.datNgaySinh.Name = "datNgaySinh";
             this.datNgaySinh.Size = new System.Drawing.Size(161, 21);
             this.datNgaySinh.TabIndex = 1;
+            this.datNgaySinh.ValueChanged += new System.EventHandler(this.datNgaySinh_ValueChanged);
             // 
             // txtTenHS
             // 

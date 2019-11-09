@@ -10,5 +10,8 @@ namespace DataLayer.InterFace
     public interface ILopHCRepository
     {
         List<LopHanhChinh> GetAlls();
+        int CapNhatTTLopHC(string MaLopHC, string TenLopHC, string NienKhoa, string TenGiaoVienCN);
+
+        int ThemLopHCMoi(string TenLopHC, string NienKhoa, string TenGiaoVienCN);
     }
 }

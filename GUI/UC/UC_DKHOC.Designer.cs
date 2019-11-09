@@ -388,7 +388,6 @@
         private Zuby.ADGV.AdvancedDataGridView adgvDanhSachLop;
         private System.Windows.Forms.BindingSource bdHocSinhDuDieuKien;
         public System.Windows.Forms.BindingSource bdLopDangKy;
-        private Zuby.ADGV.AdvancedDataGridView adgvHocSinhDuDK;
         private System.Windows.Forms.DataGridViewTextBoxColumn clLDKSTT;
         private System.Windows.Forms.DataGridViewCheckBoxColumn clCheckBoxers;
         private System.Windows.Forms.DataGridViewTextBoxColumn clMaLopDangKy;
@@ -413,5 +412,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clSoluongDK;
         private System.Windows.Forms.DataGridViewTextBoxColumn clTinhTrangHoaDon;
         private System.Windows.Forms.Label lbnThongBao;
+        public Zuby.ADGV.AdvancedDataGridView adgvHocSinhDuDK;
     }
 }

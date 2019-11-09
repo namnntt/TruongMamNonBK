@@ -26,16 +26,17 @@ namespace GUI
         {
             cbCLB.DataSource = CLBServices.LayDanhSachCLB();
             cbCLB.DisplayMember = "TenCLB";
-            cbCLB.ValueMember = "MaCLB";        
+            cbCLB.ValueMember = "MaCLB";
+            foreach (TextBox tb in this.Controls.OfType<TextBox>())
+            {
+                tb.TextChanged += Tb_TextChanged;
+            }
             txtHocPhi.Text = _TTLop[2].ToString();
             txtTenLop.Text = _TTLop[1].ToString();
             txtLichHoc.Text = _TTLop[3].ToString();
             txtNamHoc.Text = _TTLop[6].ToString();
             cbCLB.SelectedIndex = cbCLB.FindStringExact(_TTLop[4].ToString());
-            foreach (TextBox tb in this.Controls.OfType<TextBox>())
-            {
-                tb.TextChanged += Tb_TextChanged;
-            }
+            
         }
 
         private void Tb_TextChanged(object sender, EventArgs e)
@@ -52,15 +53,15 @@ namespace GUI
                         else errorProvider.SetError(tb, null);
                         break;
                     }
-                case "txtHocPhi":
-                    {
-                        if (!tb.Text.All(Char.IsDigit))
-                        {
-                            errorProvider.SetError(tb, "Phải điền vào chỉ có số mà thôi");
-                        }
-                        else errorProvider.SetError(tb, null);
-                        break;
-                    }
+                //case "txtHocPhi":
+                //    {
+                //        if (!tb.Text.All(Char.IsDigit))
+                //        {
+                //            errorProvider.SetError(tb, "Phải điền vào chỉ có số mà thôi");
+                //        }
+                //        else errorProvider.SetError(tb, null);
+                //        break;
+                //    }
                 case "txtLichHoc":
                     {
                         if (!tb.Text.All(char.IsDigit))
@@ -70,6 +71,9 @@ namespace GUI
                         else errorProvider.SetError(tb, null);
                         break;
                     }
+                default:
+                    errorProvider.SetError(tb, null);
+                    break;
             }
         }
 

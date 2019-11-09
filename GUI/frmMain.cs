@@ -234,5 +234,19 @@ namespace GUI
                 UC_QuanLyLopvaCLB.Instance.BringToFront();
             }
         }
+
+        private void btnQuanLyLopHC_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (!this.Controls.Contains(UC_LopHC.Instance))
+            {
+                this.Controls.Add(UC_LopHC.Instance);
+                UC_LopHC.Instance.Dock = DockStyle.Fill;
+                UC_LopHC.Instance.BringToFront();
+            }
+            else
+            {
+                UC_LopHC.Instance.BringToFront();
+            }
+        }
     }
 }
